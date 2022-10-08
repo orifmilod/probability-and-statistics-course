@@ -234,6 +234,193 @@ where
 .
  Werner not only gave accurate definition of separable states (those mixed
  states 
+\begin_inset Formula 
+\begin{equation}
+\frac{2}{3}\int_{-\infty}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hi Orif, I hope you meet this message.
+ I would like to add a section at the end of this Chapter callend Local
+ Causality, do not delete.
+\end_layout
+
+\begin_layout Section
+Local Causality
+\end_layout
+
+\begin_layout Standard
+In the previous section, some student wrote the definition of events in
+ probability theory and in theory of relativity.
+ Let 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ random variables taking value 
+\begin_inset Formula $\left\{ -1,1\right\} $
+\end_inset
+
+ and, let 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ some settings, or degenerate rv.
+ The probability spaces involved are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A,B\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|A,B\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+,
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The setting can be modelized as a.
+ By the multiplication formula (see slides) 
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B\right)=P\left(X|Y,A,B\right)P\left(Y|A,B\right).
+\end{equation}
+
+\end_inset
+
+Suppose that the values of the random variable 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ depends on the settings 
+\begin_inset Formula $A,B$
+\end_inset
+
+.
+ Now, consider the situation where the rv are spacelike separate such that
+ the probability spaces are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|B\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B\right)=P\left(X|A\right)P\left(Y|B\right).
+\end{equation}
+
+\end_inset
+
+However, if they show some correlations, we assume that there must be some
+ local structure.
+ Therefore we rewrite the probability spaces as
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A,\Lambda\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|B,\Lambda\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B,\Lambda\right)=P\left(X|A,\Lambda\right)P\left(Y|B,\Lambda\right).
+\end{equation}
+
+\end_inset
+
+This is call screening–off condition and can obtained equivalently with
+ parameter independence and outcome independence (Jarrett 1984).
+ Even more, the variable 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ is motivated by the Reichenbach's common cause principle.
 \end_layout
 
 \end_body

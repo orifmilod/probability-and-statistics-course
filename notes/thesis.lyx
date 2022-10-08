@@ -147,24 +147,6 @@ to the peace
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Ma cosa mi dici mai
-\begin_inset Formula $\dots$
-\end_inset
-
- – 
-\emph default
-Gigio Mouse
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -410,7 +392,7 @@ task 4: Einstein–Bose distribution as exercise of counting (stars–bars);
 
 \begin_layout Itemize
 task 5: build some material from mathematical demonstration database on
- Bayes Theorem, 
+ conditional probability, 
 \begin_inset Flex URL
 status open
 
@@ -437,18 +419,19 @@ G.
 
 \begin_layout Itemize
 S.
- Rout,
-\begin_inset Flex URL
-status collapsed
+ Rout, 
+\emph on
 
-\begin_layout Plain Layout
-
-http://corysimon.github.io/articles/by-how-many-flights-should-an-airline-overbook
-/
-\end_layout
+\begin_inset CommandInset href
+LatexCommand href
+name "overbooking flight problem"
+target "http://corysimon.github.io/articles/by-how-many-flights-should-an-airline-overbook/"
+literal "false"
 
 \end_inset
 
+
+\emph default
  
 \begin_inset Flex URL
 status collapsed
@@ -461,6 +444,46 @@ http://corysimon.github.io/articles/uniformdistn-on-sphere/
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+task 1: note on Chapter 2;
+\end_layout
+
+\begin_layout Itemize
+task 2: add the cumulative plots on the slides in the folder material
+\end_layout
+
+\begin_layout Itemize
+task 3:
+\series bold
+ 
+\series default
+use the poissonian distribution for the 
+\emph on
+overbooking flight problem
+\end_layout
+
+\begin_layout Itemize
+task 4: use the normal distribution for the 
+\emph on
+overbooking flight problem
+\end_layout
+
+\begin_layout Itemize
+task 5: build some material from mathematical demonstration database on
+ Bayes Theorem, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://demonstrations.wolfram.com/
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_deeper
