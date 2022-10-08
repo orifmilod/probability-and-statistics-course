@@ -1,0 +1,5296 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass deistesi
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Light–matter interaction
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:spontaneous"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+If I were forced to sum up in one sentence what Copenhagen interpretation
+ says to me, it would be – Shut up and calculate – .
+\begin_inset Quotes xrd
+\end_inset
+
+
+\emph default
+(D.
+ Mermin)
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+primalettera{S}
+\end_layout
+
+\end_inset
+
+pacetime is the ordinary environment for accommodating our scenarios.
+ In this framework that we try to explain the entanglement, nonlocality,
+ contextuality and all physical scenarios.
+ Nothing else might be replace spacetime in its ordinary form.
+ Unless we do not think deeper the notion of 
+\emph on
+tranquil nothingness
+\emph default
+.
+ The project of this chapter started with will to acquire knowledge on the
+ fluctuating quantum vacuum and its fundamental processes which is based
+ the quantum electrodynamics (QED).
+ Then, we distinguish the vacuum electromagnetic field and the effective
+ electromagnetic field in the presence of a dispersive environment which
+ interacts with a quantum system.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Therefore, we study physical process involving QED vacuum effects, as well
+ as, spontaneous emission, Lamb shift, van der Waals forces and the fundamental
+ linewidth of a laser and the relation between vacuum and source fields
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Milonni1994"
+literal "true"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+We are also motivated to realize physical experiment to prepare quantum
+ entanglement state that we showed in the previous chapter.
+ Interestingly, when two quantum emitters are embedded in a taylored environment
+ the pair can spontaneously relax towards an entangled state.
+ However, in the following we construct the theory only for one emitter
+ introducing a second emitter in future research for studying the entanglement
+ in cavity systems.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Firstly, we expand the theory of light-matter interactions to include the
+ spatial extension of the system, taken into account through its wavefunctions.
+ We show that this ingredient enables us to overcome the divergence problem
+ related to the Green tensor propagator and to develop a theory beyond the
+ point-dipole approximation.
+ In particular, the inclusion of the spatial structure of the atomic system
+ involve also asymmetric quantum system with respect to spatial inversion
+ and explain the role of this asymmetric effects in interaction with the
+ host medium which acts on the system by 
+\emph on
+Van der Vaals forces
+\emph default
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Abrikosov"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Spontaneous emission in dispersive media
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Hamiltonian"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename totalHamiltonian.jpeg
+	lyxscale 30
+	width 50text%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Graphic view of the total Hamiltonian.
+ In blue, the atomic 
+\begin_inset Formula $V_{\mathrm{at}}^{\parallel}$
+\end_inset
+
+, the medium 
+\begin_inset Formula $V_{\mathrm{m}}^{\parallel}$
+\end_inset
+
+ [Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Vparallel"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+], and the field 
+\begin_inset Formula $H_{\mathrm{f}}^{\perp}$
+\end_inset
+
+ [Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hamiltonian_free_field"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+] Hamiltonians.
+ The blue blocks are connected by the interaction blocks.
+ Hence 
+\begin_inset Formula $T_{\textrm{m}}$
+\end_inset
+
+ and 
+\begin_inset Formula $T_{\textrm{at}}$
+\end_inset
+
+ connect the medium and the atom, respectively, with the field as in Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Tminimalcoupling"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and 
+\begin_inset Formula $V_{\textrm{at-m}}^{\parallel}$
+\end_inset
+
+ connects the atom and the medium, as in Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Vqinteract"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ These six terms appear in Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:H"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The medium-assisted field 
+\begin_inset Formula $H_{\textrm{m}}$
+\end_inset
+
+ [Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+] arises from the terms 
+\begin_inset Formula $V_{\mathrm{m}}^{\parallel},\,T_{\mathrm{m}}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{\mathrm{f}}^{\perp}$
+\end_inset
+
+ (solid box on the right), and the atomic Hamiltonian becomes 
+\begin_inset Formula $H_{\mathrm{at}}$
+\end_inset
+
+ via the PZW transformation [Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:PZW"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+] (dashed box on the left).
+ 
+\begin_inset Formula $H_{\mathrm{at}}$
+\end_inset
+
+ interacts with 
+\begin_inset Formula $H_{\mathrm{m}}$
+\end_inset
+
+ thru 
+\begin_inset Formula $H_{\textrm{int}}$
+\end_inset
+
+ as in Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:H_summarized"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ By neglecting the magnetic properties one obtains 
+\begin_inset Formula $H_{\textrm{int}}^{\textrm{dip}}$
+\end_inset
+
+, which completes the model investigated.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:model"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+We start from a first-principle Hamiltonian where positive and negative
+ charges of the atomic system and the medium are coupled with the electromagneti
+c field.
+ If the focus is on the atomic dynamics, the system can be conveniently
+ modeled by coupling the atom to a 
+\shape italic
+medium-assisted
+\shape default
+ electromagnetic field, which is dressed by the interaction with the hosting
+ medium (see Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\noindent
+Let us consider the Coulomb-gauge Hamiltonian
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogel2006,cohen1_1997"
+literal "true"
+
+\end_inset
+
+, separating the longitudinal and transverse contributions 
+\begin_inset Formula 
+\begin{eqnarray}
+H=V_{\text{at}}^{\mathrm{\parallel}}+V_{\mathrm{m}}^{\mathrm{\parallel}}+V_{\text{at-m}}^{\parallel}+T_{\mathrm{at}}+T_{\mathrm{m}}+H_{\mathrm{F}}^{\perp}.\label{eq:H}
+\end{eqnarray}
+
+\end_inset
+
+Atomic charges will be labelled by roman indices 
+\begin_inset Formula $j,k$
+\end_inset
+
+ and the charges of the medium by greek indices 
+\begin_inset Formula $\mu,\nu$
+\end_inset
+
+.
+ The terms 
+\begin_inset Formula 
+\begin{equation}
+V_{\text{at}}^{\parallel}=\frac{1}{8\pi\epsilon_{0}}\sum_{j\neq k}\frac{Q_{j}Q_{k}}{|\boldsymbol{r}_{j}-\boldsymbol{r}_{k}|},\quad V_{\text{m}}^{\parallel}=\frac{1}{8\pi\epsilon_{0}}\sum_{\mu\neq\nu}\frac{Q_{\mu}Q_{\nu}}{|\boldsymbol{r}_{\mu}-\boldsymbol{r}_{\nu}|},\label{Vparallel}
+\end{equation}
+
+\end_inset
+
+represent the internal Coulomb interactions among the charges 
+\begin_inset Formula $Q_{k}$
+\end_inset
+
+ of the atomic system (placed at positions 
+\begin_inset Formula $\bm{r}_{k}$
+\end_inset
+
+) and among the charges 
+\begin_inset Formula $Q_{\mu}$
+\end_inset
+
+ of the medium (placed at positions 
+\begin_inset Formula $\bm{r}_{\mu}$
+\end_inset
+
+), respectively.
+ The atom-medium Coulomb interactions read 
+\begin_inset Formula 
+\begin{eqnarray}
+V_{\text{at-m}}^{\parallel} & =\frac{1}{4\pi\epsilon_{0}}\sum_{j,\mu}\frac{Q_{j}Q_{\mu}}{|\boldsymbol{r}_{j}-\boldsymbol{r}_{\mu}|}.\label{eq:Vqinteract}
+\end{eqnarray}
+
+\end_inset
+
+The kinetic terms 
+\begin_inset Formula 
+\begin{equation}
+T_{\mathrm{at}}=\sum_{j}\frac{\big(\bm{p}_{j}-Q_{j}\bm{A}(\boldsymbol{r}_{j})\big)^{2}}{2m_{j}},\qquad T_{\mathrm{m}}=\sum_{\mu}\frac{\big(\bm{p}_{\mu}-Q_{\mu}\bm{A}(\boldsymbol{r}_{\mu})\big)^{2}}{2m_{\mu}},\label{eq:Tminimalcoupling}
+\end{equation}
+
+\end_inset
+
+contain the minimal coupling between the charges (with canonical momenta
+ 
+\begin_inset Formula $\bm{p}_{j}=-\mathrm{i}\hbar\bm{\nabla}_{\boldsymbol{r}_{j}}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{p}_{\mu}=-\mathrm{i}\hbar\bm{\nabla}_{\bm{r}_{\mu}}$
+\end_inset
+
+, and masses 
+\begin_inset Formula $m_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $m_{\mu}$
+\end_inset
+
+, respectively) and the transverse part of the field, represented by the
+ Coulomb gauge vector potential 
+\begin_inset Formula $\bm{A}$
+\end_inset
+
+ (purely transverse, 
+\begin_inset Formula $\bm{\nabla}\cdot\bm{A}=0$
+\end_inset
+
+).
+ Finally, 
+\begin_inset Formula 
+\begin{equation}
+H_{\text{F}}^{\perp}=\frac{1}{2}\int\mathrm{d}^{3}\boldsymbol{r}\left(\epsilon_{0}\dot{\boldsymbol{A}}^{2}(\boldsymbol{r})+\frac{1}{\mu_{0}}\left[\nabla\times\boldsymbol{A}(\boldsymbol{r})\right]^{2}\right)\label{eq:Hamiltonian_free_field}
+\end{equation}
+
+\end_inset
+
+is the Hamiltonian of the free field in vacuum.
+ If one considers a neutral atom, the charge density 
+\begin_inset Formula 
+\begin{equation}
+\rho_{\mathrm{at}}(\boldsymbol{r})=\sum_{j}Q_{j}\delta(\boldsymbol{r}-\boldsymbol{r}_{j}),\quad\text{with}\quad\sum_{j}Q_{j}=0,
+\end{equation}
+
+\end_inset
+
+can be expressed as the divergence of a polarization density 
+\begin_inset Formula $\rho_{\mathrm{at}}(\boldsymbol{r})=-\bm{\nabla}\cdot\bm{P}_{\mathrm{at}}(\boldsymbol{r}).$
+\end_inset
+
+ Here, 
+\begin_inset Formula 
+\begin{equation}
+\bm{P}_{\mathrm{at}}(\boldsymbol{r})=\sum_{j}q_{j}\int_{0}^{1}\text{d}s\,(\boldsymbol{r}_{j}-\bm{R})\delta(\boldsymbol{r}-\bm{R}-s(\boldsymbol{r}_{j}-\bm{R})),
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\bm{R}$
+\end_inset
+
+ is the center-of-mass coordinate
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cohen1_1997"
+literal "true"
+
+\end_inset
+
+.
+ The atomic polarization density allows us to express the Coulomb interaction
+ terms as follows 
+\begin_inset Formula 
+\begin{eqnarray}
+V_{\text{at}}^{\mathrm{\parallel}}= & \frac{1}{2\epsilon_{0}}\int\text{d}^{3}\boldsymbol{r}\left(\bm{P}_{\mathrm{at}}^{\parallel}(\boldsymbol{r})\right)^{2},\label{P_Coulomb}\\
+V_{\text{at-m}}^{\parallel}= & \frac{1}{\epsilon_{0}}\int\text{d}^{3}\boldsymbol{r}\,\bm{P}_{\mathrm{at}}^{\parallel}(\boldsymbol{r})\cdot\bm{\Pi}^{\parallel}(\boldsymbol{r}).\label{Pi_Coulomb}
+\end{eqnarray}
+
+\end_inset
+
+Here, 
+\begin_inset Formula $\bm{P}_{\mathrm{at}}^{\parallel}$
+\end_inset
+
+ is the longitudinal part of the polarization, i.e.
+ the only component that determines the atomic charge density, and 
+\begin_inset Formula $\bm{\Pi}^{\parallel}$
+\end_inset
+
+ is the longitudinal displacement field of the medium, that satisfies 
+\begin_inset Formula 
+\begin{equation}
+\nabla\cdot\bm{\Pi}^{\parallel}(\boldsymbol{r})=-\sum_{\mu}Q_{\mu}\delta(\boldsymbol{r}-\boldsymbol{r}_{\mu}).\label{eq:longitudinal_medium_displacement}
+\end{equation}
+
+\end_inset
+
+The latter is proportional to the Coulomb field 
+\begin_inset Formula $\bm{E}^{\parallel}=-\bm{\Pi}^{\parallel}/\epsilon_{0}$
+\end_inset
+
+ generated by the medium charges.
+\end_layout
+
+\begin_layout Subsection
+Minimal coupling
+\end_layout
+
+\begin_layout Standard
+We now analyze the coupling between the atom and the electromagnetic field,
+ which is a consequence of the minimal coupling in the kinetic energy terms
+ in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Tminimalcoupling"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ For an atom modeled as a point-like dipole, it is possible to shift from
+ the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\bm{p}\cdot\bm{A}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ to the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\boldsymbol{r}\cdot\bm{E}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ coupling representation, through the unitary transformation 
+\begin_inset Formula $\exp(-\mathrm{i}Q\boldsymbol{r}\cdot\bm{A}/\hbar)$
+\end_inset
+
+, where the vector potential is computed at the dipole center of mass
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cohen1_1997"
+literal "true"
+
+\end_inset
+
+.
+ The advantage of this transformation lies in the fact that, in the transformed
+ picture, the canonical momentum of a particle coincides with its kinetic
+ momentum and it is decoupled from the field variables (a thorough discussion
+ of the implications of such a feature is given in Ref.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cohen1_1997"
+literal "true"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+In the case of a finite-size dipole, the aforementioned unitary transformation
+ generalizes to the Power-Zienau-Wolley (PZW) operator
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cohen1_1997,Vogel2006"
+literal "true"
+
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{equation}
+U_{\mathrm{PZW}}=\exp\left(-\frac{\mathrm{i}}{\hbar}\int\mathrm{d}^{3}\boldsymbol{r}\,\bm{P}_{\mathrm{at}}(\boldsymbol{r})\cdot\bm{A}(\boldsymbol{r})\right)=\exp\left(-\frac{\mathrm{i}}{\hbar}\int\mathrm{d}^{3}\boldsymbol{r}\,\bm{P}_{\mathrm{at}}^{\perp}(\boldsymbol{r})\cdot\bm{A}^{\perp}(\boldsymbol{r})\right).\label{eq:PZW}
+\end{equation}
+
+\end_inset
+
+The transformation property 
+\begin_inset Formula $U_{\mathrm{PZW}}\bm{\Pi}^{\perp}(\boldsymbol{r})U_{\mathrm{PZW}}^{\dagger}=\bm{\Pi}^{\perp}(\boldsymbol{r})+\bm{P}_{\mathrm{at}}^{\perp}(\boldsymbol{r})$
+\end_inset
+
+ yields two transverse-field terms from Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hamiltonian_free_field"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\begin_inset Formula 
+\begin{equation}
+V_{\mathrm{at}}^{\perp}=\frac{1}{2\epsilon_{0}}\int\mathrm{d}^{3}\boldsymbol{r}\left(\bm{P}_{\mathrm{at}}^{\perp}(\boldsymbol{r})\right)^{2},\qquad V_{\text{at-m}}^{\perp}=\frac{1}{\epsilon_{0}}\int\mathrm{d}^{3}\boldsymbol{r}\,\bm{P}_{\mathrm{at}}^{\perp}(\boldsymbol{r})\cdot\bm{\Pi}^{\perp}(\boldsymbol{r}).
+\end{equation}
+
+\end_inset
+
+These contributions are complementary to the ones in Eqs.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "P_Coulomb"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "Pi_Coulomb"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The latter, as well as the transverse part of the atomic polarization density,
+ are instead left unchanged by the transformation.
+ Although originally 
+\begin_inset Formula $\bm{\Pi}^{\perp}=-\epsilon_{0}\bm{E}^{\perp}$
+\end_inset
+
+, the proportionality is lost after the transformation 
+\begin_inset Formula 
+\begin{equation}
+\bm{\Pi}(\boldsymbol{r})=-\epsilon_{0}U_{\mathrm{PZW}}\bm{E}(\boldsymbol{r})U_{\mathrm{PZW}}^{\dagger}-U_{\mathrm{PZW}}\bm{P}_{\text{at}}(\boldsymbol{r})U_{\mathrm{PZW}}^{\dagger},
+\end{equation}
+
+\end_inset
+
+which can be shown using Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:longitudinal_medium_displacement"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For a finite-size dipole, the equality between the kinetic and canonical
+ momenta is not exactly realized in the transformed frame as in the case
+ of a point-like dipole transformation.
+ The reason is that the transformed kinetic momentum 
+\begin_inset Formula 
+\begin{equation}
+U_{\mathrm{PZW}}(\bm{p}_{j}+Q_{j}\bm{A}(\boldsymbol{r}_{j}))U_{\mathrm{PZW}}^{\dagger}=\bm{p}_{j}+Q_{j}\int_{0}^{1}\mathrm{d}s\,s(\boldsymbol{r}_{j}-\bm{R})\bm{B}(\bm{R}+s(\boldsymbol{r}_{j}-\bm{R}))
+\end{equation}
+
+\end_inset
+
+acquires an additional term, which generates a direct coupling between the
+ charges and the magnetic field 
+\begin_inset Formula $\bm{B}$
+\end_inset
+
+.
+ Nevertheless, the difference between the two momenta in the transformed
+ representation is suppressed with respect to the analogous difference in
+ the Coulomb gauge as the ratio between the atomic size and the interacting
+ light wavelength.
+ Therefore, if one neglects the interaction with the magnetic field, it
+ can be consistently assumed that 
+\begin_inset Formula $\bm{p}_{j}$
+\end_inset
+
+ coincides with the 
+\begin_inset Formula $j$
+\end_inset
+
+–th particle kinetic momentum in the transformed representation.
+ 
+\end_layout
+
+\begin_layout Subsection
+Medium-assisted electromagnetic field
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:medium"
+
+\end_inset
+
+ The medium-assisted electromagnetic field is an effective model that convenient
+ly describes, under certain approximations, the combination of the medium
+ and the field degrees of freedom, as pictured in Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:model"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The contributions to the medium-assisted Hamiltonian arise from the terms
+ 
+\begin_inset Formula $V_{\text{m}}^{\mathrm{\parallel}}$
+\end_inset
+
+, 
+\begin_inset Formula $T_{\mathrm{m}}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{\mathrm{F}}^{\perp}$
+\end_inset
+
+ in the Hamiltonian
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:H"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), as derived in detail in Refs.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Barnett1996,Huttner1992,Dung2000"
+literal "true"
+
+\end_inset
+
+.
+ The resulting effective field Hamiltonian, 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{m}}=\int_{0}^{\infty}\mathrm{d}\omega\int\mathrm{d}^{3}\boldsymbol{r}\,\hbar\omega\bm{f}^{\dagger}(\bm{r},\omega)\cdot\bm{f}(\bm{r},\omega),\label{eq:HM}
+\end{equation}
+
+\end_inset
+
+can be expanded in three-component mode operators 
+\begin_inset Formula $\bm{f}(\bm{r},\omega)$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{f}^{\dagger}(\bm{r},\omega)$
+\end_inset
+
+, satisfying canonical commutation relations 
+\begin_inset Formula 
+\begin{eqnarray}
+\left[f_{k}\left(\bm{r},\omega\right),f_{k'}^{\dagger}\left(\bm{r}',\omega'\right)\right] & =\delta_{kk'}\delta\left(\bm{r}-\bm{r}'\right)\delta\left(\omega-\omega'\right),\label{eq:CCRff1}\\
+\left[f_{k}\left(\bm{r},\omega\right),f_{k'}\left(\bm{r}',\omega'\right)\right] & =\left[f_{k}^{\dagger}\left(\boldsymbol{r},\omega\right),f_{k'}^{\dagger}\left(\bm{r}',\omega'\right)\right]=0,\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+with 
+\begin_inset Formula $k=1,2,3$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The displacement field 
+\series bold
+
+\begin_inset Formula $\boldsymbol{\Pi}$
+\end_inset
+
+
+\series default
+ and the vector potential 
+\begin_inset Formula $\bm{A}$
+\end_inset
+
+ are related to the field variable 
+\begin_inset Formula $\bm{f}$
+\end_inset
+
+ by 
+\begin_inset Formula 
+\begin{equation}
+\Pi_{j}(\boldsymbol{r})=\int_{0}^{\infty}\mathrm{d}\omega\int\mathrm{d}^{3}\boldsymbol{r}'\Bigg[-\mathrm{i}\frac{\omega^{2}}{c^{2}}\sqrt{\frac{\hbar\epsilon_{0}}{\pi}\epsilon_{I}(\boldsymbol{r}',\omega)}G_{jk}(\boldsymbol{r},\boldsymbol{r}',\omega)f_{k}(\boldsymbol{r}',\omega)+\mathrm{H.c.}\Bigg],\label{eq:Pij}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+A_{j}(\boldsymbol{r})=\int_{0}^{\infty}\mathrm{d}\omega\int\mathrm{d}^{3}\boldsymbol{r}'\Bigg[\frac{\omega}{c^{2}}\sqrt{\frac{\hbar}{\pi\epsilon_{0}}\epsilon_{I}(\boldsymbol{r}',\omega)}G_{jk}^{\perp}(\boldsymbol{r},\boldsymbol{r}',\omega)f_{k}(\boldsymbol{r}',\omega)+\mathrm{H.c.}\Bigg],\label{eq:Amedium}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\epsilon_{I}$
+\end_inset
+
+ is the imaginary part of the dielectric permittivity 
+\begin_inset Formula 
+\begin{equation}
+\epsilon(\boldsymbol{r},\omega)=\epsilon_{R}(\boldsymbol{r},\omega)+\mathrm{i}\epsilon_{I}(\boldsymbol{r},\omega).
+\end{equation}
+
+\end_inset
+
+We have assumed that the medium is isotropic, hence the permittivity is
+ a scalar.
+ The Green tensor 
+\begin_inset Formula $G$
+\end_inset
+
+ appearing in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Pij"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) is the solution of the equation
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogel2006"
+literal "true"
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\left[\partial_{j}\partial_{\ell}-\delta_{j\ell}\left(\nabla^{2}+\frac{\omega^{2}}{c^{2}}\epsilon(\boldsymbol{r},\omega)\right)\right]G_{\ell k}(\boldsymbol{r},\boldsymbol{r}',\omega)=\delta_{jk}\delta(\boldsymbol{r}-\boldsymbol{r}'),\label{eq:eqG}
+\end{equation}
+
+\end_inset
+
+and the term 
+\begin_inset Formula $G^{\perp}$
+\end_inset
+
+ in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Amedium"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) represents its transverse part, satisfying 
+\begin_inset Formula $\partial G_{\ell k}^{\perp}(\boldsymbol{r},\boldsymbol{r}',\omega)/\partial r_{\ell}=\partial G_{k\ell}^{\perp}(\boldsymbol{r}',\boldsymbol{r},\omega)/\partial r_{\ell}'=0$
+\end_inset
+
+.
+ In the Coulomb gauge, the properties of the Green tensor and the analytic
+ structure of 
+\begin_inset Formula $\epsilon(\boldsymbol{r},\omega)$
+\end_inset
+
+ in the complex frequency plane guarantee that the vector potential and
+ the transverse part of the displacement field satisfy the canonical commutation
+ relations 
+\begin_inset Formula 
+\begin{equation}
+\left[A_{j}(\boldsymbol{r}),\Pi_{k}(\boldsymbol{r}')\right]=\mathrm{i}\hbar\delta_{jk}^{\perp}(\boldsymbol{r}-\boldsymbol{r}')=\mathrm{i}\hbar\int\frac{\mathrm{d}^{3}\boldsymbol{q}}{(2\pi)^{3}}\left(\delta_{j\ell}-\frac{q_{j}q_{\ell}}{|\boldsymbol{q}|^{2}}\right)\mathrm{e}^{\mathrm{i}\boldsymbol{q}\cdot(\boldsymbol{r}-\boldsymbol{r}')}.
+\end{equation}
+
+\end_inset
+
+For a translationally invariant medium, 
+\begin_inset Formula $\epsilon(\boldsymbol{r},\omega)=\epsilon(\omega)$
+\end_inset
+
+, thus the Green tensor depends only on the coordinate difference, 
+\begin_inset Formula $G(\bm{r},\bm{r}',\omega)=G(\bm{r}-\bm{r}',\omega)$
+\end_inset
+
+, and its Fourier transform 
+\begin_inset Formula 
+\begin{equation}
+\tilde{G}_{jk}(\bm{q},\omega)=\int\mathrm{d}^{3}\boldsymbol{r}\,G_{jk}(\boldsymbol{r},\omega)\mathrm{e}^{-\mathrm{i}\bm{q}\cdot\boldsymbol{r}},
+\end{equation}
+
+\end_inset
+
+reads 
+\begin_inset Formula 
+\begin{eqnarray}
+\tilde{G}_{jk}^{\perp}(\boldsymbol{q},\omega)= & \left(\delta_{j\ell}-\frac{q_{j}q_{\ell}}{|\boldsymbol{q}|^{2}}\right)\tilde{G}_{\ell k}(\boldsymbol{q},\omega)=\frac{\delta_{jk}-q_{j}q_{k}/|\boldsymbol{q}|^{2}}{|\boldsymbol{q}|^{2}-\omega^{2}\epsilon(\omega)/c^{2}},\nonumber \\
+\tilde{G}_{jk}^{\parallel}(\boldsymbol{q},\omega)= & \frac{q_{j}q_{\ell}}{|\boldsymbol{q}|^{2}}\tilde{G}_{\ell k}(\boldsymbol{q},\omega)=-\frac{q_{j}q_{k}}{|\boldsymbol{q}|^{2}}\frac{c^{2}}{\omega^{2}\epsilon(\omega)}.\label{eq:G}
+\end{eqnarray}
+
+\end_inset
+
+Hence, the displacement field reduces to 
+\begin_inset Formula 
+\begin{equation}
+\Pi_{j}(\boldsymbol{r})=\int_{0}^{\infty}\mathrm{d}\omega\int\frac{\mathrm{d}^{3}\boldsymbol{q}}{(2\pi)^{3}}\left[-\mathrm{i}\frac{\omega^{2}}{c^{2}}\sqrt{\frac{\hbar\epsilon_{0}}{\pi}\epsilon_{I}(\omega)}\tilde{G}_{jk}(\boldsymbol{q},\omega)\tilde{f}_{k}(\boldsymbol{q},\omega)\mathrm{e}^{\mathrm{i}\boldsymbol{q}\cdot\boldsymbol{r}}+\mathrm{H.c.}\right],
+\end{equation}
+
+\end_inset
+
+where the operators 
+\begin_inset Formula 
+\begin{equation}
+\tilde{\bm{f}}(\boldsymbol{q},\omega)=\int\mathrm{d}^{3}\boldsymbol{r}\,\bm{f}(\boldsymbol{r},\omega)\mathrm{e}^{-\mathrm{i}\bm{q}\cdot\boldsymbol{r}},
+\end{equation}
+
+\end_inset
+
+satisfy 
+\begin_inset Formula 
+\begin{equation}
+[\tilde{f}_{j}(\boldsymbol{q},\omega),\tilde{f}_{k}^{\dagger}(\boldsymbol{q}',\omega')]=(2\pi)^{3}\delta_{jk}\delta(\omega-\omega')\delta(\boldsymbol{q}-\boldsymbol{q}').\label{eq:CCNRf}
+\end{equation}
+
+\end_inset
+
+For a point-like atomic system, singularities may arise in the interaction
+ Hamiltonian due to the fact that the quantities 
+\begin_inset Formula $G^{\parallel}(\bm{r},\omega)$
+\end_inset
+
+ and 
+\begin_inset Formula $G^{\perp}(\bm{r},\omega)$
+\end_inset
+
+ diverge as 
+\begin_inset Formula $\bm{r}\to\bm{0}$
+\end_inset
+
+.
+ In fact, while 
+\begin_inset Formula 
+\begin{equation}
+\mathrm{Im}G_{jk}^{\perp}(\bm{0},\omega)=\int\frac{\mathrm{d}^{3}\boldsymbol{q}}{(2\pi)^{3}}\mathrm{Im}\tilde{G}_{jk}^{\perp}(\boldsymbol{q},\omega)=\frac{\omega^{2}\epsilon_{I}(\omega)}{c^{2}}\int\frac{\mathrm{d}^{3}\boldsymbol{q}}{(2\pi)^{3}}\frac{\delta_{jk}-q_{j}q_{k}/|\boldsymbol{q}|^{2}}{\left||\boldsymbol{q}|^{2}-\frac{\omega^{2}\epsilon(\omega)}{c^{2}}\right|^{2}}\label{eq:ImGT}
+\end{equation}
+
+\end_inset
+
+is finite and yields a well-defined transverse decay rate
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Barnett1996"
+literal "true"
+
+\end_inset
+
+, 
+\begin_inset Formula $\mathrm{Im}G^{\parallel}(\bm{r},\omega)$
+\end_inset
+
+ diverges as 
+\begin_inset Formula $\bm{r}\to\bm{0}$
+\end_inset
+
+, due to the non integrability of 
+\begin_inset Formula $\mathrm{Im}\tilde{G}_{jk}^{\parallel}(\boldsymbol{q},\omega)\propto q_{j}q_{k}/|\boldsymbol{q}|^{2}$
+\end_inset
+
+, and a consistent treatment of the longitudinal decay rate requires momentum
+ regularization.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Techniques based on considering the source enclosed in an artificial cavity
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key " Juzeliunas1997,Scheel1999,Barnett1999"
+literal "true"
+
+\end_inset
+
+ have been developed to cope with such singularities.
+ In the following, we will tackle the divergences of the longitudinal part
+ with a less artificial approach, by considering the natural finite spatial
+ extent of the atomic wavefunctions.
+ This will allow us to unambiguously analyze the role of the asymmetry of
+ the atomic states on the emission process.
+\end_layout
+
+\begin_layout Subsection
+Total Hamiltonian
+\end_layout
+
+\begin_layout Standard
+From the previous parts of this section it follows that 
+\begin_inset Formula 
+\begin{equation}
+H=H_{\mathrm{at}}+H_{\mathrm{int}}^{\mathrm{el}}+H_{\mathrm{int}}^{\mathrm{mag}}+H_{\mathrm{m}}.\label{eq:H_summarized}
+\end{equation}
+
+\end_inset
+
+Here, 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{at}}=H_{\mathrm{at}}^{0}+V_{\mathrm{at}}=\sum_{j}\frac{\bm{p}_{j}^{2}}{2m_{j}}+\frac{1}{2\epsilon_{0}}\int\mathrm{d}^{3}\boldsymbol{r}\left(\bm{P}_{\mathrm{at}}(\boldsymbol{r})\right)^{2}
+\end{equation}
+
+\end_inset
+
+is the atomic Hamiltonian, 
+\begin_inset Formula 
+\[
+H_{\mathrm{int}}^{\mathrm{el}}=\frac{1}{\epsilon_{0}}\int\mathrm{d}^{3}\boldsymbol{r}\,\bm{P}_{\mathrm{at}}(\boldsymbol{r})\cdot\bm{\Pi}(\boldsymbol{r})=\frac{1}{\epsilon_{0}}\sum_{j}Q_{j}(\boldsymbol{r}_{j}-\bm{R})\cdot\int\mathrm{d}s\,\bm{\Pi}(\bm{R}+s(\boldsymbol{r}_{j}-\bm{R}))
+\]
+
+\end_inset
+
+represents the interaction of the atomic system with the electric field,
+ and 
+\begin_inset Formula 
+\begin{eqnarray}
+H_{\mathrm{int}}^{\mathrm{mag}}=\sum_{j} & \Bigg\{\frac{Q_{j}}{m_{j}}\bm{p}_{j}\cdot\int_{0}^{1}\mathrm{d}s\,s(\boldsymbol{r}_{j}-\bm{R})\bm{B}(\bm{R}+s(\boldsymbol{r}_{j}-\bm{R}))\nonumber \\
+ & +\frac{Q_{j}^{2}}{2m_{j}}\left[\int_{0}^{1}\mathrm{d}s\,s(\boldsymbol{r}_{j}-\bm{R})\bm{B}(\bm{R}+s(\boldsymbol{r}_{j}-\bm{R}))\right]^{2}\Bigg\}
+\end{eqnarray}
+
+\end_inset
+
+stands for the coupling with the magnetic field.
+ The term 
+\begin_inset Formula $H_{\mathrm{m}}$
+\end_inset
+
+ generally represents the Hamiltonian of the medium, that can be modeled
+ in different ways, e.g.
+\begin_inset space \space{}
+\end_inset
+
+through the medium-assisted field Hamiltonian
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), as shown in Sect.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:medium"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In the following part of this work we will neglect the magnetic contribution
+ to the interaction.
+ We will model the atom as a dipole of charge 
+\begin_inset Formula $Q$
+\end_inset
+
+, with a heavy positive charge at the fixed position 
+\begin_inset Formula $\bm{R}=0$
+\end_inset
+
+ and a moving negative charge of coordinate 
+\begin_inset Formula $-\boldsymbol{r}$
+\end_inset
+
+ and mass 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ As a result, one finds the final form of the interaction Hamiltonian 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{int}}^{\mathrm{dip}}=\frac{Q}{\epsilon_{0}}\boldsymbol{r}\cdot\int_{0}^{1}\mathrm{d}s\,\bm{\Pi}(-s\boldsymbol{r}),
+\end{equation}
+
+\end_inset
+
+representing the correct generalization of the 
+\begin_inset Quotes eld
+\end_inset
+
+
+\begin_inset Formula $\boldsymbol{r}\cdot\bm{E}$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+ Hamiltonian to an extended (non point-like) dipole.
+ The expression 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Pij"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ of the displacement field in terms of the Green tensor in the Hamiltonian
+ 
+\begin_inset Formula $H_{\mathrm{dip}}^{\mathrm{int}}$
+\end_inset
+
+ provides a new accurate and general approach.
+ Exploiting the tensor allows one to consider different geometries of the
+ host medium, in particular interfaces of different dimensions or photonic
+ nanostructures, even though in the following examples we demonstrate the
+ theory in the simple case of a homogeneous medium.
+ However, the application of the Green's tensor leads to a divergent field
+ at the position of the point-like quantum system.
+ This divergence is usually removed in a somewhat artificial way by introducing
+ virtual cavities or form factors.
+ Here, the renormalization procedure is based on the physical size and orientati
+on of the extended system represented with wavefunctions.
+ It allows us to accurately describe the physics of the system without artifacts.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This is one of the main finding of this work, that arises as a connection
+ between first-principle QED, represented through the canonical commutation
+ relations, and the medium-assisted field ruled by Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:CCRff1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Emission properties of a bound system of charges
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:emission"
+
+\end_inset
+
+ According to the results of the previous section, each eigenstate of the
+ internal atomic Hamiltonian is dressed by the surrounding medium.
+ We now characterize the single-photon emission process and the Lamb shift
+ of an atomic level in a medium-assisted photonic environment in a translational
+ly invariant medium.
+\end_layout
+
+\begin_layout Standard
+Consider an atom in an arbitrary environment, i.e.
+ a dispersive medium of any geometry and material.
+ Let 
+\begin_inset Formula $\ket{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|b\right\rangle $
+\end_inset
+
+ be two orthogonal eigenstates of the free atomic Hamiltonian 
+\begin_inset Formula $H_{\mathrm{at}}$
+\end_inset
+
+, characterized by 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{at}}\left|a\right\rangle =E_{a}\left|a\right\rangle ,\quad H_{\mathrm{at}}\left|b\right\rangle =E_{b}\left|b\right\rangle .
+\end{equation}
+
+\end_inset
+
+The atom-photon interaction is described by the matrix element 
+\begin_inset Formula 
+\begin{equation}
+\mathcal{M}_{j}^{ab}(\boldsymbol{r},\omega)=\left\langle a\right|H_{\mathrm{int}}^{\mathrm{dip}}f_{j}^{\dagger}(\boldsymbol{r},\omega)\left|b\right\rangle ,\label{matrixM}
+\end{equation}
+
+\end_inset
+
+which, for a translationally-invariant medium, can be expressed in the Fourier
+ space through 
+\begin_inset Formula 
+\begin{equation}
+\tilde{\mathcal{M}}_{j}^{ab}(\boldsymbol{q},\omega)=\left\langle a\right|H_{\mathrm{int}}^{\mathrm{dip}}\tilde{f}_{j}^{\dagger}(\bm{q},\omega)\left|b\right\rangle =-\mathrm{i}C(\omega)\frac{\omega^{2}}{c^{2}}%\sum_{k=1,2,3}
+\tilde{G}_{jk}(\boldsymbol{q},\omega)\left\langle a\right|r_{k}\int_{0}^{1}ds\;\mathrm{e}^{-\mathrm{i}s\boldsymbol{q}\cdot\boldsymbol{r}}\left|b\right\rangle ,\label{eq:M}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula 
+\[
+C(\omega)=Q\sqrt{\frac{\hbar\epsilon_{I}(\omega)}{8\pi^{4}\epsilon_{0}}}.
+\]
+
+\end_inset
+
+If we insert the expression of 
+\begin_inset Formula $\tilde{G}_{jk}$
+\end_inset
+
+ in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and exploit the orthogonality between longitudinal and transverse projectors,
+ we obtain 
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{T}_{ab}(\boldsymbol{q},\omega) & = & \sum_{j=1}^{3}\left|\tilde{\mathcal{M}}_{j}^{ab}(\boldsymbol{q},\omega)\right|^{2}\\
+ & = & \frac{C(\omega)^{2}}{|\epsilon(\omega)|^{2}}\Biggl[\mathcal{D}(|\boldsymbol{q}|,\omega)\mathcal{G}_{ab}(\boldsymbol{q})+(1-\mathcal{D}(|\boldsymbol{q}|,\omega))\frac{|\mathcal{F}_{ab}(\boldsymbol{q})-\delta_{ab}|^{2}}{|\boldsymbol{q}|^{2}}\Biggr],\label{eq:T}
+\end{eqnarray}
+
+\end_inset
+
+where 
+\begin_inset Formula $\delta_{ab}=\langle a|b\rangle=1$
+\end_inset
+
+ if 
+\begin_inset Formula $\left|a\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|b\right\rangle $
+\end_inset
+
+ coincide and 0 otherwise, with 
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{D}(q,\omega) & =\left|1-\frac{q^{2}c^{2}}{\omega^{2}\epsilon(\omega)}\right|^{-2},\\
+\mathcal{F}_{ab}(\bm{q}) & =\left\langle a\right|\mathrm{e}^{-\mathrm{i}\boldsymbol{q}\cdot\boldsymbol{r}}\left|b\right\rangle =\int\mathrm{d}^{3}\boldsymbol{r}\,\psi_{a}^{*}(\boldsymbol{r})\psi_{b}(\boldsymbol{r})\mathrm{e}^{-\mathrm{i}\boldsymbol{q}\cdot\boldsymbol{r}},\\
+\mathcal{G}_{ab}(\boldsymbol{q}) & =\sum_{j=1}^{3}\left|\left\langle a\right|r_{j}\frac{\mathrm{e}^{-\mathrm{i}\boldsymbol{q}\cdot\boldsymbol{r}}-1}{\boldsymbol{q}\cdot\boldsymbol{r}}\left|b\right\rangle \right|^{2}.
+\end{eqnarray}
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Notice that the longitudinal contribution is cancelled by part of the transvers
+e one in the limit $
+\backslash
+to0$.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+The quantity defined in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:T"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) determines both the total decay rate of the state 
+\begin_inset Formula $\left|a\right\rangle $
+\end_inset
+
+ and its energy shift.
+ The former can be evaluated according to the Fermi golden rule 
+\begin_inset Formula 
+\begin{align}
+\Gamma_{a}= & \frac{2\pi}{\hbar}\sum_{b}\int_{0}^{\infty}\mathrm{d}\omega\delta(\hbar\omega-\hbar\omega_{ab})T_{ab}(\omega)=\frac{2\pi}{\hbar^{2}}\sum_{b\neq a}\theta(\omega_{ab})T_{ab}(\omega_{ab}),\label{eq:Gamma-1}\\
+= & \frac{2\pi}{\hbar}\sum_{b\neq a}\theta\left(\omega_{ab}\right)\frac{C\left(\omega_{ab}\right)^{2}}{\left|\epsilon\left(\omega_{ab}\right)\right|^{2}}\int\left[\mathcal{D}\left(|\boldsymbol{q}|,\omega_{ab}\right)\mathcal{G}_{ab}\left(\boldsymbol{q}\right)+\left(1-\mathcal{D}\left(|\boldsymbol{q}|,\omega\right)\right)\frac{|\mathcal{F}_{ab}(\boldsymbol{q})|^{2}}{|\boldsymbol{q}|^{2}}\right]\mathrm{d^{2}}\boldsymbol{q}\nonumber 
+\end{align}
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\begin{equation}
+\omega_{ab}=\frac{E_{a}-E_{b}}{\hbar},\qquad T_{ab}(\omega)=\int\mathrm{d}^{3}\boldsymbol{q}\,\mathcal{T}_{ab}(\boldsymbol{q},\omega),\label{eq:Tab}
+\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula $\theta(x)$
+\end_inset
+
+ being the Heaviside step function.
+ The absence of a contribution from state 
+\begin_inset Formula $\left|a\right\rangle $
+\end_inset
+
+ in the sum over states in the second equality of Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Gamma-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), albeit reasonable, is not a trivial result.
+ Therefore, replacing Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:T"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+in the evaluation of the decay rate 
+\begin_inset Formula $\delta_{ab}=0$
+\end_inset
+
+ and the apparent divergence in the term proportional to 
+\begin_inset Formula $\mathcal{F}_{ab}$
+\end_inset
+
+ is regularized by the wavefunctions spatial extension.
+ Note that the two terms in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Gamma-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) proportional to 
+\begin_inset Formula $\mathcal{D}\left(\boldsymbol{q},\omega\right)$
+\end_inset
+
+ correspond to the transverse contribution, while the remaining one is the
+ longitudinal contribution responsible for non-radiative decay, because
+ it is related to the absorption losses in the dielectric host medium.
+\end_layout
+
+\begin_layout Standard
+\noindent
+In vacuum (
+\begin_inset Formula $\epsilon(\omega)=1$
+\end_inset
+
+), the decay rate in Eq.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Gamma-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ becomes 
+\begin_inset Formula 
+\begin{equation}
+\Gamma_{a}^{\mathrm{(vac)}}=\frac{Q^{2}q^{3}}{8\pi^{2}\hbar\epsilon_{0}}\int_{\mathbb{S}^{2}}\mathrm{d}^{2}S(\bm{n})\sum_{b\neq a}\Big[\mathcal{G}_{ab}(q\bm{n})-\frac{|\mathcal{F}_{ab}(q\bm{n})|^{2}}{q^{2}}\Big],
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $q=\omega_{ab}/c$
+\end_inset
+
+ and the integration is over the unit sphere 
+\begin_inset Formula $\bm{n}\in\mathbb{S}^{2}$
+\end_inset
+
+.
+ Note that in the point-dipole limit the quantity 
+\begin_inset Formula $\mathcal{F}_{ab}$
+\end_inset
+
+ tends to 
+\begin_inset Formula $\delta_{ab}$
+\end_inset
+
+.
+ In this way, we recover the familiar Weisskopf-Wigner result
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cohen2_1998"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The frequency shifts of the atomic levels should be determined using Eqs.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:T"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Tab"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), through 
+\begin_inset Formula 
+\begin{equation}
+\Delta_{a}=\frac{1}{\hbar^{2}}\sum_{b}\mathrm{P}\!\!\int_{0}^{\infty}\mathrm{d}\omega\frac{T_{ab}(\omega)}{\omega-\omega_{ab}},\label{eq:delta_a}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $\mathrm{P}\!\!\int$
+\end_inset
+
+ denoting principal value integration.
+ For 
+\begin_inset Formula $a=b$
+\end_inset
+
+ the function 
+\begin_inset Formula $\mathcal{T}_{ab}$
+\end_inset
+
+ contains the state-independent, non-integrable term 
+\begin_inset Formula 
+\begin{equation}
+\delta_{ab}C(\omega)^{2}|\boldsymbol{q}|^{-2}(1-\mathcal{D}(|\boldsymbol{q}|,\omega))\sim|\boldsymbol{q}|^{-2}\quad\text{as }|\boldsymbol{q}|\to\infty,\label{eq:nonint}
+\end{equation}
+
+\end_inset
+
+which provides a divergent contribution to 
+\begin_inset Formula $T_{aa}(\omega)$
+\end_inset
+
+.
+ However, this contribution is also independent of the state, representing
+ therefore the effect of a uniform energy shift.
+ Physical quantities such as the perturbed transition frequency 
+\begin_inset Formula 
+\begin{eqnarray}
+\tilde{\omega}_{ab}=\omega_{ab}+\Delta_{a}-\Delta_{b} & =\omega_{ab}+\frac{1}{\hbar^{2}}\mathrm{P}\!\!\int_{0}^{\infty}\mathrm{d}\omega\Biggl[\frac{T_{aa}(\omega)-T_{bb}(\omega)}{\omega}\nonumber \\
+ & +2\omega_{ab}\frac{T_{ab}(\omega)}{\omega^{2}-\omega_{ab}^{2}}+\sum_{c\neq a,b}\left(\frac{T_{ac}(\omega)}{\omega-\omega_{ac}}-\frac{T_{bc}(\omega)}{\omega-\omega_{bc}}\right)\Biggr]
+\end{eqnarray}
+
+\end_inset
+
+are thus independent of the divergent term given in
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:nonint"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Indeed, notice that, in the time domain the low-energy behavior of the
+ dielectric permittivity is 
+\begin_inset Formula 
+\begin{equation}
+\epsilon(\omega)=1+\int_{0}^{\infty}\mathrm{d}t\chi(t)+\mathrm{i}\omega\int_{0}^{\infty}\mathrm{d}t\,t\chi(t)+O(\omega^{2}),
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\chi(t)$
+\end_inset
+
+ is the medium susceptibility with finite moments.
+ This implies that 
+\begin_inset Formula $T_{ab}(\omega)\sim\omega$
+\end_inset
+
+ close to the origin, and therefore the integration of the term 
+\begin_inset Formula $(T_{aa}-T_{bb})/\omega$
+\end_inset
+
+ in Eq.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:omega_ab"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) is well defined.
+\end_layout
+
+\begin_layout Subsection
+Asymmetric two-level atom
+\end_layout
+
+\begin_layout Standard
+The parity asymmetry of the atomic Hamiltonian eigenstates, reflected by
+ the presence of nonvanishing expectation values of one or more components
+ of 
+\begin_inset Formula $\boldsymbol{r}$
+\end_inset
+
+, affects the state-dependent quantities 
+\begin_inset Formula $\mathcal{F}_{ab}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{G}_{ab}$
+\end_inset
+
+, which appear in the expression of 
+\begin_inset Formula $T_{ab}(\omega)$
+\end_inset
+
+ and determine the decay rate 
+\begin_inset Formula $\Gamma_{a}$
+\end_inset
+
+ and the energy shift 
+\begin_inset Formula $\Delta_{a}$
+\end_inset
+
+.
+ In a two-level atomic system, the three components of the Hermitian position
+ operator 
+\begin_inset Formula $\bm{r}$
+\end_inset
+
+ can be represented by spin operators
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "feynman1964,cohen2_1998"
+literal "true"
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+\bm{r}=\bm{\rho}\bm{1}+\bm{\delta}\sigma_{z}+\bm{r}_{ab}\sigma_{x},\qquad\sigma_{x}=\left|a\right\rangle \left\langle b\right|+\left|b\right\rangle \left\langle a\right|,\quad\sigma_{z}=\left|a\right\rangle \left\langle a\right|-\left|b\right\rangle \left\langle b\right|\label{eq:rspin}
+\end{equation}
+
+\end_inset
+
+acting on the two-dimensional space spanned by 
+\begin_inset Formula $\left|a\right\rangle ,\left|b\right\rangle $
+\end_inset
+
+, with 
+\begin_inset Formula 
+\begin{eqnarray}
+\bm{\rho} & =\frac{\left\langle a\right|\bm{r}\left|a\right\rangle +\left\langle b\right|\bm{r}\left|b\right\rangle }{2},\label{eq:rho}\\
+\bm{\delta} & =\frac{\left\langle a\right|\bm{r}\left|a\right\rangle -\left\langle b\right|\bm{r}\left|b\right\rangle }{2},\\
+\bm{r}_{ab} & =\left\langle a\right|\bm{r}\left|b\right\rangle =\left\langle b\right|\bm{r}\left|a\right\rangle .\label{eq:rab}
+\end{eqnarray}
+
+\end_inset
+
+In the two-level case, the off-diagonal matrix element
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:rab"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can be made real and non-negative by absorbing a phase factor in the definitio
+n of one of the states.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The functions that determine the decay rate from 
+\begin_inset Formula $\left|a\right\rangle $
+\end_inset
+
+ to 
+\begin_inset Formula $\left|b\right\rangle $
+\end_inset
+
+ read 
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{F}_{ab}(\boldsymbol{q}) & =-\mathrm{i}\mathrm{e}^{-\mathrm{i}\boldsymbol{q}\cdot\bm{\rho}}\boldsymbol{q}\cdot\boldsymbol{r}_{ab}\,\mathrm{sinc}(A(\boldsymbol{q})),\label{eq:Fab}\\
+\mathcal{G}_{ab}(\boldsymbol{q}) & =\left|\nabla_{\bm{q}}\left[\boldsymbol{q}\cdot\boldsymbol{r}_{ab}\int_{0}^{1}\mathrm{sinc}(sA(\boldsymbol{q}))\mathrm{e}^{-\mathrm{i}s\boldsymbol{q}\cdot\bm{\rho}}\mathrm{d}s\right]\right|^{2},\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+with 
+\begin_inset Formula $\mathrm{sinc}(x)=\sin(x)/x$
+\end_inset
+
+ and 
+\begin_inset Formula $A(\boldsymbol{q})=\sqrt{(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})^{2}+(\boldsymbol{q}\cdot\bm{\delta})^{2}}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+From these results, one can observe that the physical quantities computed
+ from 
+\begin_inset Formula $\mathcal{G}_{ab}$
+\end_inset
+
+ and from the square modulus of 
+\begin_inset Formula $\mathcal{F}_{ab}$
+\end_inset
+
+ are invariant with respect to the inversions 
+\begin_inset Formula $\bm{\rho}\to-\bm{\rho}$
+\end_inset
+
+ and 
+\begin_inset Formula $\bm{\delta}\to\bm{-\delta}$
+\end_inset
+
+, but both depend on diagonal entries and which play the role of the asymmetric
+ contributions.
+\end_layout
+
+\begin_layout Standard
+\noindent
+To identify the lowest-order contributions to the decay rate, let us perform
+ a small-
+\begin_inset Formula $\boldsymbol{q}$
+\end_inset
+
+ expansion of the functions appearing in the expression
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:T"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) of 
+\begin_inset Formula $\mathcal{T}_{ab}$
+\end_inset
+
+ for 
+\begin_inset Formula $a\neq b$
+\end_inset
+
+, namely 
+\begin_inset Formula 
+\begin{equation}
+\frac{|\mathcal{F}_{ab}(\boldsymbol{q})|^{2}}{|\boldsymbol{q}|^{2}}\simeq\frac{(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})^{2}}{|\boldsymbol{q}|^{2}}\!\left(1-\frac{(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})^{2}+(\boldsymbol{q}\cdot\bm{\delta})^{2}}{6}\right)\!,\label{eq:Fabappr}
+\end{equation}
+
+\end_inset
+
+and 
+\begin_inset Formula 
+\begin{eqnarray}
+\mathcal{G}_{ab}(\boldsymbol{q})\simeq & |\boldsymbol{r}_{ab}|^{2}\!\left(1-\frac{(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})^{2}}{3}+\frac{(\boldsymbol{q}\cdot\bm{\delta})^{2}}{9}+\frac{(\boldsymbol{q}\cdot\bm{\rho})^{2}}{12}\right)\nonumber \\
++ & \frac{|\bm{\rho}|^{2}(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})^{2}}{4}+(\boldsymbol{q}\cdot\boldsymbol{r}_{ab})\boldsymbol{r}_{ab}\cdot\left(\frac{(\boldsymbol{q}\cdot\bm{\rho})\bm{\rho}}{2}-\frac{(\boldsymbol{q}\cdot\bm{\delta})\bm{\delta}}{9}\right).\label{eq:Gabappr}
+\end{eqnarray}
+
+\end_inset
+
+While the first-order contributions are regular, the second-order approximation
+ in 
+\begin_inset Formula $\boldsymbol{q}$
+\end_inset
+
+ of the functions in Eqs.
+\begin_inset space ~
+\end_inset
+
+(
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Fabappr"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+-
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Gabappr"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) yield divergent integrals, that should be regularized by a cutoff 
+\begin_inset Formula $\Lambda_{\boldsymbol{q}}$
+\end_inset
+
+, roughly corresponding to the inverse spatial size of the involved wavefunction
+s, that can range from 1 to 100 nm according to the considered system.
+ Clearly, this cutoff is not needed if one uses the expressions in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Fab"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), that contains all orders in q.
+ Based on the approximations 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Fabappr"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Gabappr"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ one can estimate that the corrections entailed by an asymmetry of the states
+ 
+\begin_inset Formula $\left|a\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|b\right\rangle $
+\end_inset
+
+ are of order 
+\begin_inset Formula $(\Lambda_{\boldsymbol{q}}|\boldsymbol{r}_{aa}|)^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $(\Lambda_{\boldsymbol{q}}|\boldsymbol{r}_{bb}|)^{2}$
+\end_inset
+
+.
+ Notice that the asymmetry corrections compete with terms of order 
+\begin_inset Formula $(\Lambda_{\bm{q}}|\bm{r}_{ab}|)^{2}$
+\end_inset
+
+, representing the first corrections to the point-dipole result, and are
+ not characterized by a definite sign.
+\end_layout
+
+\begin_layout Standard
+\noindent
+We have expressed a light-matter interaction Hamiltonian in terms of the
+ Green tensor propagator, in a novel approach that avoids the usual divergence
+ related to the approximation of a point-like atomic quantum system.
+ The divergence was lifted via the inclusion of the wavefunctions, providing
+ in this way a natural cutoff for the system investigated.
+ The analysis focused on the determination of the decay rates and energy
+ shifts of the bound states of an 
+\begin_inset Quotes xld
+\end_inset
+
+atomic
+\begin_inset Quotes xrd
+\end_inset
+
+ system, which have been obtained under general assumptions.
+ The most important among these assumptions is the hypothesis of homogeneous
+ and isotropic media.
+ We also discussed how to extend the theory to more general situations.
+ In [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ScalaNJP2020"
+literal "false"
+
+\end_inset
+
+] the general result obtained are applied to the decay rate as a function
+ of the asymmetry of the system and the absorption of the medium showing
+ that asymmetry can yield small but detectable deviations with respect to
+ the symmetric case.
+ In the next section we introduce the effect of the asymmetry in the Rabi
+ model.
+\end_layout
+
+\begin_layout Section
+Beyond the Rabi model: light interactions with polar atomic systems in a
+ cavity
+\end_layout
+
+\begin_layout Standard
+\noindent
+In quantum optics, the Rabi model accounts for a coupling of a single electromag
+netic mode with a two-level atomic system characterized with inversion symmetry.
+ The coupling occurs via two types of terms.
+ The usually dominant resonant terms describe energy exchange between photonic
+ and atomic excitations.
+ The so-called counter-rotating terms are typically much weaker.
+ They account for a simultaneous emission or absorption of a pair of excitations
+, one in the atomic system and one in the electromagnetic mode.
+ In the electric-dipole approximation, these interaction terms arise from
+ the coupling of the electric field with an 
+\emph on
+induced
+\emph default
+ transition dipole moment.
+ If the inversion symmetry of the atomic system is broken, it becomes polar,
+ which means that its eigenstates may acquire 
+\emph on
+permanent
+\emph default
+ electric dipole moments.
+ As a consequence, a third type of terms describing light-matter interaction
+ arises, related to the coupling of the permanent dipoles to the electric
+ field.
+ In this work, based on the time-independent perturbation theory, we compare
+ light emission intensities induced by the three types of terms.
+ The analysis reveals that the emission strength related to the existence
+ of permanent dipoles may surpass the one due to the counter-rotating interactio
+n terms, but usually is much weaker than the emission due to the main, resonant
+ coupling.
+ This ratio can be modified in systems with a reduced dimensionality or
+ through engineering of the density of electromagnetic states of the environment
+, as we demonstrate with a Lorentzian example.
+\end_layout
+
+\begin_layout Subsection
+Rabi model
+\end_layout
+
+\begin_layout Standard
+The Rabi model is the fundamental model in quantum optics, which describes
+ the coupling of a two-level system and a bosonic field mode 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Xie2017"
+literal "false"
+
+\end_inset
+
+.
+ The model extends beyond the simpler Jaynes-Cummings interaction, in which
+ the energy is exchanged between the atomic excitation and a photon, such
+ that creation of a photon is accompanied by annihilation of the atomic
+ excitation and vice versa
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shore1993"
+literal "true"
+
+\end_inset
+
+.
+ The Rabi model additionally accounts for the less intuitive processes of
+ pairwise creation or annihilation of excitations in the atomic and photonic
+ subsystems.
+ The probability of these processes grows with the light-matter coupling
+ constant and becomes significant in the so-called ultrastrong coupling
+ regime, in which that coupling constant becomes comparable to the energy
+ of the system 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "FornDiaz2019"
+literal "true"
+
+\end_inset
+
+.
+ Numerous experimental realizations include superconducting systems 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bourassa2009,Niemczyk2010"
+literal "true"
+
+\end_inset
+
+ quantum wells 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gunter2009,Zhang2016"
+literal "true"
+
+\end_inset
+
+, photonic waveguide arrays 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Crespi2012PLR"
+literal "true"
+
+\end_inset
+
+, molecular ensembles 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "George2016"
+literal "true"
+
+\end_inset
+
+, cold atoms 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Schneeweiss2018"
+literal "true"
+
+\end_inset
+
+, etc.
+ In all these systems extension beyond the Jaynes-Cummings interaction may
+ lead to considerable modification of the physics of the system: in particular,
+ to a ground state with a nonvanishing number of excitations, squeezing
+ dynamic, and a significant modification of the spectra 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Braak2011,Chen2012,Xie2017"
+literal "true"
+
+\end_inset
+
+.
+ Remarkably, analytical solutions of the Rabi model have been developed
+ only in the last decade 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Braak2011,Chen2012"
+literal "true"
+
+\end_inset
+
+.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename hex.pdf
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Artistic vision of the system under study: a two-level spatially asymmetric
+ atomic system in a lossy cavity.
+ The annihilation and creation operators 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $a^{\dagger}$
+\end_inset
+
+ for the lossy cavity system, and analogously the annihilation and creation
+ operators 
+\begin_inset Formula $r$
+\end_inset
+
+ and 
+\begin_inset Formula $r^{\dagger}$
+\end_inset
+
+ for the reservoir.
+ The decay rate 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+ of the cavity system is ruled by Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "key-2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Hex"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+The Rabi model describes the light - matter interaction scenario, where
+ electromagnetic field induces transitions between the eigenstates of the
+ two-level atomic system.
+ A particular mechanism is related to a coupling of the electromagnetic
+ radiation with a transition dipole moment element induced between a pair
+ of atomic eigenstates.
+ However, simple two-level systems may sustain much richer physics, beyond
+ the traditional Rabi model: a particular example is a coupling scenario
+ where the electromagnetic field introduces energy shifts of the eigenstates
+ rather than transitions between them 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kibis_asymm_semiclass,Paspalakis2013"
+literal "true"
+
+\end_inset
+
+.
+ A simple realization exploits atomic systems with permanent dipole moments
+ e.g.
+ polar molecules or asymmetric quantum dots.
+ Due to the interplay of permanent and induced electric dipole moments,
+ polar systems are a playground where rich physics of light-matter interactions
+ can be realized: polar quantum systems have been proposed for THz radiation
+ sources 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kibis_asymm_semiclass"
+literal "true"
+
+\end_inset
+
+ based on quantum dots 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chestnov2017"
+literal "true"
+
+\end_inset
+
+ or molecular ensembles 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gladysz2020a"
+literal "true"
+
+\end_inset
+
+.
+ They can be exploited for squeezed light generation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "koppenhofer2016,Anton2017"
+literal "true"
+
+\end_inset
+
+ and they support nonlinear optical absorption 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Paspalakis2013"
+literal "true"
+
+\end_inset
+
+.
+ Recently, the impact of spatial asymmetry of a quantum system on its spontaneou
+s emission properties has been investigated 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ScalaNJP2020"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Said works just sketch the plethora of possibilities provided by asymmetric
+ quantum systems that simultaneously support light-matter interactions through
+ three mechanisms.
+ These correspond to the Jaynes - Cummings terms and the counter - rotating
+ terms, both involving the transition dipole moments of the atomic system,
+ and the scenario based on its permanent dipoles.
+ For numerous applications given above it is essential to identify conditions
+ in terms of experimentally tunable model parameters where different contributio
+ns make a significant influence on the system's optical response.
+ This is our goal in this work.
+ We study the relative impact of the three contributions and demonstrate
+ with simple examples the possibility to tune it with density-of-states
+ engineering.
+ Our analysis follows the methodology introduced in Ref.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Savenko2012"
+literal "false"
+
+\end_inset
+
+, but extends it to include all the three interaction mechanisms.
+\end_layout
+
+\begin_layout Subsection
+Hamiltonian of the system
+\end_layout
+
+\begin_layout Standard
+Let us consider a two level system with a ground and excited state denoted
+ respectively as 
+\begin_inset Formula $|g\rangle$
+\end_inset
+
+, 
+\begin_inset Formula $|e\rangle$
+\end_inset
+
+, separated with energy 
+\begin_inset Formula $\hbar\omega_{a}$
+\end_inset
+
+.
+ The system is described by a set of Pauli operators 
+\begin_inset Formula $\sigma_{-}=|g\rangle\langle e|$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma_{+}=|e\rangle\langle g|$
+\end_inset
+
+ and 
+\begin_inset Formula $\sigma_{z}=|e\rangle\langle e|-|g\rangle\langle g|$
+\end_inset
+
+.
+ The two-level system interacts with a single electromagnetic mode with
+ an annihilation operator 
+\begin_inset Formula $a$
+\end_inset
+
+.
+ The Hamiltonian 
+\begin_inset Formula $H$
+\end_inset
+
+ of the coupled system can be divided in two parts 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{int}}=H_{\mathrm{JC}}+V.\label{key-1}
+\end{equation}
+
+\end_inset
+
+The first term is the Jaynes-Cumming (JC) Hamiltonian 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Shore1993"
+literal "true"
+
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{JC}}=\hbar\omega_{c}a^{\dagger}a+\hbar\frac{\omega_{a}}{2}\sigma_{z}+\hbar g_{R}(\sigma_{+}a+a^{\dagger}\sigma_{-})\label{eq:HJC}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+ is the coupling strength between the parties of the system through the
+ resonant JC channel.
+ The following analysis could be performed without specification of the
+ coupling mechanism.
+ However, we will interpret the model for the physically important case
+ of electric-dipole coupling in a rectangular cavity, for which 
+\begin_inset Formula $g_{R}=-\boldsymbol{d}_{\mathrm{eg}}\cdot\bm{\epsilon}\sqrt{\hbar\omega_{c}/2\epsilon_{0}\mathcal{V}}$
+\end_inset
+
+.
+ Here, 
+\begin_inset Formula $\boldsymbol{d}_{\mathrm{eg}}=-\langle e|\boldsymbol{d}|g\rangle$
+\end_inset
+
+ stands for the off-diagonal element of the electric dipole operator 
+\begin_inset Formula $\boldsymbol{d}$
+\end_inset
+
+ of the two-level system, 
+\begin_inset Formula $\boldsymbol{\epsilon}$
+\end_inset
+
+ is the polarization versor, 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+ denotes vacuum electric permittivity and 
+\begin_inset Formula $\mathcal{V}$
+\end_inset
+
+ is the quantization volume.
+\end_layout
+
+\begin_layout Standard
+The term 
+\begin_inset Formula $V$
+\end_inset
+
+ of Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "key-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ accounts for the interaction of the two-level system and the electromagnetic
+ mode through the counter-rotating (CR) mechanism and the diagonal-dipole
+ mechanism 
+\begin_inset Formula 
+\begin{align}
+V & =H_{\mathrm{CR}}+H_{\mathrm{diag}},\label{eq:HS_HR}\\
+H_{\mathrm{CR}}=\hbar g_{R}\left(\sigma_{+}a^{\dagger}+\sigma_{-}a\right), & \qquad H_{\mathrm{AS}}=\hbar g_{S}\left(\sigma_{z}+\boldsymbol{1}\right)\left(a+a^{\dagger}\right).
+\end{align}
+
+\end_inset
+
+with 
+\begin_inset Formula $g_{S}=-\bm{d}_{\mathrm{ee}}\cdot\bm{\epsilon}\sqrt{\hbar\omega_{c}/8\epsilon_{0}\mathcal{V}}$
+\end_inset
+
+, proportional to the diagonal element of the dipole moment operator.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Note that the expectation value of a dipole moment operator described only
+ by off-diagonal elements 
+\begin_inset Formula $\boldsymbol{d}_{\mathrm{eg}}|e\rangle\langle g|+\boldsymbol{d}_{\mathrm{eg}}^{*}|g\rangle\langle e|$
+\end_inset
+
+ may be nonzero only at presence of transitions between the eigenstates
+ that may be induced with external electric field.
+ Therefore, these elements correspond to induced transition dipoles.
+ Contrary, the diagonal element describes the permanent dipole moment of
+ the excited state.
+ Here, we have assumed for simplicity that the ground state does not sustain
+ a dipole moment: 
+\begin_inset Formula $\left|\boldsymbol{d}_{\mathrm{gg}}\right|=0$
+\end_inset
+
+, but the analysis can be generalized in a straightforward manner to include
+ this quantity and will not lead to qualitatively new effects.
+ Notably, permanent dipole moments are sustained by polar systems, i.e.
+ systems without inversion symmetry 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kibis_asymm_semiclass"
+literal "true"
+
+\end_inset
+
+.
+ For this reason we will refer to the last Hamiltonian term as the 
+\begin_inset Quotes eld
+\end_inset
+
+asymmetry term
+\begin_inset Quotes erd
+\end_inset
+
+ and mark it with the AS subscript.
+ Finally, note that while the Hamiltonian 
+\begin_inset Formula $H_{\mathrm{JC}}$
+\end_inset
+
+ preserves the number of excitations, 
+\begin_inset Formula $H_{\mathrm{AS}}$
+\end_inset
+
+ (
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+) describes a modification of this number by 1 (by 2).
+\end_layout
+
+\begin_layout Section
+Perturbative analysis
+\end_layout
+
+\begin_layout Standard
+In the following analysis we will treat 
+\begin_inset Formula $V$
+\end_inset
+
+ as a perturbation with respect to the system Hamiltonian 
+\begin_inset Formula $H_{\mathrm{JC}}$
+\end_inset
+
+.
+ The eigenvalues of 
+\begin_inset Formula $H_{\mathrm{JC}}$
+\end_inset
+
+ are 
+\begin_inset Formula 
+\begin{equation}
+E_{n}^{s(0)}=\hbar\omega_{c}\left(n-\frac{1}{2}\right)+s\hbar\sqrt{\frac{\left(\omega_{c}-\omega_{a}\right)^{2}}{4}+ng_{R}^{2}}\label{energieslevel}
+\end{equation}
+
+\end_inset
+
+for 
+\begin_inset Formula $s=\pm1$
+\end_inset
+
+, and the eigenstates are 
+\begin_inset Formula 
+\begin{equation}
+\left|n_{s}^{\left(0\right)}\right\rangle =A_{n}^{s}\left|g;n\right\rangle +B_{n}^{s}\left|e,n-1\right\rangle ,\label{eq:psi0}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula 
+\begin{align}
+A_{n}^{s} & =\frac{E_{n}^{s(0)}-\hbar\omega_{c}\left(n-1\right)-\hbar\omega_{a}/2}{\sqrt{\Bigl(E_{n}^{s(0)}-\hbar\omega_{c}(n-1)-\hbar\omega_{a}/2\Bigr)^{2}+\hbar^{2}g_{R}^{2}n}},\\
+B_{n}^{s} & =\frac{\hbar g_{r}\sqrt{n}}{\sqrt{\Bigl(E_{n}^{s(0)}-\hbar\omega_{c}(n-1)-\hbar\omega_{a}/2\Bigr)^{2}+\hbar^{2}g_{R}^{2}n}}.
+\end{align}
+
+\end_inset
+
+The pair 
+\begin_inset Formula $\left\{ \left|n_{s}^{\left(0\right)}\right\rangle \right\} _{s=\pm}$
+\end_inset
+
+ defines a manifold 
+\begin_inset Formula $\mathcal{E}_{\mathrm{JC}}\left(n\right)$
+\end_inset
+
+, which is the set of the states with the same number of the excitations
+ (see Fig.
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ We denote it with the JC subscript, since the notion of the manifold will
+ be generalized in the perturbed picture.
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the perturbation Hamiltonian 
+\begin_inset Formula $V$
+\end_inset
+
+, the counter-rotating term 
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+ is described by the same coupling constant 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+ as the interaction term of the unperturbed Hamiltonian 
+\begin_inset Formula $H_{\mathrm{JC}}$
+\end_inset
+
+.
+ However, the transition rates due to 
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+ are much smaller since we assume to work far from the ultra-strong coupling
+ regime 
+\begin_inset Formula $g_{R}\ll\omega$
+\end_inset
+
+.
+ Therefore, the perturbation theory approach is justified for up to moderate
+ coupling strengths, as we show later on.
+ We characterize the modified eigenstates with the time-independent perturbation
+ theory up to the second order, with the wavefunction expansion given by
+ 
+\begin_inset Formula $\left|n_{s}\right\rangle =\left|n_{s}^{\left(0\right)}\right\rangle +\left|n_{s}^{\left(1\right)}\right\rangle +\left|n_{s}^{\left(2\right)}\right\rangle $
+\end_inset
+
+.
+ The first-order correction reads 
+\begin_inset Formula 
+\begin{equation}
+\left|n_{s}^{\left(1\right)}\right\rangle =\sum_{m\neq n}\sum_{\alpha=\pm}\frac{V_{mn}^{\alpha s}}{E_{nm}^{s\alpha}}\left|m_{\alpha}^{\left(0\right)}\right\rangle \equiv\frac{V_{mn}^{\alpha s}}{E_{nm}^{s\alpha}}\left|m_{\alpha}^{\left(0\right)}\right\rangle ,\label{def:first_order_state}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $E_{n,m}^{s,\alpha}=E_{n}^{s\left(0\right)}-E_{m}^{\alpha\left(0\right)}$
+\end_inset
+
+ and 
+\begin_inset Formula $V_{mn}^{\alpha s}=\left\langle m_{\alpha}^{\left(0\right)}|V|n_{s}^{\left(0\right)}\right\rangle $
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align}
+V_{mn}^{\alpha s}= & \hbar g_{R}\Bigg(\sqrt{n-1}B_{n}^{s}A_{n-2}^{\alpha}\delta_{m,n-2}+\sqrt{n+1}A_{n}^{s}B_{n+2}^{\alpha}\delta_{m,n+2}\Bigg)\nonumber \\
++ & 2\hbar g_{S}B_{m}^{\alpha}B_{n}^{s}\left(\sqrt{n-1}\delta_{m,n-1}+\sqrt{n}\delta_{m,n+1}\right).\label{eq:Vmn}
+\end{align}
+
+\end_inset
+
+The above equation shows that the perturbed eigenstates include admixtures
+ of states with 
+\begin_inset Formula $m=n\pm1$
+\end_inset
+
+ coupled by 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+ and of states with 
+\begin_inset Formula $m=n\pm2$
+\end_inset
+
+ coupled by 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+, which follows directly from the forms of the 
+\begin_inset Formula $H_{\mathrm{diag}}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+ Hamiltonians.
+ Including the second-order correction leads to 
+\begin_inset Formula 
+\begin{equation}
+\left|n_{s}\right\rangle =\left(1-\frac{1}{2}\sum_{k}\sum_{\alpha=\pm}\left(\frac{V_{nk}^{s\alpha}}{\varepsilon_{nk}^{s\alpha}}\right)^{2}\right)\left|n_{s}^{\left(0\right)}\right\rangle +\sum_{k}\sum_{\alpha=\pm}\left(\frac{V_{kn}^{\alpha s}}{\varepsilon_{nk}^{s\alpha}}+\sum_{l}\sum_{\beta=\pm}\frac{V_{kl}^{\alpha\beta}V_{ln}^{\beta s}}{\varepsilon_{nk}^{s\alpha}\varepsilon_{nl}^{s\beta}}\right)\left|k_{\alpha}^{\left(0\right)}\right\rangle .\label{eq:ket_2nd_order}
+\end{equation}
+
+\end_inset
+
+Based on the above result, we define generalized manifolds 
+\begin_inset Formula $\mathcal{E}\left(n\right)$
+\end_inset
+
+ as the pairs
+\begin_inset Formula $\left\{ \left|n_{s}\right\rangle \right\} _{s=\pm}$
+\end_inset
+
+.
+ According to the 2nd order perturbation, the eigenstate 
+\begin_inset Formula $\left|n_{s}\right\rangle $
+\end_inset
+
+ includes superposition components with different numbers of excitations
+ 
+\begin_inset Formula $\left\{ n,n\pm1,\dots,n\pm4\right\} $
+\end_inset
+
+, while the label 
+\begin_inset Formula $n$
+\end_inset
+
+ refers to the central component, which is by far the leading superposition
+ component for weak enough coupling strengths 
+\begin_inset Formula $g_{R,S}$
+\end_inset
+
+, for which the theory is applicable.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The correction 
+\begin_inset Formula $V$
+\end_inset
+
+ does not perturb the eigenvalues at the first order, because 
+\begin_inset Formula $V_{\mathrm{nn}}^{s\sigma}=\left\langle n_{s}|V|n_{\sigma}\right\rangle =0$
+\end_inset
+
+.
+ Up to the second order, the energy eigenvalues are 
+\begin_inset Formula $E_{n}^{s}=E_{n}^{s\left(0\right)}+E_{n}^{s\left(1\right)}+E_{n}^{s\left(2\right)}$
+\end_inset
+
+, with 
+\begin_inset Formula $E_{n}^{s\left(1\right)}=0$
+\end_inset
+
+ and 
+\begin_inset Formula 
+\begin{equation}
+E_{n}^{s\left(2\right)}=\sum_{k\neq n}\sum_{j=\pm}\frac{\left(V_{kn}^{js}\right)^{2}}{E_{nk}^{sj}}.\label{eq:energy_2nd_order}
+\end{equation}
+
+\end_inset
+
+Inclusion of the second-order corrections provides us with a method to estimate
+ the range of validity for the theory, as described related section.
+\end_layout
+
+\begin_layout Subsection
+Outcoupling
+\end_layout
+
+\begin_layout Standard
+In this section, we assume the cavity mirrors to be semi-transparent, so
+ that the cavity photons described by 
+\begin_inset Formula $a$
+\end_inset
+
+ may exchange energy with an external reservoir mode 
+\begin_inset Formula $r$
+\end_inset
+
+ at a rate 
+\begin_inset Formula $\Gamma$
+\end_inset
+
+.
+ This approach follows directly the reasoning in Ref.~
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Savenko2012"
+literal "true"
+
+\end_inset
+
+.
+\begin_inset Formula 
+\begin{equation}
+H_{\mathrm{ex}}=\hbar\Gamma(ar^{\dagger}+a^{\dagger}r).\label{key-2}
+\end{equation}
+
+\end_inset
+
+This Hamiltonian effectively models losses, since we assume the reservoir
+ mode to be in the vacuum state 
+\begin_inset Formula $|0\rangle_{R}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+The Fermi golden rule allows us to find the emission spectrum into the reservoir
+ mode, 
+\begin_inset Formula 
+\begin{align}
+S\left(\omega\right)=\sum_{\iota,\phi=\pm}\sum_{i_{\iota},f_{\phi}} & \left|\left\langle f_{\phi},1_{R}|H_{\mathrm{ex}}|i_{\iota},0_{R}\right\rangle \right|^{2}L_{\mathrm{fi}}\left(\omega\right)\mathcal{P}\left(\omega\right),\label{eq:spec}\\
+L_{\mathrm{fi}}(\omega)=\frac{1}{2\pi} & \frac{\hbar\gamma}{(E_{\mathrm{if}}^{\iota\phi}-\hbar\omega)^{2}+\left(\frac{\hbar\gamma}{2}\right)^{2}}.\nonumber 
+\end{align}
+
+\end_inset
+
+We include contributions from all 
+\begin_inset Formula $|i_{\iota}\rangle\rightarrow|f_{\phi}\rangle$
+\end_inset
+
+ transitions such that 
+\begin_inset Formula $|i_{\iota}\rangle,|f_{\phi}\rangle\in\left\{ \left|n_{s}\right\rangle \right\} $
+\end_inset
+
+ and 
+\begin_inset Formula $E_{i}^{\iota(0)}>E_{f}^{\phi(0)}$
+\end_inset
+
+.
+ To evaluate the contribution from a given pair of states, the corresponding
+ transition element 
+\begin_inset Formula $\left|\left\langle f_{\phi},1_{R}|H_{\mathrm{ex}}|i_{\iota},0_{R}\right\rangle \right|^{2}$
+\end_inset
+
+ must be weighted with the Lorentzian distribution 
+\begin_inset Formula $L_{\mathrm{fi}}\left(\omega\right)$
+\end_inset
+
+ which accounts for the emission linewidth 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ due to the finite lifetime of the cavity photons.
+ Here, 
+\begin_inset Formula $E_{if}^{\iota\phi}=E_{i}^{\iota}-E_{f}^{\phi}$
+\end_inset
+
+
+\color blue
+ 
+\color inherit
+and 
+\begin_inset Formula $\mathcal{P}(\omega)$
+\end_inset
+
+ stands for the density of reservoir states.
+ Since we fix the initial and final states of the reservoir, we can simplify
+ 
+\begin_inset Formula 
+\begin{equation}
+\left|\left\langle f_{\phi},1_{R}|H_{\mathrm{ex}}|i_{\iota},0_{R}\right\rangle \right|^{2}\sim\left|\left\langle f_{\phi}|a|i_{\iota}\right\rangle \right|^{2}=\left|a_{f,i}^{\phi\iota}\right|^{2}
+\end{equation}
+
+\end_inset
+
+and obtain 
+\begin_inset Formula $\left|a_{f,i}^{\phi\iota}\right|^{2}$
+\end_inset
+
+ as the relevant quantity that contributes to the emission rate.
+\end_layout
+
+\begin_layout Standard
+\noindent
+We now define a transition rate 
+\begin_inset Formula $P_{f,i}^{\phi\iota}$
+\end_inset
+
+ that accounts for the emission through a given transition in a certain
+ spectral range 
+\begin_inset Formula $\delta\omega$
+\end_inset
+
+, which covers the emission bandwidth 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ 
+\begin_inset Formula 
+\begin{align}
+P_{f,i}^{\phi\iota} & =\frac{2\pi}{\hbar}\int_{\delta\omega}\left|\left\langle f_{\phi},1_{R}|H_{\mathrm{ex}}|i_{\iota},0_{R}\right\rangle \right|^{2}L_{fi}\left(\omega\right)\mathcal{P}\left(\omega\right)d\omega.\label{eq:intensity-1}
+\end{align}
+
+\end_inset
+
+Next, we assume the density of states which corresponds to a free space
+ 
+\begin_inset Formula $\mathcal{P}\left(\omega\right)=\left(\frac{L}{\pi c}\right)^{p+1}\omega^{p}$
+\end_inset
+
+, where 
+\begin_inset Formula $L$
+\end_inset
+
+ is the quantization length and 
+\begin_inset Formula $p=0,1,2$
+\end_inset
+
+ is the Jacobian exponent related to the dimension 
+\begin_inset Formula $d=p+1$
+\end_inset
+
+ of the system.
+ For a sufficiently narrow transition 
+\begin_inset Formula $\gamma\ll\omega$
+\end_inset
+
+, which can be safely assumed for a great majority of systems, the density
+ of states can be approximated as a constant value across the transition
+ bandwidth 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ and replaced by 
+\begin_inset Formula $\mathcal{P}(\omega)\sim\left(\hbar\omega\right)^{p}\approx\left(E_{if}^{\iota\phi}\right)^{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+P_{f,i}^{\phi\iota} & \propto\int_{\delta\omega}\left|a_{f,i}^{\phi\iota}\right|^{2}L_{fi}\left(\omega\right)\left(\hbar\omega\right)^{p}\mathrm{d}\omega\approx\left|a_{f,i}^{\phi\iota}\right|^{2}\left(E_{if}^{\iota\phi}\right)^{p}.\label{eq:Pofp-1}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+We now evaluate the transition amplitude 
+\begin_inset Formula $a_{f,i}^{\phi\iota}$
+\end_inset
+
+.
+ At the 
+\begin_inset Formula $0-$
+\end_inset
+
+th order, we find directly from Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:psi0"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) 
+\begin_inset Formula 
+\begin{align}
+\left\langle f_{\phi}^{\left(0\right)}|a|i_{\iota}^{\left(0\right)}\right\rangle \equiv & c_{i}^{\phi\iota}\delta_{f,i-1}=\left(\sqrt{i}A_{i}^{\iota}A_{i-1}^{\phi}+\sqrt{i-1}B_{i}^{\iota}B_{i-1}^{\phi}\right)\delta_{f,i-1}.\label{eq:Frl}
+\end{align}
+
+\end_inset
+
+This equation shows that only transitions between two subsequent excitation
+ manifolds 
+\begin_inset Formula $\mathcal{E_{\mathrm{JC}}}\left(i\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{E}_{\mathrm{JC}}\left(i-1\right)$
+\end_inset
+
+ are allowed in the Jaynes-Cummings model, as expected.
+ Our goal is to analyze the emission probability via Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:intensity-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ when the eigenstates are corrected by the perturbation term 
+\begin_inset Formula $V$
+\end_inset
+
+ in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HS_HR"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) and the spectrum is defined in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "energieslevel"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ In the perturbed expression for 
+\begin_inset Formula $a_{f,i}^{\phi\iota}=\left\langle f_{\phi}|a|i_{\iota}\right\rangle $
+\end_inset
+
+, that is in the eigenstates 
+\begin_inset Formula $\left|n_{s}\right\rangle $
+\end_inset
+
+, we consider all the correction terms up to the second order in the coupling
+ strengths 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+ and 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+.
+ 
+\color black
+Using 
+\color inherit
+
+\begin_inset Formula $V_{\mathrm{nn}}=0$
+\end_inset
+
+, we find 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left|\left\langle f_{\phi}|a|i_{\iota}\right\rangle \right|^{2}=\left|\frac{V_{f+1,i}^{\alpha\iota}}{\varepsilon_{i,f+1}^{\iota\alpha}}c_{f+1}^{\phi\alpha}+\frac{V_{i+1,f}^{\alpha\phi}}{\varepsilon_{f,i+1}^{\phi\alpha}}c_{i}^{\alpha\iota}\right|^{2}+\delta_{f,i-1}\Bigg\{\left(1-\left(\frac{V_{ik}^{\iota\alpha}}{\varepsilon_{ik}^{\iota\alpha}}\right)^{2}-\left(\frac{V_{fk}^{\phi\alpha}}{\varepsilon_{fk}^{\phi\alpha}}\right)^{2}\right)\left|c_{i}^{\phi\iota}\right|^{2}\nonumber \\
++2c_{i}^{\phi\iota}\left(\frac{V_{il}^{\alpha\beta}V_{li}^{\beta\iota}}{\varepsilon_{ii}^{\iota\alpha}\varepsilon_{il}^{\iota\beta}}c_{i}^{\phi\alpha}+\frac{V_{k-1,i-1}^{\alpha\phi}}{\varepsilon_{i-1,k-1}^{\phi\alpha}}\frac{V_{ki}^{\alpha'\iota}}{\varepsilon_{ik}^{\iota\alpha'}}c_{k}^{\alpha\alpha'}+\frac{V_{i-1,l}^{\alpha\beta}V_{l,i-1}^{\beta\phi}}{\varepsilon_{i-1,i-1}^{\phi\alpha}\varepsilon_{i-1,l}^{\phi\beta}}c_{i}^{\alpha\iota}\right)\bigg\}.
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Inclusion of the perturbation Hamiltonian allows transitions to new manifolds.
+ A close inspection of the form the perturbation 
+\begin_inset Formula $V$
+\end_inset
+
+in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Vmn"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) combined with the above form of 
+\begin_inset Formula $\left|\left\langle f_{\phi}|a|i_{\iota}\right\rangle \right|^{2}$
+\end_inset
+
+ reveals that transitions between 
+\begin_inset Formula $\mathcal{E}\left(i\right)\longrightarrow\mathcal{E}\left(f=i\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{E}\left(i\right)\longrightarrow\mathcal{E}\left(f=i-2\right)$
+\end_inset
+
+ are due to the asymmetric Hamiltonian
+\color blue
+ 
+\begin_inset Formula $H_{\mathrm{AS}}$
+\end_inset
+
+
+\color inherit
+ and the transition between 
+\begin_inset Formula $\mathcal{E}\left(i\right)\longrightarrow\mathcal{E}\left(i-3\right)$
+\end_inset
+
+ are due to 
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+.
+ The latter would also give rise to 
+\begin_inset Formula $\mathcal{E}\left(i\right)\longrightarrow\mathcal{E}\left(i+1\right)$
+\end_inset
+
+ transitions, which are suppressed in a vacuum reservoir mode 
+\begin_inset Formula $r$
+\end_inset
+
+.
+ One might argue that this fact suggests a stronger contribution comes from
+ the diagonal coupling than the counter-rotating terms because the former
+ involves closer manifolds, hence is energetically more favorite.
+ On the other hand, the transitions at higher frequencies contribute with
+ an higher intensity due to the increased density of states 
+\begin_inset Formula $\mathcal{P}$
+\end_inset
+
+.
+ Therefore, we need a quantitative comparison which evaluates the spectrum
+ and highlights properly the behavior in different regimes.
+\end_layout
+
+\begin_layout Subsection
+Result
+\end_layout
+
+\begin_layout Standard
+In this section we analyze the transitions showed in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, with a special emphasis on the ones induced by the perturbation Hamiltonian
+ 
+\begin_inset Formula $H_{\mathrm{AS}}$
+\end_inset
+
+ and 
+\begin_inset Formula $H_{\mathrm{CR}}$
+\end_inset
+
+.
+ We will investigate relative emission strengths of transitions that origin
+ from different Hamiltonian contributions in function of the coupling constants
+ 
+\begin_inset Formula $g_{R,S}$
+\end_inset
+
+.
+ We also estimate the range of applicability of the theory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename all_transitionsarrowsthick.eps
+	width 75line%
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The first 4 bunch of transition are allowed by 
+\begin_inset Formula $H_{JC}$
+\end_inset
+
+, as express in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:Frl"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Interestingly new 5 transitions are opened by 
+\begin_inset Formula $H_{S}$
+\end_inset
+
+ in violet.
+ The 0-th order enable transition for 
+\begin_inset Formula $f=i-1$
+\end_inset
+
+, and symmetrically 
+\begin_inset Formula $H_{S}$
+\end_inset
+
+ enable new decay for 
+\begin_inset Formula $f=i,i-2$
+\end_inset
+
+.
+ The transitions due to the counter rotating Hamiltonian 
+\begin_inset Formula $H_{R}$
+\end_inset
+
+ enable transitions for 
+\begin_inset Formula $f=i+1,i-3$
+\end_inset
+
+.
+ Of course 
+\begin_inset Formula $f$
+\end_inset
+
+ cannot be equal to 
+\begin_inset Formula $i+1$
+\end_inset
+
+ for the energy conservation, implicitly written in the Fermi golden rule.
+ The three thicker lines will be studied in more details in the next subsection.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:transitions"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ depicts the thirteen allowed transitions from a selected manifold 
+\begin_inset Formula $\mathcal{E}\left(n\right)$
+\end_inset
+
+, corresponding to different parts of the Hamiltonian, connecting respectively
+ the 
+\begin_inset Formula $\mathcal{E}\left(n\right)\rightarrow\mathcal{E}\left(n-1\right)$
+\end_inset
+
+ manifolds (the JC interaction term, green arrows), 
+\begin_inset Formula $\mathcal{E}\left(n\right)\rightarrow\mathcal{E}\left(n\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{E}\left(n\right)\rightarrow\mathcal{E}\left(n-2\right)$
+\end_inset
+
+ manifolds (the AS Hamiltonian, purple arrows), 
+\begin_inset Formula $\mathcal{E}\left(n\right)\rightarrow\mathcal{E}\left(n-3\right)$
+\end_inset
+
+ manifolds (the CR contribution, red arrows).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename energi_10_resonance.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename energi_10_resonanceOFF.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+resonant (left) and detuned (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energy spectrum from Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "energieslevel"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+depends only on 
+\begin_inset Formula $g_{R}/\omega_{c}$
+\end_inset
+
+ with 
+\begin_inset Formula $n=10$
+\end_inset
+
+, for the resonant case 
+\begin_inset Formula $\omega_{a}=\omega_{c}$
+\end_inset
+
+ (a) and far from the resonance case 
+\begin_inset Formula $\left(\omega_{c}-\omega_{a}\right)/\omega_{c}=0.2$
+\end_inset
+
+ (b).
+
+\color black
+ Around 
+\begin_inset Formula $g_{R}=0.16\omega_{c}$
+\end_inset
+
+ on the left or 
+\begin_inset Formula $g_{R}=0.19\omega_{c}$
+\end_inset
+
+ on the right indicate the first energy crossings according to the JC model.
+ For coupling constants beyond these values the structure of the energy
+ ladder from Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is not preserved.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:energy_10_resonance"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The transition frequencies will naturally depend on the coupling strength
+ 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+, as already follows from the Jaynes-Cummings theory, and weakly on 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+ through the second order perturbation [Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:energy_2nd_order"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)].
+ The Jaynes-Cummings energy structure is shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:energy_10_resonance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for the states from 
+\begin_inset Formula $n=7$
+\end_inset
+
+ up to 
+\begin_inset Formula $n=10$
+\end_inset
+
+ manifolds, both in a resonant 
+\begin_inset Formula $\omega_{c}=\omega_{a}$
+\end_inset
+
+ and detuned case 
+\begin_inset Formula $\omega_{c}-\omega_{a}=0.2\omega_{c}$
+\end_inset
+
+.
+ In the 
+\color red
+A
+\color inherit
+ppendix, we argue that the range of applicability of the theory is limited
+ by the first crossing of the states with energies below the initial state,
+ which sets an upper limit on the coupling strength 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+.
+ An even stronger limit is imposed by a normalization condition for the
+ eigenstates (see the Appendix).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename spectrum.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename spectrum0.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Emission spectra (arbitrary units) from the initial states 
+\begin_inset Formula $\left|10_{+}\right\rangle $
+\end_inset
+
+ (blue) and 
+\begin_inset Formula $\left|10_{-}\right\rangle $
+\end_inset
+
+ (orange) for the three- (a) and one-dimentional space (b), respectively
+ sustaining densities of states 
+\begin_inset Formula $\omega^{p}$
+\end_inset
+
+ with 
+\begin_inset Formula $p=2$
+\end_inset
+
+ (a) and 
+\begin_inset Formula $p=0$
+\end_inset
+
+ (b).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:spec"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+According to Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:spec"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the emission spectrum includes a set of approximately Lorentzian peaks.
+ In Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spec"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we separately plot spectra for the initial states 
+\begin_inset Formula $\left|10_{+}\right\rangle $
+\end_inset
+
+ (solid blue line) and 
+\begin_inset Formula $\left|10_{-}\right\rangle $
+\end_inset
+
+ (dashed orange line), for the resonant case 
+\begin_inset Formula $\omega_{a}=\omega_{c}$
+\end_inset
+
+ and fixed coupling strengths 
+\begin_inset Formula $g_{R}=g_{S}=0.1\omega_{c}$
+\end_inset
+
+.
+ The spectra are plotted for two different densities of states 
+\begin_inset Formula $\mathcal{P}\sim\omega^{2}$
+\end_inset
+
+ [Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spec"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(a)] and 
+\begin_inset Formula $\mathcal{P=\mathrm{const.}}$
+\end_inset
+
+ [Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:spec"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(b)].
+ The single low-energy peak around 
+\begin_inset Formula $\omega=2\sqrt{10}g_{R}\approx0.63\omega_{c}$
+\end_inset
+
+ corresponds to the 
+\begin_inset Formula $\left|10_{+}\right\rangle \rightarrow\left|10_{-}\right\rangle $
+\end_inset
+
+ transition induced by the inversion-symmetry breaking of the two-level
+ system and might unveil applications for low-frequency-sources.
+ Therefore, its tunability is an important feature: the position of this
+ peak depends on 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+, i.e.
+ on the system's permanent dipole moment 
+\begin_inset Formula $\boldsymbol{d}_{\mathrm{ee}}$
+\end_inset
+
+ and on the field strength in the cavity related to the number of photons.
+ In the classical limit, this provides the tuning possibility with the field
+ amplitude 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kibis_asymm_semiclass"
+literal "true"
+
+\end_inset
+
+.
+ Additionally, tuning could be achieved through orientation of the permanent
+ dipole moment of the two-level system with an external DC electric field
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Gladysz2020a"
+literal "true"
+
+\end_inset
+
+.
+ Around 
+\begin_inset Formula $\omega=\omega_{c}$
+\end_inset
+
+ we recognize the Mollow triplet that arises from the JC interaction.
+ Similar structures are repeated around 
+\begin_inset Formula $\omega=2\omega_{c}$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega=3\omega_{c}$
+\end_inset
+
+, arising respectively from the AS and CR Hamiltonian perturbations.
+ Note that the positions of sidebands of the Mollow-like triplet around
+ 
+\begin_inset Formula $2\omega_{c}$
+\end_inset
+
+ are related to the diagonal dipole moment and will accordingly be modified
+ if 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+ is tuned.
+ We emphasize that all the peaks including the Mollow-like sidebands can
+ be resolved in the spectra.
+ In particular, even though the low-energy peak usually corresponds to the
+ weakest transition intensities, it appears on top of a correspondingly
+ suppressed background.
+ In consequence, the signal-to-noise ratio is found comparable for all emission
+ peaks.
+ Below we analyze the intensity ratio of different peaks depending on the
+ coupling strengths of the model.
+\end_layout
+
+\begin_layout Standard
+\noindent
+We study three selected transitions representative for each Hamiltonian
+ contribution, highlighted as thick arrows in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+: for the Jaynes-Cummings term we select the 
+\begin_inset Formula $|10_{+}\rangle\rightarrow|9_{+}\rangle$
+\end_inset
+
+ transition, for the diagonal coupling term - the 
+\begin_inset Formula $|10_{+}\rangle\rightarrow|10_{-}\rangle$
+\end_inset
+
+ transition, for the counter-rotating term - the 
+\begin_inset Formula $|10_{+}\rangle\rightarrow|7_{-}\rangle$
+\end_inset
+
+ transition that corresponds to the highest frequency.
+ In Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(a), we plot the squared amplitudes 
+\begin_inset Formula $\left|\left\langle f_{\phi}|a|i_{\iota}\right\rangle \right|^{2}$
+\end_inset
+
+ which determine the transition probability in the one-dimentional case
+ 
+\begin_inset Formula $p=0$
+\end_inset
+
+ [Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Pofp-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)].
+ The squared ampitudes are plotted separately for each of the considered
+ transitions.
+ As anticipated, the contribution due to the Jaynes-Cummings interaction
+ is the leading term, overcoming other terms by several orders of magnitude
+ for the investigated range of the coupling strengths 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+.
+ The JC contribution itself weakly depends on 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+, though, which is also expected: the set of perturbed eigenstates 
+\begin_inset Formula $\left\{ |n_{\pm}\rangle\right\} $
+\end_inset
+
+ which are used as a basis closely corresponds to the Jaynes-Cummings basis
+ 
+\begin_inset Formula $\left\{ |n_{\pm}^{(0)}\rangle\right\} $
+\end_inset
+
+, from which it weakly deviates for large 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+.
+ The purple (red) lines in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ correspond to squared amplitudes for the selected transitions induced by
+ the AS (CR) Hamiltonian, respectively.
+ Results obtained for different values of 
+\begin_inset Formula $g_{S}=g_{R},\:\frac{g_{R}}{10},\:\frac{g_{R}}{100}$
+\end_inset
+
+ are presented.
+ We confirm the intuition suggested at the final paragraph of the previous
+ section, that for equal coupling strengths 
+\begin_inset Formula $g_{S}=g_{R}$
+\end_inset
+
+the term induced by the diagonal coupling overcomes the counter-rotating
+ contribution.
+ Both terms share the same linear scaling with their respective coupling
+ strengths 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+ or 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+, so naturally as we decrease 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+, the squared transition amplitude 
+\begin_inset Formula $\left|a_{nn}^{+-}\right|^{2}$
+\end_inset
+
+ is suppressed proportionally.
+\end_layout
+
+\begin_layout Standard
+\noindent
+This simple linear scaling is slightly modified in the detuned case, in
+ which the slopes change around 
+\begin_inset Formula $g_{R}\approx\frac{\left(\omega_{c}-\omega_{a}\right)}{2\sqrt{n}}$
+\end_inset
+
+.
+ An example for a strong detuning 
+\begin_inset Formula $\omega_{a}=0.8\omega_{c}$
+\end_inset
+
+ is shown in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(b).
+ We find that in this case the contribution of both perturbative terms is
+ suppressed with respect to the resonant result.
+ However, for relatively small coupling strengths 
+\begin_inset Formula $g_{R}<4\times10^{-3}\omega_{c}$
+\end_inset
+
+ the terms corresponding to the asymmetric contribution still dominate over
+ the ones due to the counter-rotating Hamiltonian even for reduced 
+\begin_inset Formula $g_{S}\approx0.01g_{R}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename a2resonance.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename a2resonanceOFF.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1D, resonant (on the left) detuned (on the right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Sresonance.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SresonanceOFF.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+3D, resonant (on the left) detuned (on the right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename SCAVresonance.eps
+	width 24text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename SCAVresonanceOFF.eps
+	width 24text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lorentzian, resonant (on the left) detuned (on the right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rescaled transition rates for densities of states corresponding to the 1D
+ environment [
+\begin_inset Formula $p=0$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{P}=\mathrm{const.}$
+\end_inset
+
+, panels (a,b)], 3D [
+\begin_inset Formula $p=2$
+\end_inset
+
+, 
+\begin_inset Formula $\mathcal{P\sim\omega^{2}}$
+\end_inset
+
+, panels (c,d)] case, as well as for a Lorentzian cavity resonant at 
+\begin_inset Formula $\hbar\omega_{c}=E_{ii}^{+-(0)}$
+\end_inset
+
+ and with a quality factor 
+\begin_inset Formula $\gamma/\omega_{c}=10^{-4}$
+\end_inset
+
+ [panels (e,f)].
+ For 
+\begin_inset Formula $p=0$
+\end_inset
+
+, the result corresponds to the squared transition elements
+\begin_inset Formula $\left|\left\langle f_{\phi}|a|i_{\iota}\right\rangle \right|^{2}$
+\end_inset
+
+.
+ Colors indicate different transition mechanisms: the Jaynes-Cummings transition
+ 
+\begin_inset Formula $\left|10_{+}\right\rangle \to\left|9_{+}\right\rangle $
+\end_inset
+
+ is shown in green, the counter-rotating term 
+\begin_inset Formula $\left|10_{+}\right\rangle \to\left|7_{-}\right\rangle $
+\end_inset
+
+ in red, and the transition driven by the diagonal coupling 
+\begin_inset Formula $\left|10_{+}\right\rangle \to\left|10_{-}\right\rangle $
+\end_inset
+
+ in violet for 3 values of the diagonal coupling strength 
+\begin_inset Formula $g_{S}=g_{R},g_{R}/10,g_{R}/100$
+\end_inset
+
+.
+ Results are shown on resonance 
+\begin_inset Formula $\omega_{c}=\omega_{a}$
+\end_inset
+
+ (a,c,e) and in a detuned case 
+\begin_inset Formula $\left(\omega_{c}-\omega_{a}\right)/\omega_{c}=0.2$
+\end_inset
+
+ (b,d,f).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:amplitudes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+For a wide range of the coupling strengths, the squared transition amplitudes
+ induced by the part of the perturbation related to the asymmettry dominate
+ over those originating from the counter-rotating term.
+ However, the transition probability in a 
+\begin_inset Formula $p+1$
+\end_inset
+
+ dimensional space is rescaled by the density of states 
+\begin_inset Formula $\sim\left(E_{i}^{\iota}-E_{f}^{\phi}\right)^{p}$
+\end_inset
+
+.
+ Therefore, in 3D the low-energy transitions will be suppressed, while the
+ high-energy component from the counter-rotating contribution to the Hamiltonian
+ will be relatively increased.
+ This rescaling is observed both in the resonant and off resonant case in
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(c,d).
+ In the off-resonant case we note that the for equal coupling strengths
+ 
+\begin_inset Formula $g_{S}=g_{R}$
+\end_inset
+
+ the terms that origin at the diagonal-coupling still dominate over the
+ counter-rotating ones, despite the latter are by far more energetically
+ favorable.
+\end_layout
+
+\begin_layout Standard
+\noindent
+Rescaling of the transition probabilities between the one-dimentional [Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(a,b)] and three-dimentional cases [Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(c,d)] demonstrates the possibility of tailoring the output by density of
+ states engineering.
+ To highlight this point further, we insert the entire system in a single-mode
+ cavity for which we assume a Lorentzian density of states, centered at
+ the low-energy transition frequency 
+\begin_inset Formula $\omega_{\mathrm{ext}}=E_{ii}^{+-(0)}$
+\end_inset
+
+ and of full-width at half-maximum 
+\begin_inset Formula $\gamma_{\mathrm{ext}}=10^{-4}\omega_{c}.$
+\end_inset
+
+ A cavity with comparable parameters can be realized in photonic crystals
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lu2018"
+literal "true"
+
+\end_inset
+
+ that provide 1D or 2D photonic environments, in whispering-gallery-mode
+ resonators 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogt2018"
+literal "true"
+
+\end_inset
+
+ or, with smaller quality factors, using metamaterials 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Zografopoulos2015"
+literal "true"
+
+\end_inset
+
+.
+ Here, the cavity is tailored to emphasize the strength of the low-energy
+ transition 
+\begin_inset Formula $|n^{+}\rangle\rightarrow|n^{-}\rangle$
+\end_inset
+
+ for the cost of suppressing other transitions.
+ Indeed, as demonstrated in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:amplitudes"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+(e,f), this is successful both in the resonant case and for the strongly
+ detuned one.
+\end_layout
+
+\begin_layout Standard
+\noindent
+For the above analysis we have selected only one exemplary transition of
+ the Jaynes-Cummings, diagonal-coupling and counter-rotating groups, correspondi
+ng to different-color arrows in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:grouped"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we demonstrate the total transition rates 
+\begin_inset Formula $\sum_{f,\phi}P_{f,10}^{\phi+}$
+\end_inset
+
+ in each group, assuming a fixed initial state 
+\begin_inset Formula $|i_{\iota}\rangle=|10_{+}\rangle$
+\end_inset
+
+.
+ According to the notation in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:intensity-1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), the green line corresponds to the Jaynes-Cummings transitions 
+\begin_inset Formula $P_{9,10}^{++}+P_{9,10}^{-+}$
+\end_inset
+
+, the purple line - to the diagonal coupling 
+\begin_inset Formula $P_{8,10}^{++}+P_{8,10}^{-+}+P_{10,10}^{-+}$
+\end_inset
+
+, and the red line - to the counter-rotating contribution 
+\begin_inset Formula $P_{7,10}^{++}+P_{7,10}^{-+}$
+\end_inset
+
+.
+
+\color black
+ We find that, as expected, the higher-energy contributions from the asymmetric
+ Hamiltonian 
+\begin_inset Formula $H_{\mathrm{AS}}$
+\end_inset
+
+ around 
+\begin_inset Formula $2\omega_{a}$
+\end_inset
+
+ are strong enough to overcome the ones induced by the counter-rotating
+ terms.
+ This can be also seen from Fig.
+ 
+\color inherit
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:grouped"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\color black
+(c), in which we resolve 
+\color inherit
+different contributions induced by 
+\color black
+
+\begin_inset Formula $H_{\mathrm{AS}}$
+\end_inset
+
+
+\color inherit
+ in the decay from the state 
+\begin_inset Formula $|10_{+}\rangle$
+\end_inset
+
+
+\color black
+.
+ The difference between the two perturbative contributions becomes even
+ smaller in the detuned case, in which all the perturbative terms are suppressed
+, as can be seen from panels (b,d) in Fig.
+ 
+\color inherit
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:grouped"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
+\color black
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename grouped_res.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename grouped_resOFF.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+1D, resonant (left) and detuned (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename asym_res.eps
+	width 48text%
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename asymOFF.eps
+	width 48text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+resonant (left) and detuned (right)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Total transition rates for each Hamiltonian contribution and for a fixed
+ initial state 
+\begin_inset Formula $\left|10^{+}\right\rangle $
+\end_inset
+
+: rate of the Jaynes-Cummings transitions 
+\begin_inset Formula $P_{9,10}^{++}+P_{9,10}^{-+}$
+\end_inset
+
+ (green), diagonal coupling mechanism 
+\begin_inset Formula $P_{8,10}^{++}+P_{8,10}^{-+}+P_{10,10}^{-+}$
+\end_inset
+
+ (violet), and the counter-rotating transitions 
+\begin_inset Formula $P_{7,10}^{++}+P_{7,10}^{-+}$
+\end_inset
+
+ (red) on resonance (a) or for the detuned case (b).
+ Individual contributions to the diagonal coupling are resolved in panels
+ (c) - for the resonant, and (d) - the detuned cases, where the solid line
+ represents the low-energy transition rate 
+\begin_inset Formula $P_{10,10}^{-+}$
+\end_inset
+
+, while the dashed (
+\begin_inset Formula $P_{8,10}^{++}$
+\end_inset
+
+) and dotted (
+\begin_inset Formula $P_{8,10}^{-+}$
+\end_inset
+
+) lines correspond to the transitions around 
+\begin_inset Formula $2\omega_{a}$
+\end_inset
+
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:grouped"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Validity of the perturbative approach
+\end_layout
+
+\begin_layout Standard
+In this section we verify the range of coupling strengths for which the
+ perturbative approach applied in the main text is justified.
+ Naturally, the condition is that the perturbation corrections to the energies
+ are small with respect to the energy differences, and that the perturbation
+ series converge both for the perturbed energies and the states.
+ This is not the case around the energy crossings, where some of the series
+ terms diverge.
+ To identify the applicability range of the approach, we therefore perform
+ two tests: we verify 1) preservation of the energy structure and 2) the
+ normalization of the states.
+\end_layout
+
+\begin_layout Subsubsection
+Preservation of the energy structure 
+\end_layout
+
+\begin_layout Standard
+The structure of energy levels is preserved if the coupling strength 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+ is small enough to avoid energy level crossings.
+ Otherwise, a level crossing gives rise to divergent resonances which are
+ not physical but they are artifacts of the theory: the energy differences
+ in the denominators in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ket_2nd_order"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) vanish and the expression diverges.
+ The positions of the energy crossings depend on the initial state: in the
+ following examples we choose 
+\begin_inset Formula $|10^{+}\rangle$
+\end_inset
+
+ as the initial state, for which the first relevant crossing appears between
+ the energies of states 
+\begin_inset Formula $|10^{-}\rangle$
+\end_inset
+
+ and 
+\begin_inset Formula $|9^{+}\rangle$
+\end_inset
+
+.
+ Its position depends on the atom-cavity detuning: on resonance 
+\begin_inset Formula $\omega_{a}=\omega_{c}$
+\end_inset
+
+ the crossing appears around 
+\begin_inset Formula $g_{R}/\omega_{a}=0.15$
+\end_inset
+
+, and blue-shifts as the cavity red-shifts from the atomic transition.
+ That dependence is visualized in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:validity"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Note that for a strong blue detuning of the cavity 
+\begin_inset Formula $\frac{\omega_{a}}{\omega_{c}}\leq0.5$
+\end_inset
+
+, the level ordering in the ladder structure from Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is reshuffled and the analysis in this regime would have to be done independent
+ly.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename detuning.eps
+	width 60text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+The black line corresponds to the position of the first level crossing in
+ function of the relative energy of the atomic system and the cavity mode.
+ The figure corresponds to the initial state 
+\begin_inset Formula $|10^{+}\rangle$
+\end_inset
+
+.
+ The black point corresponds to the first crossing in the left panel of
+ Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:energy_10_resonance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+
+\color blue
+ 
+\color inherit
+The structure of Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:transitions"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is preserved in the part of parameter space shaded in grey.
+ and the validity of our model is a subarea in blue where we consider the
+ 
+\begin_inset Formula $10\%$
+\end_inset
+
+ of the energy difference without any coupling (
+\begin_inset Formula $g_{R}=0$
+\end_inset
+
+).
+ This analysis does not depend on 
+\begin_inset Formula $g_{S}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:validity"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Preservation of the ladder structure is just the necessary condition for
+ the following analysis.
+ In practice, the denominators in the coefficients in Eq.
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ket_2nd_order"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) can get arbitrarily large in close proximity of the crossing point, i.e.
+ for 
+\begin_inset Formula $g_{R,\mathrm{crossing}}-g_{R}<\delta$
+\end_inset
+
+.
+ This condition defines the parameter region for which the ladder structure
+ is correctly represented in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:energy_10_resonance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, and yields that the coupling strength must be strictly smaller than a
+ threshold value 
+\begin_inset Formula $g_{R,\mathrm{crossing}}-\delta$
+\end_inset
+
+.
+ We deem the distance 
+\begin_inset Formula $\delta$
+\end_inset
+
+ to be safe if the energy difference of the states responsible for the first
+ crossing (in the illustrated example: 
+\begin_inset Formula $E_{10}^{-(0)}-E_{9}^{+(0)}$
+\end_inset
+
+) for a given coupling strength 
+\begin_inset Formula $g_{R}$
+\end_inset
+
+ is larger than 10% of its value for 
+\begin_inset Formula $g_{R}=0$
+\end_inset
+
+: 
+\begin_inset Formula 
+\begin{align*}
+E_{10}^{-(0)}\left(g_{R}\right)-E_{9}^{+(0)}\left(g_{R}\right) & \leq\frac{E_{10}^{-(0)}\left(0\right)-E_{9}^{+(0)}\left(0\right)}{10},
+\end{align*}
+
+\end_inset
+
+and the equality is achieved for 
+\begin_inset Formula $g_{R}=g_{R,\mathrm{crossing}}-\delta$
+\end_inset
+
+.
+ Safe parameter space defined in this way is shaded in blue in Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:validity"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Preservation of state normalization
+\end_layout
+
+\begin_layout Standard
+The state norm is approximately preserved for a set of model parameters
+ sufficiently away from an energy crossing.
+ For the cases investigated in the main manuscript, the first energy crossing
+ among the investigated states appears for those corresponding to the highest
+ manifold.
+ In Fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:norm"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we plot the norm of the state 
+\begin_inset Formula $\left|10_{+}\right\rangle $
+\end_inset
+
+ in function of 
+\begin_inset Formula $g_{S}=g_{R}$
+\end_inset
+
+.
+ A clear divergence appears for the coupling strengths approaching 
+\begin_inset Formula $0.14\omega_{c}$
+\end_inset
+
+, which results from a crossing involving higher manifolds, in this case
+ up to 
+\begin_inset Formula $\mathcal{E}\left(14\right)$
+\end_inset
+
+.
+ The vertical line in the figure indicates the limit for the coupling strengths
+ considered in the main text.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename normstate.eps
+	width 60text%
+	rotateOrigin centerTop
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Norm of the state 
+\begin_inset Formula $|10_{+}\rangle$
+\end_inset
+
+.
+ For coupling strengths around and above 
+\begin_inset Formula $g_{R}>0.1\omega_{c}$
+\end_inset
+
+the norm deviates from 1, which is an indication of breakdown of the perturbatio
+n theory.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:norm"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+In conclusion we have applied the 2nd order perturbation theory to investigate
+ the emission properties of a two-level system coupled to a single-mode
+ electromagnetic field, including interaction channels based on the Jaynes-Cummi
+ngs, counter-rotating and asymmetry-related contributions.
+ In the electric-dipole interaction mechanism, the first two arise from
+ the coupling of the field mode with the induced transition dipole moment,
+ the latter requires a permanent dipole characterizing the system's eigenstates.
+ Light-matter coupling with permanent dipoles gives birth to additional
+ emission peaks.
+ We have demonstrated that even though at some frequencies the asymmetry-related
+ contribution is weak in relative terms, the signal-to-noise ratio is comparable
+ for all emission peaks.
+ Moreover, the relative strengths of the emission peaks can be modified
+ with a suitable photonic environment, as we have discussed for 1D systems
+ and for a Lorentzian cavity.
+ In the latter example we have shown that for cavity parameters that lie
+ well within the range of experimental capabilities, the asymmetry-related
+ emission channel may even dominate in absolute terms.
+\end_layout
+
+\begin_layout Section
+Future research: the role of the environment and canonical derivation
+\end_layout
+
+\begin_layout Standard
+In the analysis of section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Hamiltonian"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we solve the problem of the divergence in the longitudinal component of
+ the Green tensor propagator as discussed after Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ImGT"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, using the spatial extension of the wavefunctions which provide a natural
+ regularization of the integral momenta of the quantum system surrounded
+ by a continuum dispersive medium.
+ However we can also solve the problem considering a point-like quantum
+ system and regularize the continuum dispersive medium such that at higher
+ frequencies the coupling with the quantum system is vanishing.
+ Indeed, at this regime the theory doesn't work because the discretization
+ of the atoms in the medium becomes relevant.
+ In the following, we suggest how to implement this idea.
+\begin_inset Newline newline
+\end_inset
+
+We implemented the phenomenological effective Hamiltonian in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:HM"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ However, starting from first principles of QED we can rewrite the creation
+ and annihilation operators 
+\begin_inset Formula $\boldsymbol{f}^{\dagger}$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ in terms of the noise polarization
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Vogel2006,Czech_red_book"
+literal "false"
+
+\end_inset
+
+, as follows
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{P}_{N}\left(\boldsymbol{r},\omega\right)=i\sqrt{\frac{\hbar\epsilon_{0}}{\pi}\epsilon_{I}\left(\boldsymbol{r},\omega\right)}\boldsymbol{f}\left(\boldsymbol{r},\omega\right),
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\epsilon_{I}\left(\boldsymbol{r},\omega\right)=\mathrm{Im}\epsilon\left(\boldsymbol{r},\omega\right)$
+\end_inset
+
+.
+ The quantity rise up in the expression of the polarization due to the presence
+ of the 
+\emph on
+bound 
+\emph default
+charge in the macroscopic treatment of Maxwell equation, in the expression
+ of the polarization as a transfer function of the medium in the presence
+ of an electric field
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buhmann2012"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{align}
+\boldsymbol{P}_{b}\left(\boldsymbol{r},t\right)= & \epsilon_{0}\int\int_{0}^{\infty}\chi\left(\boldsymbol{s},t\right)\boldsymbol{E}\left(\boldsymbol{r}-\boldsymbol{s},t-\tau\right)d\tau d^{3}s+\boldsymbol{P}_{N}\left(\boldsymbol{r},t\right)\\
+\tilde{\boldsymbol{P}}_{b}\left(\boldsymbol{k},\omega\right) & =\epsilon_{0}\epsilon\left(\boldsymbol{k},\omega\right)\left(\tilde{\boldsymbol{E}}\left(\boldsymbol{k},\omega\right)-1\right)+\boldsymbol{P}_{N}\left(\boldsymbol{k},\omega\right),
+\end{align}
+
+\end_inset
+
+with 
+\begin_inset Formula $\epsilon\left(\boldsymbol{k},\omega\right)=1+\chi\left(\boldsymbol{k},\omega\right)$
+\end_inset
+
+ and the latter equation is the Fourier transform of the former.
+ The susceptibility 
+\begin_inset Formula $\chi$
+\end_inset
+
+ of the medium is the 
+\emph on
+response function
+\emph default
+, and it is convoluted in space and time with the electric field 
+\begin_inset Formula $\boldsymbol{E}$
+\end_inset
+
+.
+ Notice that there not exists an analogous term 
+\begin_inset Formula $\boldsymbol{P}_{N}$
+\end_inset
+
+, in classical physics where we do not applied the same concept of vacuum.
+ Nonetheless, according to fluctuation–dissipation theorem of classical
+ statistical physics [2, 3], the fluctuation spectrum of a physical quantity
+ 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+ can be related to the imaginary part of the susceptibility.
+ Denoting classical fluctuations by 
+\begin_inset Formula $\Delta\boldsymbol{P}_{N}=\boldsymbol{P}_{N}-\left\langle \boldsymbol{P}_{N}\right\rangle _{\mathrm{cl}}$
+\end_inset
+
+ (the noise terms vanish on the classical average 
+\begin_inset Formula $\left\langle \boldsymbol{P}_{N}\right\rangle _{\mathrm{cl}}$
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buhmann2012"
+literal "false"
+
+\end_inset
+
+) the fluctuation and dissipation theorem (Fourier transform only in time)
+ reads
+\begin_inset Formula 
+\begin{equation}
+\left\langle \Delta\boldsymbol{P}_{N}\left(\boldsymbol{r},\omega\right)\Delta\boldsymbol{P}_{N}^{*}\left(\boldsymbol{r}^{\prime},\omega^{\prime}\right)\right\rangle _{\mathrm{cl}}=\frac{k_{B}T}{\pi\omega}\epsilon_{0}\mathrm{Im}\chi\left(\boldsymbol{r},\omega\right)\delta\left(\boldsymbol{r}-\boldsymbol{r}^{\prime}\right)\delta\left(\omega-\omega^{\prime}\right)
+\end{equation}
+
+\end_inset
+
+with (
+\begin_inset Formula $k_{B}$
+\end_inset
+
+: Boltzmann constant; 
+\begin_inset Formula $T$
+\end_inset
+
+: temperature).
+ The imaginary parts of the response functions determine whether the medium
+ is absorbing or amplifying.
+ We only consider absorbing media for which 
+\begin_inset Formula $\chi\left(\boldsymbol{r},\omega\right)$
+\end_inset
+
+ has a positive imaginary part.
+ The above equations thus reveal the intrinsic connection between fluctuations
+ and absorption: fluctuations are necessarily present in any absorbing system
+ at non-zero temperature.
+ Note that the classical fluctuations vanish in the zero-temperature limit.
+\end_layout
+
+\begin_layout Standard
+On the other hands, for a system prepare in a quantum state 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ of an appropriate Hilbert space, the quantum average observable is given
+ by 
+\begin_inset Formula $\left\langle \boldsymbol{P}_{N}\right\rangle =\left\langle \psi|\boldsymbol{P}_{N}|\psi\right\rangle $
+\end_inset
+
+, where now 
+\begin_inset Formula $\boldsymbol{P}_{N}$
+\end_inset
+
+ is an operator acting on such Hilbert space.
+ Its quantum fluctuations can be calculated according to 
+\begin_inset Formula $\left\langle \left(\Delta\boldsymbol{P}_{N}\right)^{2}\right\rangle =\left\langle \boldsymbol{P}_{N}^{2}\right\rangle -\left\langle \boldsymbol{P}_{N}\right\rangle ^{2}$
+\end_inset
+
+, with 
+\begin_inset Formula $\Delta\boldsymbol{P}_{N}=\boldsymbol{P}_{N}-\left\langle \boldsymbol{P}_{N}\right\rangle $
+\end_inset
+
+.
+ Then we have that the noise polarization vanishes on its grounds state
+ average 
+\begin_inset Formula $\left\langle \boldsymbol{P}_{N}\right\rangle =0$
+\end_inset
+
+ and its fluctuations ruled by the fluctation-dissipation theorem is
+\begin_inset Formula 
+\begin{equation}
+\left\langle \mathcal{S}\left(\Delta\boldsymbol{P}_{N}\left(\boldsymbol{r},\omega\right)\Delta\boldsymbol{P}_{N}^{\dagger}\left(\boldsymbol{r}^{\prime},\omega^{\prime}\right)\right)\right\rangle =\frac{\hbar}{2\pi}\epsilon_{0}\mathrm{Im}\chi\left(\boldsymbol{r},\omega\right)\delta\left(\boldsymbol{r}-\boldsymbol{r}^{\prime}\right)\delta\left(\omega-\omega^{\prime}\right)\label{eq:diss-fluc_q}
+\end{equation}
+
+\end_inset
+
+with 
+\begin_inset Formula $\mathcal{S}\left(ab\right)=\frac{1}{2}\left(ab+ba\right)$
+\end_inset
+
+ denotes a symmetrised operator product.
+ Note that the average thermal energy 
+\begin_inset Formula $k_{B}T$
+\end_inset
+
+ appearing in the classical fluctuation-dissipation theorem has been replaced
+ with the quantum ground-state energy 
+\begin_inset Formula $\frac{1}{2}\hbar\omega$
+\end_inset
+
+ of a bosonic system.
+ The use of a noise polarisation with a spectrum governed by (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:diss-fluc_q"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) is known as Rytov theory 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rytov_1989"
+literal "false"
+
+\end_inset
+
+, it lies at the heart of Lifshitz’ s famous calculation of the Casimir
+ force 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lifshitz1992theory"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\noindent
+The imaginary part of the longitudinal Green tensor propagator for a non
+ local susceptibility in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:G"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ becomes
+\begin_inset Formula 
+\begin{equation}
+\mathrm{Im}\tilde{G}_{jk}^{\parallel}(\boldsymbol{q},\omega)=\frac{c^{2}}{\omega^{2}}\frac{q_{j}q_{k}}{|\boldsymbol{q}|^{2}}\frac{\epsilon_{I}\left(\boldsymbol{q},\omega\right)}{\left|\epsilon\left(\boldsymbol{q},\omega\right)\right|^{2}}
+\end{equation}
+
+\end_inset
+
+In the relation of the permettivity we propose our model of suscptibility
+ 
+\begin_inset Formula $\chi_{0}$
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\epsilon\left(\boldsymbol{k},\omega\right)=1+\chi\left(\boldsymbol{k},\omega\right)=1+\chi_{0}\left(\boldsymbol{k},\omega\right)
+\end{equation}
+
+\end_inset
+
+such that 
+\begin_inset Formula 
+\begin{equation}
+\chi_{0}\left(\boldsymbol{k},\omega\right)=\left(\chi_{0,R}+i\chi_{0,I}\right)\exp\left(-\frac{k^{2}}{k_{M}^{2}}\right).
+\end{equation}
+
+\end_inset
+
+This provide a convergent integral of with a cut-off paramenter 
+\begin_inset Formula $k_{M}$
+\end_inset
+
+, as follows
+\begin_inset Formula 
+\begin{equation}
+\mathrm{Im}\tilde{G}_{jk}^{\parallel}\left(\bm{\rho},\omega\right)=\frac{2\pi c^{2}}{\left(2\pi\omega\right)^{2}}\frac{\Im\chi_{0}\left(0,\omega\right)}{\left|1+\chi_{0}\left(0,\omega\right)\right|^{2}}\frac{2k_{M}^{3}}{3\sqrt{\pi}}\delta_{ij}\left(1+O\left(\rho^{4}\right)\right).
+\end{equation}
+
+\end_inset
+
+Here 
+\begin_inset Formula $\boldsymbol{\rho}$
+\end_inset
+
+is the relative distance between the positive charge at the origin and the
+ relative negative charge.
+\end_layout
+
+\begin_layout Standard
+\noindent
+In the end, one should be rigorous to derive the commutation relation of
+ 
+\begin_inset Formula $\boldsymbol{f}$
+\end_inset
+
+and 
+\begin_inset Formula $\boldsymbol{f}^{\dagger}$
+\end_inset
+
+ starting from the Lagrangian and applied the Fano diagonalization on the
+ Hamiltonian obtained by the Legendre transform similarly to Ref 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Huttner1992"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,71 @@
+\documentclass[]{article}
+\usepackage{lmodern,parskip}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% For comparison with Euler Script and Ralph Smith's Formal Script
+\usepackage[mathscr]{eucal}  % \mathscr with Euler Script
+\DeclareSymbolFont{rsfscript}{OMS}{rsfs}{m}{n}
+\DeclareSymbolFontAlphabet{\mathrsfs}{rsfscript}
+
+% Now load the package (play with the options):
+
+% \usepackage[mathscr]{pzccal}
+\usepackage{pzccal}
+% \usepackage[scaled=1.2]{pzccal}
+
+% .......................................................................
+
+\DeclareMathAlphabet{\mathcal}{OT1}{pzcm}{mb}{it}
+
+\begin{document}
+
+\section*{\texttt{pzccal} package test}
+
+The script (calligraphic) math alphabet with Zapf Chancery
+(\verb+\mathpzc+):
+\[
+  \mathpzc{ABCDEFGHIJKLMNOPQRSTUVWXYZ\, 
+  	   abcdefghijklmnopqrstuvwxyz\,
+	   1234567890}
+\]
+The script (calligraphic) math alphabet with Euler Script
+(\verb+\EuScript+):
+\[
+  \EuScript{ABCDEFGHIJKLMNOPQRSTUVWXYZ\,abc\,123}
+\]
+The script (calligraphic) math alphabet with Ralph Smith's Formal Script
+(\verb+\mathrsfs+):
+\[
+  \mathrsfs{ABCDEFGHIJKLMNOPQRSTUVWXYZ\,abc\,123}
+\]
+The script (calligraphic) math alphabet with (\verb+\mathcal+):
+\[
+  \mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ\,abc\,123}
+\]
+The script (calligraphic) math alphabet with (\verb+\mathscr+):
+\[
+  \mathscr{ABCDEFGHIJKLMNOPQRSTUVWXYZ\,abc\,123}
+\]
+Compare script letters (CM, CMcal, pzcm, EuScript, rsfs):
+\[
+  H \CMcal{H} \mathpzc{H} \EuScript{H} \mathrsfs{H}
+  Z \CMcal{Z} \mathpzc{Z} \EuScript{Z} \mathrsfs{Z}
+  F \CMcal{F} \mathpzc{F} \EuScript{F} \mathrsfs{F}
+\]
+
+Usage examples with \verb+\mathcal+:
+\[
+  \mathcal{F}\left\{ s(x)\right\} =\int_{-\infty}^{\infty}s(x)
+  \mathrm{e}^{\mathrm{i}\omega_{x}x}\,\mathrm{d}{x}
+\]
+
+Die Hamiltonfunktion ist die Legendre-Transformierte der Lagrange-Funktion
+$\mathcal L(t,q,\dot q)$, die von den generalisierten Koordinaten und
+ihren Geschwindigkeiten $\dot q=(\dot q_1,\dot q_2\dots \dot q_n)$ abhängt:
+\[
+   \mathcal H(t,q,p)= \sum_{k=1}^n \dot q_k\, p_k - \mathcal L(t, q,\dot q)
+\]
+
+\makeatother
+\end{document}

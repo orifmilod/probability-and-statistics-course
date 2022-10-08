@@ -1,0 +1,349 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass deistesi
+\begin_preamble
+\usepackage{pzccal}
+\end_preamble
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-named
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Contextuality for operational theories
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Foundations"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\emph on
+The early development of quantum mechanics and the early applications of
+ quantum mechanics to elucidating the structure of matter required little
+ mathematical sophistication.
+ It has been said that "In the 1930s, under the demoralizing influence of
+ quantum theoretic perturbation theory, the mathematics required of a theoretica
+l physicist was reduced to a rudimentary knowledge of the Latin and Greek
+ alphabets.
+ (R.
+ Jost)
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\emph on
+\begin_inset Quotes eld
+\end_inset
+
+Quantum Foundations is the jazz of the Physics
+\begin_inset Formula $\dots$
+\end_inset
+
+
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+(
+\begin_inset Formula $\dots$
+\end_inset
+
+for me.)
+\end_layout
+
+\begin_layout Section
+Motivation
+\end_layout
+
+\begin_layout Standard
+Operational equivalence maps into ontological equivale
+\end_layout
+
+\begin_layout Proof
+\noindent
+\align block
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+   
+\backslash
+tikzset{myptr/.style={decoration={markings,mark=at position 1 with {
+\backslash
+arrow[scale=1.5,>=stealth]{>}}},postaction={decorate}}} 	    
+\backslash
+fill[black!20] (0,0) -- (20,0) -- (10,-17.32) -- cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill[black!40,shift={(10,-5.77)},scale=.5,rotate=15] (-10,5.77) -- (10,5.77)
+ -- (0,-11.55) -- cycle;
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[gray] (10,-5.77) circle (11.58);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[gray] (10,-5.77) circle (5.77);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill[black] (10,-5.77) circle (.1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (11,-4.77) {$I/d$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill[black] (15,-8.66) circle (.1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (17,-9.66) {$
+\backslash
+frac{I-|
+\backslash
+psi
+\backslash
+rangle
+\backslash
+langle 
+\backslash
+psi |}{d-1}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fill[black] (0,0) circle (.1);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (2,.5) {$|
+\backslash
+psi
+\backslash
+rangle
+\backslash
+langle 
+\backslash
+psi |$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[myptr] (10,-5.77) -- (0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (8,-1.39) {$
+\backslash
+vec{r}_{circ} = 
+\backslash
+sqrt{(d-1)/d}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw[myptr] (10,-5.77) -- (15,-8.66);
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+node at (17,-7.21) {$
+\backslash
+vec{r}_{insc} = 
+\backslash
+sqrt{
+\backslash
+frac 1{d(d-1)}}$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{tikzpicture}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:statesconfiguration"
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pictorial representation of five decomposition of the completely mixed states.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

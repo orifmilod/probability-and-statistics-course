@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.8: http://docutils.sourceforge.net/" />
+<title>pzccal README</title>
+<meta name="date" content="2011-03-28" />
+<meta name="copyright" content="© 2011 Günter Milde &lt;milde&#64;users.berlios.de&gt;" />
+<link rel="stylesheet" href="../../../../Code/Python/docutils-svn/docutils/docutils/writers/html4strict/html4css1.css" type="text/css" />
+<link rel="stylesheet" href="../../../../Code/Python/docutils-svn/docutils/docutils/writers/html4strict/html4css2.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="pzccal-readme">
+<h1 class="title">pzccal README</h1>
+
+<dl class="docinfo simple">
+<dt class="date">Date</dt>
+<dd class="date">2011-03-28</dd>
+<dt class="copyright">Copyright</dt>
+<dd class="copyright">© 2011 Günter Milde &lt;<a class="reference external" href="mailto:milde&#64;users.berlios.de">milde&#64;users.berlios.de</a>&gt;</dd>
+<dt>Licence</dt>
+<dd><p>This work may be distributed and/or modified under the
+conditions of the <a class="reference external" href="http://www.latex-project.org/lppl.txt">LaTeX Project Public License</a>, either
+version&nbsp;1.3 of this license or (at your option) any later version.</p>
+</dd>
+</dl>
+<div class="abstract topic">
+<p class="topic-title first">Abstract</p>
+<p>Set up the Zapf Chancery font as script (calligraphic) math
+alphabet.</p>
+<p><strong>Obsoleted by the urwchancal_ package.</strong></p>
+</div>
+<div class="section" id="versions">
+<h1>Versions</h1>
+<dl class="field-list simple">
+<dt>0.1</dt>
+<dd><p>2011-02-03  first published version</p>
+</dd>
+<dt>0.2</dt>
+<dd><p>2011-03-28  documentation update: deprecated by <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/urwchancal.html">urwchancal</a></p>
+</dd>
+</dl>
+</div>
+<div class="section" id="introduction">
+<h1>Introduction</h1>
+<p>The <cite>pzccal</cite> package sets up the Zapf Chancery font (pzcmi7t) as
+script (calligraphic) math alphabet <tt class="literal">\mathpzc</tt>. It provides options
+to scale the font and to configure the alias command name. By default,
+<cite>pzccal</cite> overwrites the predefined math alphabet command <tt class="literal">\mathcal</tt>.</p>
+<p>The <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/urwchancal.html">urwchancal</a> package (developed independently and published less
+than a month after pzcal.sty) provides not only a style file but also
+virtual fonts solving problems with accents and spacing.  Like
+<cite>pzcal</cite>, it provides both lowercase and capital Latin math script
+letters. It is highly recommended to use <tt class="literal">urwchancal.sty</tt> instead of
+<tt class="literal">pzcal.sty</tt>.</p>
+</div>
+<div class="section" id="files">
+<h1>Files</h1>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="65%" />
+</colgroup>
+<tbody valign="top">
+<tr><td><p>README.txt</p></td>
+<td><p>Requirements, Installation, Usage</p></td>
+</tr>
+<tr><td><p>README.html</p></td>
+<td><p>browser friendly README</p></td>
+</tr>
+<tr><td><p>pzccal.sty</p></td>
+<td><p>literate source (LaTeX package)</p></td>
+</tr>
+<tr><td><p>pzccal.sty.txt</p></td>
+<td><p>literate source (Documentation)</p></td>
+</tr>
+<tr><td><p>pzccal.sty.pdf</p></td>
+<td><p>literate source (Documentation, PDF)</p></td>
+</tr>
+<tr><td><p>pzccal.sty.html</p></td>
+<td><p>literate source (Documentation, HTML)</p></td>
+</tr>
+<tr><td><p>pzccal-test.tex</p></td>
+<td><p>Test example (source)</p></td>
+</tr>
+<tr><td><p>pzccal-test.pdf</p></td>
+<td><p>Test example (PDF output)</p></td>
+</tr>
+</tbody>
+</table>
+<p>The bidirectional text &lt;-&gt; code converter <a class="reference external" href="http://pylit.berlios.de">PyLit</a> can convert between
+<tt class="literal">pzccal.sty</tt> and <tt class="literal">pzccal.sty.txt</tt>.</p>
+<p>The Python <a class="reference external" href="http://docutils.sourceforge.net/rst.html">Docutils</a> and pdflatex were used to generate the HTML and PDF
+documentation from the <a class="reference external" href="http://docutils.sourceforge.net/rst.html">reStructuredText</a> sources.</p>
+</div>
+<div class="section" id="requirements">
+<h1>Requirements</h1>
+<p>This package uses fonts from the PSNFSS bundle.
+It also requires <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/kvoptions.html">kvoptions</a>.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation</h1>
+<ul>
+<li><p>Unpack pzccal.zip (preferably in a <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=tds">TDS</a> documentation folder).</p></li>
+<li><p>Make sure LaTeX can find pzccal.sty:</p>
+<p>Copy/Move/Link it to a suitable place in the <a class="reference external" href="http://www.tex.ac.uk/cgi-bin/texfaq2html?label=tds">TDS</a> and run <tt class="literal">texhash</tt>
+or place it in the current working directory (e.g. for testing).</p>
+</li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h1>Usage</h1>
+<p>It is highly recommended to use <a class="reference external" href="http://mirror.ctan.org/help/Catalogue/entries/urwchancal.html">urwchancal</a>:</p>
+<pre class="literal-block">\usepackage{urwchancal}
+</pre>
+<p>instead of</p>
+<pre class="literal-block">\usepackage{pzccal}
+</pre>
+<p>Option descriptions in the literate source.</p>
+<!-- References
+========== -->
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,3087 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[    138986,       3078]
+NotebookOptionsPosition[    134110,       2930]
+NotebookOutlinePosition[    135748,       2981]
+CellTagsIndexPosition[    135412,       2969]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Topological Phases with Quantum Walks", "DemoTitle",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497053329530367*^9, 3.4970533626868963`*^9}, {
+   3.497370575868854*^9, 3.4973705911175528`*^9}, {3.497614263229516*^9, 
+   3.4976142699051833`*^9}, 3.498315800427875*^9}],
+
+Cell[CellGroupData[{
+
+Cell["", "InitializationSection"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"distribution", "[", 
+    RowBox[{
+    "plotmax_", ",", "initialangle_", ",", "theta1m_", ",", "theta1p_", ",", 
+     "theta2_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"n", "=", "plotmax"}], ",", 
+       RowBox[{"iangle", "=", "initialangle"}], ",", 
+       RowBox[{"thetam", "=", "theta1m"}], ",", 
+       RowBox[{"thetap", "=", "theta1p"}], ",", 
+       RowBox[{"theta2angle", "=", "theta2"}], ",", "t", ",", "i", ",", 
+       "boundarylength", ",", "Initialup", ",", "Initialdown", ",", "theta1", 
+       ",", "a", ",", "temp", ",", "d", ",", "rotation1", ",", "rotation2"}], 
+      "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"boundarylength", "=", "0.01"}], ";", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Initialup", "=", " ", 
+       RowBox[{"N", "[", 
+        RowBox[{"Cos", "[", "iangle", "]"}], "]"}]}], ";", " ", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Not", " ", "Needed", " ", "Normalised"}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"Initialdown", "=", " ", 
+       RowBox[{"N", "[", " ", 
+        RowBox[{"Sin", "[", "iangle", "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"theta1", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"thetam", "+", "thetap"}], ")"}], "/", "2"}], "+", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"thetap", "-", "thetam"}], ")"}], "/", "2"}], "*", 
+           RowBox[{"Tanh", "[", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"i", "-", 
+               RowBox[{"2", "n"}], "+", 
+               RowBox[{"1", "/", "2"}]}], ")"}], "/", "boundarylength"}], 
+            "]"}]}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+            RowBox[{"4", "n"}], "+", "1"}]}], "}"}]}], "]"}]}], ";", " ", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+        "at", " ", "\"\<l\>\"", " ", "step", " ", "and", " ", "\"\<i\>\"", 
+         " ", "position"}], ",", " ", 
+        RowBox[{
+         RowBox[{"coin", " ", "up", " ", "\"\<j\>\""}], " ", "+", " ", 
+         RowBox[{"down", " ", "\"\<k\>\""}]}]}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"a", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"l", ",", "n"}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+            RowBox[{"4", "n"}], "+", "1"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "2"}], "}"}]}], "]"}]}], ";", " ", 
+      "\[IndentingNewLine]", 
+      RowBox[{"temp", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+            RowBox[{"4", "n"}], "+", "1"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "2"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"d", "=", 
+       RowBox[{"Table", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", 
+           RowBox[{
+            RowBox[{"4", "n"}], "+", "1"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"k", ",", "2"}], "}"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rotation1", "=", 
+       RowBox[{"N", "[", 
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"MatrixExp", "[", 
+           RowBox[{
+            RowBox[{"-", "\[ImaginaryI]"}], " ", 
+            RowBox[{"PauliMatrix", "[", "2", "]"}], " ", 
+            RowBox[{
+             RowBox[{"theta1", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "/", "2"}]}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{
+             RowBox[{"4", "n"}], "+", "1"}]}], "}"}]}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"rotation2", "=", 
+       RowBox[{"N", "[", 
+        RowBox[{"MatrixExp", "[", 
+         RowBox[{
+          RowBox[{"-", "\[ImaginaryI]"}], " ", 
+          RowBox[{"PauliMatrix", "[", "2", "]"}], " ", 
+          RowBox[{"theta2angle", "/", "2"}]}], "]"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+        "Normalised", " ", "Initial", " ", "Coin", " ", "Condition", " ", 
+         "at", " ", "2", "n"}], ",", " ", 
+        RowBox[{
+         RowBox[{"zero", " ", "step", " ", "is", " ", "t"}], "=", "1"}], ",", 
+        
+        RowBox[{
+         RowBox[{"edge", " ", "is", " ", "n"}], "+", "1"}]}], "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"a", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", 
+          RowBox[{"2", "n"}], ",", "1"}], "]"}], "]"}], "=", "Initialup"}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"a", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", 
+          RowBox[{"2", "n"}], ",", "2"}], "]"}], "]"}], "=", "Initialdown"}], 
+      ";", "\n", 
+      RowBox[{"(*", " ", 
+       RowBox[{"Time", " ", "Evolution", " ", "Step"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"For", "[", 
+       RowBox[{
+        RowBox[{"t", "=", "1"}], ",", 
+        RowBox[{"t", "\[LessEqual]", 
+         RowBox[{"n", "-", "1"}]}], ",", 
+        RowBox[{"t", "++"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"1", "+", 
+             RowBox[{"2", "n"}], "-", 
+             RowBox[{"2", "t"}]}]}], ",", 
+           RowBox[{"i", "\[LessEqual]", 
+            RowBox[{
+             RowBox[{"2", "n"}], "+", 
+             RowBox[{"2", "t"}], "+", "1"}]}], ",", 
+           RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Coin", " ", "Flip"}], " ", "*)"}], "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "All"}], "]"}], "]"}], "=", 
+             RowBox[{
+              RowBox[{"rotation1", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "All", ",", "All"}], "]"}], "]"}], ".", 
+              RowBox[{"a", "[", 
+               RowBox[{"[", 
+                RowBox[{"t", ",", "i", ",", "All"}], "]"}], "]"}]}]}], 
+            ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+          "Shift", " ", "Process", " ", "with", " ", "the", " ", 
+           "normalization"}], " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"1", "+", 
+             RowBox[{"2", "n"}], "-", 
+             RowBox[{"2", "t"}]}]}], ",", 
+           RowBox[{"i", "\[LessEqual]", 
+            RowBox[{
+             RowBox[{"2", "n"}], "+", 
+             RowBox[{"2", "t"}], "+", "1"}]}], ",", 
+           RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"i", "+", "1"}], ",", "1"}], "]"}], "]"}], "=", 
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "2"}], "]"}], "]"}], "=", 
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"1", "+", 
+             RowBox[{"2", "n"}], "-", 
+             RowBox[{"2", "t"}]}]}], ",", 
+           RowBox[{"i", "\[LessEqual]", 
+            RowBox[{
+             RowBox[{"2", "n"}], "+", 
+             RowBox[{"2", "t"}], "+", "1"}]}], ",", 
+           RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{"Coin", " ", "Flip"}], " ", "*)"}], "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "All"}], "]"}], "]"}], "=", 
+             RowBox[{"rotation2", ".", 
+              RowBox[{"temp", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "All"}], "]"}], "]"}]}]}], ";"}]}], "]"}], 
+         ";", "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+          "Shift", " ", "Process", " ", "with", " ", "the", " ", 
+           "normalization"}], " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", 
+            RowBox[{"1", "+", 
+             RowBox[{"2", "n"}], "-", 
+             RowBox[{"2", "t"}]}]}], ",", 
+           RowBox[{"i", "\[LessEqual]", 
+            RowBox[{
+             RowBox[{"2", "n"}], "+", 
+             RowBox[{"2", "t"}], "+", "1"}]}], ",", 
+           RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"a", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"t", "+", "1"}], ",", "i", ",", "1"}], "]"}], "]"}], 
+             "=", 
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"a", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{"t", "+", "1"}], ",", 
+                RowBox[{"i", "-", "1"}], ",", "2"}], "]"}], "]"}], "=", 
+             RowBox[{"d", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";"}]}], "]"}], 
+         ";"}]}], "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"i", "-", 
+           RowBox[{"2", "n"}]}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Abs", "[", 
+             RowBox[{"a", "[", 
+              RowBox[{"[", 
+               RowBox[{"t", ",", "i", ",", "1"}], "]"}], "]"}], "]"}], "^", 
+            "2"}], "+", 
+           RowBox[{
+            RowBox[{"Abs", "[", 
+             RowBox[{"a", "[", 
+              RowBox[{"[", 
+               RowBox[{"t", ",", "i", ",", "2"}], "]"}], "]"}], "]"}], "^", 
+            "2"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"t", ",", "1", ",", 
+          RowBox[{"n", "-", "1"}], ",", "1"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"i", ",", "n", ",", 
+          RowBox[{"3", "n"}], ",", "1"}], "}"}]}], "]"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"phasediagram", "[", 
+    RowBox[{"theta1m_", ",", "theta1p_", ",", "theta2_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"thetam", "=", "theta1m"}], ",", 
+       RowBox[{"thetap", "=", "theta1p"}], ",", 
+       RowBox[{"theta2angle", "=", "theta2"}], ",", "pline1", ",", "pline2", 
+       ",", "pline3", ",", "pline4", ",", "pline5", ",", "pline6", ",", 
+       "theta2line", ",", "tx", ",", "dots"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"pline1", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{"x", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+           RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Red", ",", "Dotted", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"pline2", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "\[Pi]"}], "-", "x"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", 
+           RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Red", ",", "Dotted", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"pline3", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "2"}], "\[Pi]"}], "-", "x"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Red", ",", "Dotted", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"pline4", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{"-", "x"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+           RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"pline5", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"2", "\[Pi]"}], "+", "x"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]"}], ",", "0"}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"pline6", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "2"}], "\[Pi]"}], "+", "x"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", "0", ",", 
+           RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Black", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"theta2line", "=", 
+       RowBox[{"Plot", "[", 
+        RowBox[{"theta2", ",", 
+         RowBox[{"{", 
+          RowBox[{"x", ",", 
+           RowBox[{
+            RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+           RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+         RowBox[{"PlotStyle", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"Black", ",", "Dotted", ",", 
+            RowBox[{"Thickness", "[", ".005", "]"}]}], "}"}]}]}], "]"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"tx", "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Rotate", "[", 
+           RowBox[{
+            RowBox[{"Rectangle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\[Pi]", "-", 
+                 RowBox[{"\[Pi]", "/", 
+                  RowBox[{"Sqrt", "[", "2", "]"}]}]}], ",", 
+                RowBox[{
+                 RowBox[{"-", "\[Pi]"}], "/", 
+                 RowBox[{"Sqrt", "[", "2", "]"}]}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"\[Pi]", "+", 
+                 RowBox[{"\[Pi]", "/", 
+                  RowBox[{"Sqrt", "[", "2", "]"}]}]}], ",", 
+                RowBox[{"\[Pi]", "/", 
+                 RowBox[{"Sqrt", "[", "2", "]"}]}]}], "}"}]}], "]"}], ",", 
+            RowBox[{"45", "Degree"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\[Pi]", ",", "0"}], "}"}]}], "]"}], ",", 
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Rotate", "[", 
+           RowBox[{
+            RowBox[{"Rectangle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "\[Pi]"}], "-", 
+                 RowBox[{"\[Pi]", "/", 
+                  RowBox[{"Sqrt", "[", "2", "]"}]}]}], ",", 
+                RowBox[{
+                 RowBox[{"-", "\[Pi]"}], "/", 
+                 RowBox[{"Sqrt", "[", "2", "]"}]}]}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "\[Pi]"}], "+", 
+                 RowBox[{"\[Pi]", "/", 
+                  RowBox[{"Sqrt", "[", "2", "]"}]}]}], ",", 
+                RowBox[{"\[Pi]", "/", 
+                 RowBox[{"Sqrt", "[", "2", "]"}]}]}], "}"}]}], "]"}], ",", 
+            RowBox[{"45", "Degree"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], ",", "0"}], "}"}]}], "]"}], ",", 
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "\[Pi]"}], ",", 
+               RowBox[{"-", "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"\[Pi]", ",", 
+               RowBox[{"-", "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"2", "\[Pi]"}], ",", 
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"\[Pi]", ",", "\[Pi]"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"2", "\[Pi]"}], ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          RowBox[{"GrayLevel", "[", ".8", "]"}], ",", 
+          RowBox[{"Polygon", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "\[Pi]"}], ",", "\[Pi]"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"0", ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}]}], "}"}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\[Pi]", ",", "0"}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], ",", "0"}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\[Pi]", ",", 
+              RowBox[{"3", 
+               RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], ",", 
+              RowBox[{"3", 
+               RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"\[Pi]", ",", 
+              RowBox[{
+               RowBox[{"-", "3"}], 
+               RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<1\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "\[Pi]"}], ",", 
+              RowBox[{
+               RowBox[{"-", "3"}], 
+               RowBox[{"\[Pi]", "/", "2"}]}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<0\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "\[Pi]"}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<0\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", 
+              RowBox[{"-", "\[Pi]"}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{
+            RowBox[{"Text", "[", 
+             RowBox[{
+              RowBox[{"Style", "[", 
+               RowBox[{"\"\<0\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+               "]"}], ",", 
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"3", 
+                 RowBox[{"\[Pi]", "/", "2"}]}], ",", "\[Pi]"}], "}"}]}], 
+             "]"}], ","}], "*)"}], 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<0\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "3"}], 
+               RowBox[{"\[Pi]", "/", "2"}]}], ",", "\[Pi]"}], "}"}]}], "]"}], 
+          ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<0\>\"", ",", "30", ",", "Bold", ",", "Black"}], 
+             "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "3"}], 
+               RowBox[{"\[Pi]", "/", "2"}]}], ",", 
+              RowBox[{"-", "\[Pi]"}]}], "}"}]}], "]"}]}], 
+         "\[IndentingNewLine]", "}"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"dots", "=", 
+       RowBox[{"Graphics", "[", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", 
+          RowBox[{"Disk", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"thetam", ",", "theta2"}], "}"}], ",", 
+            RowBox[{"\[Pi]", "/", "10"}]}], "]"}], ",", "Blue", ",", 
+          RowBox[{"Disk", "[", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"thetap", ",", "theta2"}], "}"}], ",", 
+            RowBox[{"\[Pi]", "/", "10"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Left\>\"", ",", "Bold", ",", "Green"}], "]"}], ",", 
+            
+            RowBox[{"{", 
+             RowBox[{"thetam", ",", 
+              RowBox[{"theta2", "+", 
+               RowBox[{"\[Pi]", "/", "5"}]}]}], "}"}]}], "]"}], ",", 
+          RowBox[{"Text", "[", 
+           RowBox[{
+            RowBox[{"Style", "[", 
+             RowBox[{"\"\<Right\>\"", ",", "Bold", ",", "Blue"}], "]"}], ",", 
+            
+            RowBox[{"{", 
+             RowBox[{"thetap", ",", 
+              RowBox[{"theta2", "+", 
+               RowBox[{"\[Pi]", "/", "5"}]}]}], "}"}]}], "]"}]}], "}"}], 
+        "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Show", "[", 
+       RowBox[{
+       "tx", ",", "pline1", ",", "pline2", ",", "pline3", ",", "pline4", ",", 
+        "pline5", ",", "pline6", ",", "theta2line", ",", "dots", ",", 
+        RowBox[{"PlotRange", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+             RowBox[{"2", "\[Pi]"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+             RowBox[{"2", "\[Pi]"}]}], "}"}]}], "}"}]}], ",", 
+        RowBox[{"PlotRangePadding", "\[Rule]", "0"}], ",", 
+        RowBox[{"Axes", "\[Rule]", "False"}], ",", 
+        RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+        RowBox[{"FrameTicks", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+               RowBox[{"-", "\[Pi]"}], ",", "0", ",", "\[Pi]", ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "None"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+               RowBox[{"-", "\[Pi]"}], ",", "0", ",", "\[Pi]", ",", 
+               RowBox[{"2", "\[Pi]"}]}], "}"}], ",", "None"}], "}"}]}], 
+          "}"}]}], ",", 
+        RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", 
+        RowBox[{"FrameLabel", "\[Rule]", " ", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"\"\<second rotation\>\"", ",", "None"}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+            "\"\<first rotation\>\"", ",", 
+             "\"\<phase diagram (winding number)\>\""}], "}"}]}], "}"}]}]}], 
+       "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}], "\[IndentingNewLine]"}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.4970888456826267`*^9, {3.497099060270286*^9, 
+   3.497099064968305*^9}, 3.497102158632449*^9, {3.497614277208914*^9, 
+   3.4976143457237644`*^9}, {3.497614444896681*^9, 3.49761448469466*^9}, {
+   3.4988539517963753`*^9, 3.4988539605307503`*^9}, 3.4988540347026253`*^9},
+ CellID->1681047275]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateSection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"GraphicsRow", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Show", "[", 
+        RowBox[{
+         RowBox[{"Graphics", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Opacity", "[", 
+             RowBox[{"0.1", ",", "Green"}], "]"}], ",", 
+            RowBox[{"Rectangle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "plotmax"}], ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "1.0"}], "}"}]}], "]"}], ",", 
+            RowBox[{"Opacity", "[", 
+             RowBox[{"0.1", ",", "Blue"}], "]"}], ",", 
+            RowBox[{"Rectangle", "[", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{"0", ",", "0"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"plotmax", ",", "1.0"}], "}"}]}], "]"}]}], "}"}], 
+          "]"}], ",", 
+         RowBox[{"ListPlot", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"distribution", "[", 
+             RowBox[{
+             "plotmax", ",", "iniangle", ",", "thetam", ",", "thetap", ",", 
+              "theta2"}], "]"}], "[", 
+            RowBox[{"[", 
+             RowBox[{
+              RowBox[{"t", "+", "1"}], ",", "All"}], "]"}], "]"}], ",", 
+           RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+           RowBox[{"FillingStyle", "\[Rule]", 
+            RowBox[{"Directive", "[", 
+             RowBox[{"Black", ",", "Thick"}], "]"}]}], ",", 
+           RowBox[{"PlotRange", "\[Rule]", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+                RowBox[{"-", "plotmax"}], ",", "plotmax"}], "}"}], ",", 
+              RowBox[{"{", 
+               RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ",", 
+           RowBox[{"PlotStyle", "\[Rule]", 
+            RowBox[{"PointSize", "[", "Medium", "]"}]}], ",", 
+           RowBox[{"Joined", "\[Rule]", "True"}], ",", 
+           RowBox[{"Mesh", "\[Rule]", "All"}]}], "]"}], ",", 
+         RowBox[{"AspectRatio", "\[Rule]", " ", "0.6"}], ",", 
+         RowBox[{"PlotRange", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"-", "plotmax"}], ",", "plotmax"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"PlotRangePadding", "\[Rule]", "0"}], ",", 
+         RowBox[{"Axes", "\[Rule]", "True"}], ",", 
+         RowBox[{"Frame", "\[Rule]", "True"}], ",", 
+         RowBox[{"FrameTicks", "\[Rule]", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"{", 
+               RowBox[{
+               "0", ",", "0.2", ",", "0.4", ",", "0.6", ",", "0.8", ",", 
+                "1.0"}], "}"}], ",", "None"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+              RowBox[{"Table", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"plotmax", "-", "2"}], ")"}], "/", "4"}], "i"}], 
+                 "-", 
+                 RowBox[{"(", 
+                  RowBox[{"plotmax", "-", "2"}], ")"}]}], ",", 
+                RowBox[{"{", 
+                 RowBox[{"i", ",", "0", ",", "8"}], "}"}]}], "]"}], ",", 
+              "None"}], "}"}]}], "}"}]}], ",", 
+         RowBox[{"FrameLabel", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"\"\<probability\>\"", ",", "None"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<sites\>\"", ",", "\"\<probability distribution\>\""}], 
+             "}"}]}], "}"}]}]}], "]"}], ",", 
+       RowBox[{"phasediagram", "[", 
+        RowBox[{"thetam", ",", "thetap", ",", "theta2"}], "]"}]}], "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"600", ",", "200"}], "}"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "\"\<steps\>\""}], "}"}], ",", "0", ",", 
+     RowBox[{"plotmax", "-", "2"}], ",", "1", ",", 
+     RowBox[{"Appearance", "\[Rule]", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"plotmax", ",", "22", ",", "\"\<maximum number of steps\>\""}], 
+      "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"22", "\[Rule]", "\"\<20\>\""}], ",", 
+       RowBox[{"42", "\[Rule]", "\"\<40\>\""}]}], "}"}], ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "RadioButton"}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"iniangle", ",", "0", ",", "\"\<initial spin\>\""}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0", "\[Rule]", " ", "\"\<up\>\""}], ",", 
+       RowBox[{
+        RowBox[{"\[Pi]", "/", "2"}], "\[Rule]", "\"\<down\>\""}]}], "}"}], 
+     ",", 
+     RowBox[{"ControlType", "\[Rule]", " ", "RadioButton"}]}], "}"}], ",", 
+   "Delimiter", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"thetam", ",", 
+       RowBox[{
+        RowBox[{"-", "3"}], "*", 
+        RowBox[{"\[Pi]", "/", "8"}]}], ",", 
+       "\"\<first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk\>\""}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+     RowBox[{"2", "\[Pi]"}], ",", 
+     RowBox[{"\[Pi]", "/", "8"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"thetap", ",", 
+       RowBox[{"9", "*", 
+        RowBox[{"\[Pi]", "/", "8"}]}], ",", 
+       "\"\<first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk\>\""}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+     RowBox[{"2", "\[Pi]"}], ",", 
+     RowBox[{"\[Pi]", "/", "8"}]}], "}"}], ",", "\[IndentingNewLine]", 
+   "Delimiter", ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"theta2", ",", 
+       RowBox[{"\[Pi]", "/", "2"}], ",", 
+       "\"\<second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)\>\""}], 
+      "}"}], ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], "\[Pi]"}], ",", 
+     RowBox[{"2", "\[Pi]"}], ",", 
+     RowBox[{"\[Pi]", "/", "8"}]}], "}"}], ",", 
+   RowBox[{"AutorunSequencing", "\[Rule]", 
+    RowBox[{"{", "1", "}"}]}], ",", 
+   RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.497053378380372*^9, {3.4970888345586033`*^9, 
+   3.4970888558695393`*^9}, {3.4970989862597523`*^9, 3.497098990107312*^9}, {
+   3.497099233805132*^9, 3.497099251953763*^9}, {3.4970992843405848`*^9, 
+   3.497099310202137*^9}, {3.497099412907897*^9, 3.497099433272119*^9}, {
+   3.4970997419889183`*^9, 3.4970997716726427`*^9}, {3.497099828038488*^9, 
+   3.497099828734034*^9}, {3.497100208103445*^9, 3.4971002099039927`*^9}, {
+   3.4971021720612183`*^9, 3.497102174615399*^9}, {3.497367570019449*^9, 
+   3.497367591926578*^9}, {3.497367664390629*^9, 3.497367672010618*^9}, {
+   3.497369870903377*^9, 3.497369987875469*^9}, {3.497370414236191*^9, 
+   3.49737041875508*^9}, {3.4976143647266645`*^9, 3.4976143888990817`*^9}, {
+   3.4976144265968513`*^9, 3.497614427158907*^9}, {3.497614503140505*^9, 
+   3.497614546242814*^9}, {3.497614746238352*^9, 3.497614748973461*^9}, {
+   3.497615093022541*^9, 3.497615097025942*^9}, {3.497723529395341*^9, 
+   3.497723530223466*^9}, {3.497726424215791*^9, 3.497726440997041*^9}, 
+   3.497726622215791*^9, {3.49831598809975*^9, 3.49831599328725*^9}, {
+   3.498316141427875*^9, 3.498316173865375*^9}, {3.498316238381*^9, 
+   3.498316240927875*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+    22, $CellContext`t$$ = 0, $CellContext`theta2$$ = Rational[1, 2] 
+    Pi, $CellContext`thetam$$ = Rational[-3, 8] Pi, $CellContext`thetap$$ = 
+    Rational[9, 8] Pi, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 0, "steps"}, 0, 
+      Dynamic[$CellContext`plotmax$$ - 2], 1}, {{
+       Hold[$CellContext`plotmax$$], 22, "maximum number of steps"}, {
+      22 -> "20", 42 -> "40"}}, {{
+       Hold[$CellContext`iniangle$$], 0, "initial spin"}, {
+      0 -> "up", Rational[1, 2] Pi -> "down"}}, {{
+       Hold[$CellContext`thetam$$], Rational[-3, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`thetap$$], Rational[9, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`theta2$$], Rational[1, 2] Pi, 
+       "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) Pi, 
+      2 Pi, Rational[1, 8] Pi}}, Typeset`size$$ = {600., {98., 102.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$44232$$ = 0, $CellContext`plotmax$44233$$ = 
+    False, $CellContext`iniangle$44234$$ = 
+    False, $CellContext`thetam$44235$$ = 0, $CellContext`thetap$44236$$ = 
+    0, $CellContext`theta2$44237$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+        22, $CellContext`t$$ = 0, $CellContext`theta2$$ = 
+        Rational[1, 2] Pi, $CellContext`thetam$$ = 
+        Rational[-3, 8] Pi, $CellContext`thetap$$ = Rational[9, 8] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$44232$$, 0], 
+        Hold[$CellContext`plotmax$$, $CellContext`plotmax$44233$$, False], 
+        Hold[$CellContext`iniangle$$, $CellContext`iniangle$44234$$, False], 
+        Hold[$CellContext`thetam$$, $CellContext`thetam$44235$$, 0], 
+        Hold[$CellContext`thetap$$, $CellContext`thetap$44236$$, 0], 
+        Hold[$CellContext`theta2$$, $CellContext`theta2$44237$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsRow[{
+         Show[
+          Graphics[{
+            Opacity[0.1, Green], 
+            Rectangle[{-$CellContext`plotmax$$, 0}, {0, 1.}], 
+            Opacity[0.1, Blue], 
+            Rectangle[{0, 0}, {$CellContext`plotmax$$, 1.}]}], 
+          ListPlot[
+           Part[
+            $CellContext`distribution[$CellContext`plotmax$$, \
+$CellContext`iniangle$$, $CellContext`thetam$$, $CellContext`thetap$$, \
+$CellContext`theta2$$], $CellContext`t$$ + 1, All], Filling -> Axis, 
+           FillingStyle -> Directive[Black, Thick], 
+           PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {
+             0, 1}}, PlotStyle -> PointSize[Medium], Joined -> True, Mesh -> 
+           All], AspectRatio -> 0.6, 
+          PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {0,
+             1}}, PlotRangePadding -> 0, Axes -> True, Frame -> True, 
+          FrameTicks -> {{{0, 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+             
+             Table[(($CellContext`plotmax$$ - 2)/
+                4) $CellContext`i - ($CellContext`plotmax$$ - 
+              2), {$CellContext`i, 0, 8}], None}}, 
+          FrameLabel -> {{"probability", None}, {
+            "sites", "probability distribution"}}], 
+         $CellContext`phasediagram[$CellContext`thetam$$, \
+$CellContext`thetap$$, $CellContext`theta2$$]}, ImageSize -> {600, 200}], 
+      "Specifications" :> {{{$CellContext`t$$, 0, "steps"}, 0, 
+         Dynamic[$CellContext`plotmax$$ - 2], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`plotmax$$, 22, 
+          "maximum number of steps"}, {22 -> "20", 42 -> "40"}, ControlType -> 
+         RadioButton}, {{$CellContext`iniangle$$, 0, "initial spin"}, {
+         0 -> "up", Rational[1, 2] Pi -> "down"}, ControlType -> RadioButton},
+         Delimiter, {{$CellContext`thetam$$, Rational[-3, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] 
+         Pi}, {{$CellContext`thetap$$, Rational[9, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, 
+        Delimiter, {{$CellContext`theta2$$, Rational[1, 2] Pi, 
+          "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) 
+         Pi, 2 Pi, Rational[1, 8] Pi}}, 
+      "Options" :> {AutorunSequencing -> {1}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{647., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`distribution[
+         Pattern[$CellContext`plotmax, 
+          Blank[]], 
+         Pattern[$CellContext`initialangle, 
+          Blank[]], 
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`n = $CellContext`plotmax, $CellContext`iangle = \
+$CellContext`initialangle, $CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`t, $CellContext`i, \
+$CellContext`boundarylength, $CellContext`Initialup, \
+$CellContext`Initialdown, $CellContext`theta1, $CellContext`a, \
+$CellContext`temp, $CellContext`d, $CellContext`rotation1, \
+$CellContext`rotation2}, $CellContext`boundarylength = 
+          0.01; $CellContext`Initialup = N[
+            Cos[$CellContext`iangle]]; $CellContext`Initialdown = N[
+            Sin[$CellContext`iangle]]; $CellContext`theta1 = 
+          Table[($CellContext`thetam + $CellContext`thetap)/
+             2 + (($CellContext`thetap - $CellContext`thetam)/2) 
+             Tanh[($CellContext`i - 2 $CellContext`n + 
+                1/2)/$CellContext`boundarylength], {$CellContext`i, 
+             4 $CellContext`n + 1}]; $CellContext`a = 
+          Table[0, {$CellContext`l, $CellContext`n}, {$CellContext`i, 
+             4 $CellContext`n + 1}, {$CellContext`k, 2}]; $CellContext`temp = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`d = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`rotation1 = N[
+            Table[
+             
+             MatrixExp[(-I) 
+              PauliMatrix[2] (Part[$CellContext`theta1, $CellContext`i]/
+               2)], {$CellContext`i, 4 $CellContext`n + 
+              1}]]; $CellContext`rotation2 = N[
+            MatrixExp[(-I) PauliMatrix[2] ($CellContext`theta2angle/2)]]; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            1] = $CellContext`Initialup; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            2] = $CellContext`Initialdown; 
+         For[$CellContext`t = 1, $CellContext`t <= $CellContext`n - 1, 
+           Increment[$CellContext`t], 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = Dot[
+                Part[$CellContext`rotation1, $CellContext`i, All, All], 
+                Part[$CellContext`a, $CellContext`t, $CellContext`i, All]]; 
+             Null]; For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`temp, $CellContext`i + 1, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`temp, $CellContext`i, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = 
+              Dot[$CellContext`rotation2, 
+                Part[$CellContext`temp, $CellContext`i, All]]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i - 1, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; Null]; 
+         Table[{$CellContext`i - 2 $CellContext`n, Abs[
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 1]]^2 + 
+            Abs[
+               
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 
+                2]]^2}, {$CellContext`t, 1, $CellContext`n - 1, 
+            1}, {$CellContext`i, $CellContext`n, 3 $CellContext`n, 1}]], 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`phasediagram[
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`tx, \
+$CellContext`dots}, $CellContext`pline1 = 
+          Plot[$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline2 = 
+          Plot[2 Pi - $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline3 = 
+          Plot[(-2) Pi - $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline4 = 
+          Plot[-$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline5 = 
+          Plot[2 Pi + $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline6 = 
+          Plot[(-2) Pi + $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`theta2line = 
+          Plot[$CellContext`theta2, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, Dotted, 
+              Thickness[0.005]}]; $CellContext`tx = Graphics[{
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {
+               Pi + Pi/Sqrt[2], Pi/Sqrt[2]}], 45 Degree, {Pi, 0}], 
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{-Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {-Pi + Pi/Sqrt[2], 
+                Pi/Sqrt[2]}], 45 Degree, {-Pi, 0}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, -Pi}, {(-2) Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, -Pi}, {2 Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, Pi}, {2 Pi, 2 Pi}, {0, 2 Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, Pi}, {(-2) Pi, 2 Pi}, {0, 2 Pi}}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, -Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {(-3) (Pi/2), Pi}], 
+             Text[
+              Style[
+              "0", 30, Bold, Black], {(-3) (Pi/2), -Pi}]}]; $CellContext`dots = 
+          Graphics[{Green, 
+             Disk[{$CellContext`thetam, $CellContext`theta2}, Pi/10], Blue, 
+             Disk[{$CellContext`thetap, $CellContext`theta2}, Pi/10], 
+             Text[
+              Style[
+              "Left", Bold, Green], {$CellContext`thetam, $CellContext`theta2 + 
+               Pi/5}], 
+             Text[
+              Style[
+              "Right", Bold, Blue], {$CellContext`thetap, $CellContext`theta2 + 
+               Pi/5}]}]; 
+         Show[$CellContext`tx, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`dots, 
+           PlotRange -> {{(-2) Pi, 2 Pi}, {(-2) Pi, 2 Pi}}, PlotRangePadding -> 
+           0, Axes -> False, Frame -> True, 
+           FrameTicks -> {{{(-2) Pi, -Pi, 0, Pi, 2 Pi}, 
+              None}, {{(-2) Pi, -Pi, 0, Pi, 2 Pi}, None}}, AspectRatio -> 1, 
+           FrameLabel -> {{"second rotation", None}, {
+             "first rotation", "phase diagram (winding number)"}}]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->326025612]
+}, {2}]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ManipulateCaptionSection"],
+
+Cell[TextData[{
+ "This Demonstration simulates a quantum dynamical protocol for a single \
+spin-1/2 particle in a one-dimensional lattice, called a (split-step) \
+discrete-time quantum walk. The dynamics generated through the quantum walk \
+realize intriguing dynamical phases called topological phases. These phases \
+are characterized by an integer (winding number), which can be controlled by \
+changing the parameters of the protocols corresponding to the first and \
+second rotation angles, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "1"], TraditionalForm]], "InlineMath"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "2"], TraditionalForm]], "InlineMath"],
+ " (see Details for the description of the protocol). The topological phase \
+diagram of the quantum walk is drawn on the right."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497088904597611*^9, 3.49708935253274*^9}, 
+   3.497089669907298*^9, {3.497367971381081*^9, 3.4973679896345463`*^9}, {
+   3.497368028953392*^9, 3.49736804460435*^9}, {3.497368157024663*^9, 
+   3.497368304913999*^9}, {3.497614764339076*^9, 3.497614778129627*^9}, {
+   3.497614990529293*^9, 3.4976149906883087`*^9}, {3.4977261431376667`*^9, 
+   3.497726143434541*^9}, {3.497726239809541*^9, 3.497726314903291*^9}, {
+   3.49773076482415*^9, 3.497730765536639*^9}, {3.497730813636794*^9, 
+   3.497730830505629*^9}, {3.4977319770855417`*^9, 3.497731977688122*^9}, {
+   3.498236505263074*^9, 3.498236506562933*^9}, {3.498236643277804*^9, 
+   3.498236648997279*^9}, {3.49864979894851*^9, 3.49864982198689*^9}, 
+   3.4988540622807503`*^9},
+ CellID->1865459029],
+
+Cell[TextData[{
+ "A unique signature of these topological phases is the existence of \
+topologically protected bound states at the boundary of regions belonging to \
+two distinct topological phases. One can create such a boundary by \
+implementing the (spatially inhomogeneous) quantum walk with different first \
+rotation angles ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "1"], TraditionalForm]], "InlineMath"],
+ " on the left and right of the origin (here we choose the same rotation for \
+the second rotation ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "2"], TraditionalForm]], "InlineMath"],
+ "). Now this Demonstration initializes the particle at the origin (boundary) \
+with either spin up or spin down, and simulates the inhomogeneous quantum \
+walk. The resulting probability distribution of the particle is plotted on \
+the left. When the right and left regions correspond to the quantum walk \
+protocols of distinct topological phases, one can confirm the existence of a \
+bound state by observing that there is a finite probability of finding a \
+particle near the phase boundary after many steps of the quantum walk."
+}], "ManipulateCaption",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497088904597611*^9, 3.49708935253274*^9}, 
+   3.497089669907298*^9, {3.497367971381081*^9, 3.4973679896345463`*^9}, {
+   3.497368028953392*^9, 3.49736804460435*^9}, {3.497368157024663*^9, 
+   3.497368616455152*^9}, {3.497368667721919*^9, 3.497368860892159*^9}, {
+   3.4973689367473183`*^9, 3.497368960868043*^9}, 3.497614766734172*^9, {
+   3.4976149747947197`*^9, 3.497614995761816*^9}, {3.497726147184541*^9, 
+   3.4977261475126667`*^9}, {3.4977263463564167`*^9, 
+   3.4977263871064167`*^9}, {3.498236811963667*^9, 3.498236813138852*^9}, 
+   3.498236945314208*^9, 3.4986498450627823`*^9, 3.49864987683392*^9, {
+   3.498649914155525*^9, 3.498649965357602*^9}, 3.4988540662495003`*^9},
+ CellID->1656137850]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ThumbnailSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+    22, $CellContext`t$$ = 20, $CellContext`theta2$$ = Rational[1, 2] 
+    Pi, $CellContext`thetam$$ = Rational[-1, 4] Pi, $CellContext`thetap$$ = 
+    Rational[9, 8] Pi, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 20, "steps"}, 0, 
+      Dynamic[$CellContext`plotmax$$ - 2], 1}, {{
+       Hold[$CellContext`plotmax$$], 22, "maximum number of steps"}, {
+      22 -> "20", 42 -> "40"}}, {{
+       Hold[$CellContext`iniangle$$], 0, "initial spin"}, {
+      0 -> "up", Rational[1, 2] Pi -> "down"}}, {{
+       Hold[$CellContext`thetam$$], Rational[-1, 4] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`thetap$$], Rational[9, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`theta2$$], Rational[1, 2] Pi, 
+       "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) Pi, 
+      2 Pi, Rational[1, 8] Pi}}, Typeset`size$$ = {600., {98., 102.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$44316$$ = 0, $CellContext`plotmax$44317$$ = 
+    False, $CellContext`iniangle$44318$$ = 
+    False, $CellContext`thetam$44319$$ = 0, $CellContext`thetap$44320$$ = 
+    0, $CellContext`theta2$44321$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+        22, $CellContext`t$$ = 20, $CellContext`theta2$$ = 
+        Rational[1, 2] Pi, $CellContext`thetam$$ = 
+        Rational[-1, 4] Pi, $CellContext`thetap$$ = Rational[9, 8] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$44316$$, 0], 
+        Hold[$CellContext`plotmax$$, $CellContext`plotmax$44317$$, False], 
+        Hold[$CellContext`iniangle$$, $CellContext`iniangle$44318$$, False], 
+        Hold[$CellContext`thetam$$, $CellContext`thetam$44319$$, 0], 
+        Hold[$CellContext`thetap$$, $CellContext`thetap$44320$$, 0], 
+        Hold[$CellContext`theta2$$, $CellContext`theta2$44321$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsRow[{
+         Show[
+          Graphics[{
+            Opacity[0.1, Green], 
+            Rectangle[{-$CellContext`plotmax$$, 0}, {0, 1.}], 
+            Opacity[0.1, Blue], 
+            Rectangle[{0, 0}, {$CellContext`plotmax$$, 1.}]}], 
+          ListPlot[
+           Part[
+            $CellContext`distribution[$CellContext`plotmax$$, \
+$CellContext`iniangle$$, $CellContext`thetam$$, $CellContext`thetap$$, \
+$CellContext`theta2$$], $CellContext`t$$ + 1, All], Filling -> Axis, 
+           FillingStyle -> Directive[Black, Thick], 
+           PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {
+             0, 1}}, PlotStyle -> PointSize[Medium], Joined -> True, Mesh -> 
+           All], AspectRatio -> 0.6, 
+          PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {0,
+             1}}, PlotRangePadding -> 0, Axes -> True, Frame -> True, 
+          FrameTicks -> {{{0, 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+             
+             Table[(($CellContext`plotmax$$ - 2)/
+                4) $CellContext`i - ($CellContext`plotmax$$ - 
+              2), {$CellContext`i, 0, 8}], None}}, 
+          FrameLabel -> {{"probability", None}, {
+            "sites", "probability distribution"}}], 
+         $CellContext`phasediagram[$CellContext`thetam$$, \
+$CellContext`thetap$$, $CellContext`theta2$$]}, ImageSize -> {600, 200}], 
+      "Specifications" :> {{{$CellContext`t$$, 20, "steps"}, 0, 
+         Dynamic[$CellContext`plotmax$$ - 2], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`plotmax$$, 22, 
+          "maximum number of steps"}, {22 -> "20", 42 -> "40"}, ControlType -> 
+         RadioButton}, {{$CellContext`iniangle$$, 0, "initial spin"}, {
+         0 -> "up", Rational[1, 2] Pi -> "down"}, ControlType -> RadioButton},
+         Delimiter, {{$CellContext`thetam$$, Rational[-1, 4] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] 
+         Pi}, {{$CellContext`thetap$$, Rational[9, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, 
+        Delimiter, {{$CellContext`theta2$$, Rational[1, 2] Pi, 
+          "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) 
+         Pi, 2 Pi, Rational[1, 8] Pi}}, 
+      "Options" :> {AutorunSequencing -> {1}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{647., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`distribution[
+         Pattern[$CellContext`plotmax, 
+          Blank[]], 
+         Pattern[$CellContext`initialangle, 
+          Blank[]], 
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`n = $CellContext`plotmax, $CellContext`iangle = \
+$CellContext`initialangle, $CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`t, $CellContext`i, \
+$CellContext`boundarylength, $CellContext`Initialup, \
+$CellContext`Initialdown, $CellContext`theta1, $CellContext`a, \
+$CellContext`temp, $CellContext`d, $CellContext`rotation1, \
+$CellContext`rotation2}, $CellContext`boundarylength = 
+          0.01; $CellContext`Initialup = N[
+            Cos[$CellContext`iangle]]; $CellContext`Initialdown = N[
+            Sin[$CellContext`iangle]]; $CellContext`theta1 = 
+          Table[($CellContext`thetam + $CellContext`thetap)/
+             2 + (($CellContext`thetap - $CellContext`thetam)/2) 
+             Tanh[($CellContext`i - 2 $CellContext`n + 
+                1/2)/$CellContext`boundarylength], {$CellContext`i, 
+             4 $CellContext`n + 1}]; $CellContext`a = 
+          Table[0, {$CellContext`l, $CellContext`n}, {$CellContext`i, 
+             4 $CellContext`n + 1}, {$CellContext`k, 2}]; $CellContext`temp = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`d = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`rotation1 = N[
+            Table[
+             
+             MatrixExp[(-I) 
+              PauliMatrix[2] (Part[$CellContext`theta1, $CellContext`i]/
+               2)], {$CellContext`i, 4 $CellContext`n + 
+              1}]]; $CellContext`rotation2 = N[
+            MatrixExp[(-I) PauliMatrix[2] ($CellContext`theta2angle/2)]]; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            1] = $CellContext`Initialup; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            2] = $CellContext`Initialdown; 
+         For[$CellContext`t = 1, $CellContext`t <= $CellContext`n - 1, 
+           Increment[$CellContext`t], 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = Dot[
+                Part[$CellContext`rotation1, $CellContext`i, All, All], 
+                Part[$CellContext`a, $CellContext`t, $CellContext`i, All]]; 
+             Null]; For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`temp, $CellContext`i + 1, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`temp, $CellContext`i, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = 
+              Dot[$CellContext`rotation2, 
+                Part[$CellContext`temp, $CellContext`i, All]]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i - 1, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; Null]; 
+         Table[{$CellContext`i - 2 $CellContext`n, Abs[
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 1]]^2 + 
+            Abs[
+               
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 
+                2]]^2}, {$CellContext`t, 1, $CellContext`n - 1, 
+            1}, {$CellContext`i, $CellContext`n, 3 $CellContext`n, 1}]], 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`phasediagram[
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`tx, \
+$CellContext`dots}, $CellContext`pline1 = 
+          Plot[$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline2 = 
+          Plot[2 Pi - $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline3 = 
+          Plot[(-2) Pi - $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline4 = 
+          Plot[-$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline5 = 
+          Plot[2 Pi + $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline6 = 
+          Plot[(-2) Pi + $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`theta2line = 
+          Plot[$CellContext`theta2, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, Dotted, 
+              Thickness[0.005]}]; $CellContext`tx = Graphics[{
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {
+               Pi + Pi/Sqrt[2], Pi/Sqrt[2]}], 45 Degree, {Pi, 0}], 
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{-Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {-Pi + Pi/Sqrt[2], 
+                Pi/Sqrt[2]}], 45 Degree, {-Pi, 0}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, -Pi}, {(-2) Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, -Pi}, {2 Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, Pi}, {2 Pi, 2 Pi}, {0, 2 Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, Pi}, {(-2) Pi, 2 Pi}, {0, 2 Pi}}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, -Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {(-3) (Pi/2), Pi}], 
+             Text[
+              Style[
+              "0", 30, Bold, Black], {(-3) (Pi/2), -Pi}]}]; $CellContext`dots = 
+          Graphics[{Green, 
+             Disk[{$CellContext`thetam, $CellContext`theta2}, Pi/10], Blue, 
+             Disk[{$CellContext`thetap, $CellContext`theta2}, Pi/10], 
+             Text[
+              Style[
+              "Left", Bold, Green], {$CellContext`thetam, $CellContext`theta2 + 
+               Pi/5}], 
+             Text[
+              Style[
+              "Right", Bold, Blue], {$CellContext`thetap, $CellContext`theta2 + 
+               Pi/5}]}]; 
+         Show[$CellContext`tx, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`dots, 
+           PlotRange -> {{(-2) Pi, 2 Pi}, {(-2) Pi, 2 Pi}}, PlotRangePadding -> 
+           0, Axes -> False, Frame -> True, 
+           FrameTicks -> {{{(-2) Pi, -Pi, 0, Pi, 2 Pi}, 
+              None}, {{(-2) Pi, -Pi, 0, Pi, 2 Pi}, None}}, AspectRatio -> 1, 
+           FrameLabel -> {{"second rotation", None}, {
+             "first rotation", "phase diagram (winding number)"}}]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->30420690]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SnapshotsSection"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+    22, $CellContext`t$$ = 20, $CellContext`theta2$$ = Rational[1, 2] 
+    Pi, $CellContext`thetam$$ = Rational[-1, 8] Pi, $CellContext`thetap$$ = 
+    Rational[7, 8] Pi, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 20, "steps"}, 0, 
+      Dynamic[$CellContext`plotmax$$ - 2], 1}, {{
+       Hold[$CellContext`plotmax$$], 22, "maximum number of steps"}, {
+      22 -> "20", 42 -> "40"}}, {{
+       Hold[$CellContext`iniangle$$], 0, "initial spin"}, {
+      0 -> "up", Rational[1, 2] Pi -> "down"}}, {{
+       Hold[$CellContext`thetam$$], Rational[-1, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`thetap$$], Rational[7, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`theta2$$], Rational[1, 2] Pi, 
+       "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) Pi, 
+      2 Pi, Rational[1, 8] Pi}}, Typeset`size$$ = {600., {98., 102.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$44400$$ = 0, $CellContext`plotmax$44401$$ = 
+    False, $CellContext`iniangle$44402$$ = 
+    False, $CellContext`thetam$44403$$ = 0, $CellContext`thetap$44404$$ = 
+    0, $CellContext`theta2$44405$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+        22, $CellContext`t$$ = 20, $CellContext`theta2$$ = 
+        Rational[1, 2] Pi, $CellContext`thetam$$ = 
+        Rational[-1, 8] Pi, $CellContext`thetap$$ = Rational[7, 8] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$44400$$, 0], 
+        Hold[$CellContext`plotmax$$, $CellContext`plotmax$44401$$, False], 
+        Hold[$CellContext`iniangle$$, $CellContext`iniangle$44402$$, False], 
+        Hold[$CellContext`thetam$$, $CellContext`thetam$44403$$, 0], 
+        Hold[$CellContext`thetap$$, $CellContext`thetap$44404$$, 0], 
+        Hold[$CellContext`theta2$$, $CellContext`theta2$44405$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsRow[{
+         Show[
+          Graphics[{
+            Opacity[0.1, Green], 
+            Rectangle[{-$CellContext`plotmax$$, 0}, {0, 1.}], 
+            Opacity[0.1, Blue], 
+            Rectangle[{0, 0}, {$CellContext`plotmax$$, 1.}]}], 
+          ListPlot[
+           Part[
+            $CellContext`distribution[$CellContext`plotmax$$, \
+$CellContext`iniangle$$, $CellContext`thetam$$, $CellContext`thetap$$, \
+$CellContext`theta2$$], $CellContext`t$$ + 1, All], Filling -> Axis, 
+           FillingStyle -> Directive[Black, Thick], 
+           PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {
+             0, 1}}, PlotStyle -> PointSize[Medium], Joined -> True, Mesh -> 
+           All], AspectRatio -> 0.6, 
+          PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {0,
+             1}}, PlotRangePadding -> 0, Axes -> True, Frame -> True, 
+          FrameTicks -> {{{0, 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+             
+             Table[(($CellContext`plotmax$$ - 2)/
+                4) $CellContext`i - ($CellContext`plotmax$$ - 
+              2), {$CellContext`i, 0, 8}], None}}, 
+          FrameLabel -> {{"probability", None}, {
+            "sites", "probability distribution"}}], 
+         $CellContext`phasediagram[$CellContext`thetam$$, \
+$CellContext`thetap$$, $CellContext`theta2$$]}, ImageSize -> {600, 200}], 
+      "Specifications" :> {{{$CellContext`t$$, 20, "steps"}, 0, 
+         Dynamic[$CellContext`plotmax$$ - 2], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`plotmax$$, 22, 
+          "maximum number of steps"}, {22 -> "20", 42 -> "40"}, ControlType -> 
+         RadioButton}, {{$CellContext`iniangle$$, 0, "initial spin"}, {
+         0 -> "up", Rational[1, 2] Pi -> "down"}, ControlType -> RadioButton},
+         Delimiter, {{$CellContext`thetam$$, Rational[-1, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] 
+         Pi}, {{$CellContext`thetap$$, Rational[7, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, 
+        Delimiter, {{$CellContext`theta2$$, Rational[1, 2] Pi, 
+          "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) 
+         Pi, 2 Pi, Rational[1, 8] Pi}}, 
+      "Options" :> {AutorunSequencing -> {1}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{647., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`distribution[
+         Pattern[$CellContext`plotmax, 
+          Blank[]], 
+         Pattern[$CellContext`initialangle, 
+          Blank[]], 
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`n = $CellContext`plotmax, $CellContext`iangle = \
+$CellContext`initialangle, $CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`t, $CellContext`i, \
+$CellContext`boundarylength, $CellContext`Initialup, \
+$CellContext`Initialdown, $CellContext`theta1, $CellContext`a, \
+$CellContext`temp, $CellContext`d, $CellContext`rotation1, \
+$CellContext`rotation2}, $CellContext`boundarylength = 
+          0.01; $CellContext`Initialup = N[
+            Cos[$CellContext`iangle]]; $CellContext`Initialdown = N[
+            Sin[$CellContext`iangle]]; $CellContext`theta1 = 
+          Table[($CellContext`thetam + $CellContext`thetap)/
+             2 + (($CellContext`thetap - $CellContext`thetam)/2) 
+             Tanh[($CellContext`i - 2 $CellContext`n + 
+                1/2)/$CellContext`boundarylength], {$CellContext`i, 
+             4 $CellContext`n + 1}]; $CellContext`a = 
+          Table[0, {$CellContext`l, $CellContext`n}, {$CellContext`i, 
+             4 $CellContext`n + 1}, {$CellContext`k, 2}]; $CellContext`temp = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`d = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`rotation1 = N[
+            Table[
+             
+             MatrixExp[(-I) 
+              PauliMatrix[2] (Part[$CellContext`theta1, $CellContext`i]/
+               2)], {$CellContext`i, 4 $CellContext`n + 
+              1}]]; $CellContext`rotation2 = N[
+            MatrixExp[(-I) PauliMatrix[2] ($CellContext`theta2angle/2)]]; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            1] = $CellContext`Initialup; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            2] = $CellContext`Initialdown; 
+         For[$CellContext`t = 1, $CellContext`t <= $CellContext`n - 1, 
+           Increment[$CellContext`t], 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = Dot[
+                Part[$CellContext`rotation1, $CellContext`i, All, All], 
+                Part[$CellContext`a, $CellContext`t, $CellContext`i, All]]; 
+             Null]; For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`temp, $CellContext`i + 1, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`temp, $CellContext`i, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = 
+              Dot[$CellContext`rotation2, 
+                Part[$CellContext`temp, $CellContext`i, All]]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i - 1, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; Null]; 
+         Table[{$CellContext`i - 2 $CellContext`n, Abs[
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 1]]^2 + 
+            Abs[
+               
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 
+                2]]^2}, {$CellContext`t, 1, $CellContext`n - 1, 
+            1}, {$CellContext`i, $CellContext`n, 3 $CellContext`n, 1}]], 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`phasediagram[
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`tx, \
+$CellContext`dots}, $CellContext`pline1 = 
+          Plot[$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline2 = 
+          Plot[2 Pi - $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline3 = 
+          Plot[(-2) Pi - $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline4 = 
+          Plot[-$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline5 = 
+          Plot[2 Pi + $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline6 = 
+          Plot[(-2) Pi + $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`theta2line = 
+          Plot[$CellContext`theta2, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, Dotted, 
+              Thickness[0.005]}]; $CellContext`tx = Graphics[{
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {
+               Pi + Pi/Sqrt[2], Pi/Sqrt[2]}], 45 Degree, {Pi, 0}], 
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{-Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {-Pi + Pi/Sqrt[2], 
+                Pi/Sqrt[2]}], 45 Degree, {-Pi, 0}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, -Pi}, {(-2) Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, -Pi}, {2 Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, Pi}, {2 Pi, 2 Pi}, {0, 2 Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, Pi}, {(-2) Pi, 2 Pi}, {0, 2 Pi}}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, -Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {(-3) (Pi/2), Pi}], 
+             Text[
+              Style[
+              "0", 30, Bold, Black], {(-3) (Pi/2), -Pi}]}]; $CellContext`dots = 
+          Graphics[{Green, 
+             Disk[{$CellContext`thetam, $CellContext`theta2}, Pi/10], Blue, 
+             Disk[{$CellContext`thetap, $CellContext`theta2}, Pi/10], 
+             Text[
+              Style[
+              "Left", Bold, Green], {$CellContext`thetam, $CellContext`theta2 + 
+               Pi/5}], 
+             Text[
+              Style[
+              "Right", Bold, Blue], {$CellContext`thetap, $CellContext`theta2 + 
+               Pi/5}]}]; 
+         Show[$CellContext`tx, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`dots, 
+           PlotRange -> {{(-2) Pi, 2 Pi}, {(-2) Pi, 2 Pi}}, PlotRangePadding -> 
+           0, Axes -> False, Frame -> True, 
+           FrameTicks -> {{{(-2) Pi, -Pi, 0, Pi, 2 Pi}, 
+              None}, {{(-2) Pi, -Pi, 0, Pi, 2 Pi}, None}}, AspectRatio -> 1, 
+           FrameLabel -> {{"second rotation", None}, {
+             "first rotation", "phase diagram (winding number)"}}]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->2120245],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+    22, $CellContext`t$$ = 20, $CellContext`theta2$$ = Rational[1, 2] 
+    Pi, $CellContext`thetam$$ = Rational[-3, 8] Pi, $CellContext`thetap$$ = 
+    Rational[3, 8] Pi, Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 20, "steps"}, 0, 
+      Dynamic[$CellContext`plotmax$$ - 2], 1}, {{
+       Hold[$CellContext`plotmax$$], 22, "maximum number of steps"}, {
+      22 -> "20", 42 -> "40"}}, {{
+       Hold[$CellContext`iniangle$$], 0, "initial spin"}, {
+      0 -> "up", Rational[1, 2] Pi -> "down"}}, {{
+       Hold[$CellContext`thetam$$], Rational[-3, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`thetap$$], Rational[3, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`theta2$$], Rational[1, 2] Pi, 
+       "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) Pi, 
+      2 Pi, Rational[1, 8] Pi}}, Typeset`size$$ = {600., {98., 102.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$44484$$ = 0, $CellContext`plotmax$44485$$ = 
+    False, $CellContext`iniangle$44486$$ = 
+    False, $CellContext`thetam$44487$$ = 0, $CellContext`thetap$44488$$ = 
+    0, $CellContext`theta2$44489$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`iniangle$$ = 0, $CellContext`plotmax$$ = 
+        22, $CellContext`t$$ = 20, $CellContext`theta2$$ = 
+        Rational[1, 2] Pi, $CellContext`thetam$$ = 
+        Rational[-3, 8] Pi, $CellContext`thetap$$ = Rational[3, 8] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$44484$$, 0], 
+        Hold[$CellContext`plotmax$$, $CellContext`plotmax$44485$$, False], 
+        Hold[$CellContext`iniangle$$, $CellContext`iniangle$44486$$, False], 
+        Hold[$CellContext`thetam$$, $CellContext`thetam$44487$$, 0], 
+        Hold[$CellContext`thetap$$, $CellContext`thetap$44488$$, 0], 
+        Hold[$CellContext`theta2$$, $CellContext`theta2$44489$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsRow[{
+         Show[
+          Graphics[{
+            Opacity[0.1, Green], 
+            Rectangle[{-$CellContext`plotmax$$, 0}, {0, 1.}], 
+            Opacity[0.1, Blue], 
+            Rectangle[{0, 0}, {$CellContext`plotmax$$, 1.}]}], 
+          ListPlot[
+           Part[
+            $CellContext`distribution[$CellContext`plotmax$$, \
+$CellContext`iniangle$$, $CellContext`thetam$$, $CellContext`thetap$$, \
+$CellContext`theta2$$], $CellContext`t$$ + 1, All], Filling -> Axis, 
+           FillingStyle -> Directive[Black, Thick], 
+           PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {
+             0, 1}}, PlotStyle -> PointSize[Medium], Joined -> True, Mesh -> 
+           All], AspectRatio -> 0.6, 
+          PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {0,
+             1}}, PlotRangePadding -> 0, Axes -> True, Frame -> True, 
+          FrameTicks -> {{{0, 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+             
+             Table[(($CellContext`plotmax$$ - 2)/
+                4) $CellContext`i - ($CellContext`plotmax$$ - 
+              2), {$CellContext`i, 0, 8}], None}}, 
+          FrameLabel -> {{"probability", None}, {
+            "sites", "probability distribution"}}], 
+         $CellContext`phasediagram[$CellContext`thetam$$, \
+$CellContext`thetap$$, $CellContext`theta2$$]}, ImageSize -> {600, 200}], 
+      "Specifications" :> {{{$CellContext`t$$, 20, "steps"}, 0, 
+         Dynamic[$CellContext`plotmax$$ - 2], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`plotmax$$, 22, 
+          "maximum number of steps"}, {22 -> "20", 42 -> "40"}, ControlType -> 
+         RadioButton}, {{$CellContext`iniangle$$, 0, "initial spin"}, {
+         0 -> "up", Rational[1, 2] Pi -> "down"}, ControlType -> RadioButton},
+         Delimiter, {{$CellContext`thetam$$, Rational[-3, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] 
+         Pi}, {{$CellContext`thetap$$, Rational[3, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, 
+        Delimiter, {{$CellContext`theta2$$, Rational[1, 2] Pi, 
+          "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) 
+         Pi, 2 Pi, Rational[1, 8] Pi}}, 
+      "Options" :> {AutorunSequencing -> {1}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{647., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`distribution[
+         Pattern[$CellContext`plotmax, 
+          Blank[]], 
+         Pattern[$CellContext`initialangle, 
+          Blank[]], 
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`n = $CellContext`plotmax, $CellContext`iangle = \
+$CellContext`initialangle, $CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`t, $CellContext`i, \
+$CellContext`boundarylength, $CellContext`Initialup, \
+$CellContext`Initialdown, $CellContext`theta1, $CellContext`a, \
+$CellContext`temp, $CellContext`d, $CellContext`rotation1, \
+$CellContext`rotation2}, $CellContext`boundarylength = 
+          0.01; $CellContext`Initialup = N[
+            Cos[$CellContext`iangle]]; $CellContext`Initialdown = N[
+            Sin[$CellContext`iangle]]; $CellContext`theta1 = 
+          Table[($CellContext`thetam + $CellContext`thetap)/
+             2 + (($CellContext`thetap - $CellContext`thetam)/2) 
+             Tanh[($CellContext`i - 2 $CellContext`n + 
+                1/2)/$CellContext`boundarylength], {$CellContext`i, 
+             4 $CellContext`n + 1}]; $CellContext`a = 
+          Table[0, {$CellContext`l, $CellContext`n}, {$CellContext`i, 
+             4 $CellContext`n + 1}, {$CellContext`k, 2}]; $CellContext`temp = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`d = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`rotation1 = N[
+            Table[
+             
+             MatrixExp[(-I) 
+              PauliMatrix[2] (Part[$CellContext`theta1, $CellContext`i]/
+               2)], {$CellContext`i, 4 $CellContext`n + 
+              1}]]; $CellContext`rotation2 = N[
+            MatrixExp[(-I) PauliMatrix[2] ($CellContext`theta2angle/2)]]; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            1] = $CellContext`Initialup; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            2] = $CellContext`Initialdown; 
+         For[$CellContext`t = 1, $CellContext`t <= $CellContext`n - 1, 
+           Increment[$CellContext`t], 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = Dot[
+                Part[$CellContext`rotation1, $CellContext`i, All, All], 
+                Part[$CellContext`a, $CellContext`t, $CellContext`i, All]]; 
+             Null]; For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`temp, $CellContext`i + 1, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`temp, $CellContext`i, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = 
+              Dot[$CellContext`rotation2, 
+                Part[$CellContext`temp, $CellContext`i, All]]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i - 1, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; Null]; 
+         Table[{$CellContext`i - 2 $CellContext`n, Abs[
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 1]]^2 + 
+            Abs[
+               
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 
+                2]]^2}, {$CellContext`t, 1, $CellContext`n - 1, 
+            1}, {$CellContext`i, $CellContext`n, 3 $CellContext`n, 1}]], 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`phasediagram[
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`tx, \
+$CellContext`dots}, $CellContext`pline1 = 
+          Plot[$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline2 = 
+          Plot[2 Pi - $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline3 = 
+          Plot[(-2) Pi - $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline4 = 
+          Plot[-$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline5 = 
+          Plot[2 Pi + $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline6 = 
+          Plot[(-2) Pi + $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`theta2line = 
+          Plot[$CellContext`theta2, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, Dotted, 
+              Thickness[0.005]}]; $CellContext`tx = Graphics[{
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {
+               Pi + Pi/Sqrt[2], Pi/Sqrt[2]}], 45 Degree, {Pi, 0}], 
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{-Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {-Pi + Pi/Sqrt[2], 
+                Pi/Sqrt[2]}], 45 Degree, {-Pi, 0}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, -Pi}, {(-2) Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, -Pi}, {2 Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, Pi}, {2 Pi, 2 Pi}, {0, 2 Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, Pi}, {(-2) Pi, 2 Pi}, {0, 2 Pi}}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, -Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {(-3) (Pi/2), Pi}], 
+             Text[
+              Style[
+              "0", 30, Bold, Black], {(-3) (Pi/2), -Pi}]}]; $CellContext`dots = 
+          Graphics[{Green, 
+             Disk[{$CellContext`thetam, $CellContext`theta2}, Pi/10], Blue, 
+             Disk[{$CellContext`thetap, $CellContext`theta2}, Pi/10], 
+             Text[
+              Style[
+              "Left", Bold, Green], {$CellContext`thetam, $CellContext`theta2 + 
+               Pi/5}], 
+             Text[
+              Style[
+              "Right", Bold, Blue], {$CellContext`thetap, $CellContext`theta2 + 
+               Pi/5}]}]; 
+         Show[$CellContext`tx, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`dots, 
+           PlotRange -> {{(-2) Pi, 2 Pi}, {(-2) Pi, 2 Pi}}, PlotRangePadding -> 
+           0, Axes -> False, Frame -> True, 
+           FrameTicks -> {{{(-2) Pi, -Pi, 0, Pi, 2 Pi}, 
+              None}, {{(-2) Pi, -Pi, 0, Pi, 2 Pi}, None}}, AspectRatio -> 1, 
+           FrameLabel -> {{"second rotation", None}, {
+             "first rotation", "phase diagram (winding number)"}}]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->161214278],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`iniangle$$ = Rational[1, 2] 
+    Pi, $CellContext`plotmax$$ = 42, $CellContext`t$$ = 
+    17, $CellContext`theta2$$ = Rational[5, 4] Pi, $CellContext`thetam$$ = 
+    Rational[5, 4] Pi, $CellContext`thetap$$ = Rational[9, 8] Pi, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`t$$], 17, "steps"}, 0, 
+      Dynamic[$CellContext`plotmax$$ - 2], 1}, {{
+       Hold[$CellContext`plotmax$$], 42, "maximum number of steps"}, {
+      22 -> "20", 42 -> "40"}}, {{
+       Hold[$CellContext`iniangle$$], Rational[1, 2] Pi, "initial spin"}, {
+      0 -> "up", Rational[1, 2] Pi -> "down"}}, {{
+       Hold[$CellContext`thetam$$], Rational[5, 4] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`thetap$$], Rational[9, 8] Pi, 
+       "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, {{
+       Hold[$CellContext`theta2$$], Rational[5, 4] Pi, 
+       "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) Pi, 
+      2 Pi, Rational[1, 8] Pi}}, Typeset`size$$ = {600., {98., 102.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    False, $CellContext`t$44568$$ = 0, $CellContext`plotmax$44569$$ = 
+    False, $CellContext`iniangle$44570$$ = 
+    False, $CellContext`thetam$44571$$ = 0, $CellContext`thetap$44572$$ = 
+    0, $CellContext`theta2$44573$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`iniangle$$ = 
+        Rational[1, 2] Pi, $CellContext`plotmax$$ = 42, $CellContext`t$$ = 
+        17, $CellContext`theta2$$ = Rational[5, 4] Pi, $CellContext`thetam$$ = 
+        Rational[5, 4] Pi, $CellContext`thetap$$ = Rational[9, 8] Pi}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`t$$, $CellContext`t$44568$$, 0], 
+        Hold[$CellContext`plotmax$$, $CellContext`plotmax$44569$$, False], 
+        Hold[$CellContext`iniangle$$, $CellContext`iniangle$44570$$, False], 
+        Hold[$CellContext`thetam$$, $CellContext`thetam$44571$$, 0], 
+        Hold[$CellContext`thetap$$, $CellContext`thetap$44572$$, 0], 
+        Hold[$CellContext`theta2$$, $CellContext`theta2$44573$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> GraphicsRow[{
+         Show[
+          Graphics[{
+            Opacity[0.1, Green], 
+            Rectangle[{-$CellContext`plotmax$$, 0}, {0, 1.}], 
+            Opacity[0.1, Blue], 
+            Rectangle[{0, 0}, {$CellContext`plotmax$$, 1.}]}], 
+          ListPlot[
+           Part[
+            $CellContext`distribution[$CellContext`plotmax$$, \
+$CellContext`iniangle$$, $CellContext`thetam$$, $CellContext`thetap$$, \
+$CellContext`theta2$$], $CellContext`t$$ + 1, All], Filling -> Axis, 
+           FillingStyle -> Directive[Black, Thick], 
+           PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {
+             0, 1}}, PlotStyle -> PointSize[Medium], Joined -> True, Mesh -> 
+           All], AspectRatio -> 0.6, 
+          PlotRange -> {{-$CellContext`plotmax$$, $CellContext`plotmax$$}, {0,
+             1}}, PlotRangePadding -> 0, Axes -> True, Frame -> True, 
+          FrameTicks -> {{{0, 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+             
+             Table[(($CellContext`plotmax$$ - 2)/
+                4) $CellContext`i - ($CellContext`plotmax$$ - 
+              2), {$CellContext`i, 0, 8}], None}}, 
+          FrameLabel -> {{"probability", None}, {
+            "sites", "probability distribution"}}], 
+         $CellContext`phasediagram[$CellContext`thetam$$, \
+$CellContext`thetap$$, $CellContext`theta2$$]}, ImageSize -> {600, 200}], 
+      "Specifications" :> {{{$CellContext`t$$, 17, "steps"}, 0, 
+         Dynamic[$CellContext`plotmax$$ - 2], 1, Appearance -> 
+         "Labeled"}, {{$CellContext`plotmax$$, 42, 
+          "maximum number of steps"}, {22 -> "20", 42 -> "40"}, ControlType -> 
+         RadioButton}, {{$CellContext`iniangle$$, Rational[1, 2] Pi, 
+          "initial spin"}, {0 -> "up", Rational[1, 2] Pi -> "down"}, 
+         ControlType -> RadioButton}, 
+        Delimiter, {{$CellContext`thetam$$, Rational[5, 4] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): left \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] 
+         Pi}, {{$CellContext`thetap$$, Rational[9, 8] Pi, 
+          "first rotation \!\(\*SubscriptBox[\(\[Theta]\), \(1\)]\): right \
+bulk"}, (-2) Pi, 2 Pi, Rational[1, 8] Pi}, 
+        Delimiter, {{$CellContext`theta2$$, Rational[5, 4] Pi, 
+          "second rotation \!\(\*SubscriptBox[\(\[Theta]\), \(2\)]\)"}, (-2) 
+         Pi, 2 Pi, Rational[1, 8] Pi}}, 
+      "Options" :> {AutorunSequencing -> {1}}, 
+      "DefaultOptions" :> {ControllerLinking -> True}],
+     ImageSizeCache->{647., {219., 224.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`distribution[
+         Pattern[$CellContext`plotmax, 
+          Blank[]], 
+         Pattern[$CellContext`initialangle, 
+          Blank[]], 
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`n = $CellContext`plotmax, $CellContext`iangle = \
+$CellContext`initialangle, $CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`t, $CellContext`i, \
+$CellContext`boundarylength, $CellContext`Initialup, \
+$CellContext`Initialdown, $CellContext`theta1, $CellContext`a, \
+$CellContext`temp, $CellContext`d, $CellContext`rotation1, \
+$CellContext`rotation2}, $CellContext`boundarylength = 
+          0.01; $CellContext`Initialup = N[
+            Cos[$CellContext`iangle]]; $CellContext`Initialdown = N[
+            Sin[$CellContext`iangle]]; $CellContext`theta1 = 
+          Table[($CellContext`thetam + $CellContext`thetap)/
+             2 + (($CellContext`thetap - $CellContext`thetam)/2) 
+             Tanh[($CellContext`i - 2 $CellContext`n + 
+                1/2)/$CellContext`boundarylength], {$CellContext`i, 
+             4 $CellContext`n + 1}]; $CellContext`a = 
+          Table[0, {$CellContext`l, $CellContext`n}, {$CellContext`i, 
+             4 $CellContext`n + 1}, {$CellContext`k, 2}]; $CellContext`temp = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`d = 
+          Table[0, {$CellContext`i, 4 $CellContext`n + 1}, {$CellContext`k, 
+             2}]; $CellContext`rotation1 = N[
+            Table[
+             
+             MatrixExp[(-I) 
+              PauliMatrix[2] (Part[$CellContext`theta1, $CellContext`i]/
+               2)], {$CellContext`i, 4 $CellContext`n + 
+              1}]]; $CellContext`rotation2 = N[
+            MatrixExp[(-I) PauliMatrix[2] ($CellContext`theta2angle/2)]]; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            1] = $CellContext`Initialup; 
+         Part[$CellContext`a, 1, 2 $CellContext`n, 
+            2] = $CellContext`Initialdown; 
+         For[$CellContext`t = 1, $CellContext`t <= $CellContext`n - 1, 
+           Increment[$CellContext`t], 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = Dot[
+                Part[$CellContext`rotation1, $CellContext`i, All, All], 
+                Part[$CellContext`a, $CellContext`t, $CellContext`i, All]]; 
+             Null]; For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`temp, $CellContext`i + 1, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`temp, $CellContext`i, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`d, $CellContext`i, All] = 
+              Dot[$CellContext`rotation2, 
+                Part[$CellContext`temp, $CellContext`i, All]]; Null]; 
+           For[$CellContext`i = 
+             1 + 2 $CellContext`n - 2 $CellContext`t, $CellContext`i <= 
+             2 $CellContext`n + 2 $CellContext`t + 1, 
+             Increment[$CellContext`i], 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i, 1] = 
+              Part[$CellContext`d, $CellContext`i, 1]; 
+             Part[$CellContext`a, $CellContext`t + 1, $CellContext`i - 1, 2] = 
+              Part[$CellContext`d, $CellContext`i, 2]; Null]; Null]; 
+         Table[{$CellContext`i - 2 $CellContext`n, Abs[
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 1]]^2 + 
+            Abs[
+               
+               Part[$CellContext`a, $CellContext`t, $CellContext`i, 
+                2]]^2}, {$CellContext`t, 1, $CellContext`n - 1, 
+            1}, {$CellContext`i, $CellContext`n, 3 $CellContext`n, 1}]], 
+       Attributes[PlotRange] = {ReadProtected}, $CellContext`phasediagram[
+         Pattern[$CellContext`theta1m, 
+          Blank[]], 
+         Pattern[$CellContext`theta1p, 
+          Blank[]], 
+         Pattern[$CellContext`theta2, 
+          Blank[]]] := 
+       Module[{$CellContext`thetam = $CellContext`theta1m, \
+$CellContext`thetap = $CellContext`theta1p, $CellContext`theta2angle = \
+$CellContext`theta2, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`tx, \
+$CellContext`dots}, $CellContext`pline1 = 
+          Plot[$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline2 = 
+          Plot[2 Pi - $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline3 = 
+          Plot[(-2) Pi - $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Red, Dotted, 
+              Thickness[0.005]}]; $CellContext`pline4 = 
+          Plot[-$CellContext`x, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline5 = 
+          Plot[2 Pi + $CellContext`x, {$CellContext`x, (-2) Pi, 0}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`pline6 = 
+          Plot[(-2) Pi + $CellContext`x, {$CellContext`x, 0, 2 Pi}, 
+            PlotStyle -> {Black, 
+              Thickness[0.005]}]; $CellContext`theta2line = 
+          Plot[$CellContext`theta2, {$CellContext`x, (-2) Pi, 2 Pi}, 
+            PlotStyle -> {Black, Dotted, 
+              Thickness[0.005]}]; $CellContext`tx = Graphics[{
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {
+               Pi + Pi/Sqrt[2], Pi/Sqrt[2]}], 45 Degree, {Pi, 0}], 
+             GrayLevel[0.8], 
+             Rotate[
+              
+              Rectangle[{-Pi - Pi/Sqrt[2], -(Pi/Sqrt[2])}, {-Pi + Pi/Sqrt[2], 
+                Pi/Sqrt[2]}], 45 Degree, {-Pi, 0}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, -Pi}, {(-2) Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, -Pi}, {2 Pi, (-2) Pi}, {0, (-2) Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{Pi, Pi}, {2 Pi, 2 Pi}, {0, 2 Pi}}], 
+             GrayLevel[0.8], 
+             Polygon[{{-Pi, Pi}, {(-2) Pi, 2 Pi}, {0, 2 Pi}}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 0}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, 3 (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["1", 30, Bold, Black], {-Pi, (-3) (Pi/2)}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {0, -Pi}], 
+             Text[
+              Style["0", 30, Bold, Black], {(-3) (Pi/2), Pi}], 
+             Text[
+              Style[
+              "0", 30, Bold, Black], {(-3) (Pi/2), -Pi}]}]; $CellContext`dots = 
+          Graphics[{Green, 
+             Disk[{$CellContext`thetam, $CellContext`theta2}, Pi/10], Blue, 
+             Disk[{$CellContext`thetap, $CellContext`theta2}, Pi/10], 
+             Text[
+              Style[
+              "Left", Bold, Green], {$CellContext`thetam, $CellContext`theta2 + 
+               Pi/5}], 
+             Text[
+              Style[
+              "Right", Bold, Blue], {$CellContext`thetap, $CellContext`theta2 + 
+               Pi/5}]}]; 
+         Show[$CellContext`tx, $CellContext`pline1, $CellContext`pline2, \
+$CellContext`pline3, $CellContext`pline4, $CellContext`pline5, \
+$CellContext`pline6, $CellContext`theta2line, $CellContext`dots, 
+           PlotRange -> {{(-2) Pi, 2 Pi}, {(-2) Pi, 2 Pi}}, PlotRangePadding -> 
+           0, Axes -> False, Frame -> True, 
+           FrameTicks -> {{{(-2) Pi, -Pi, 0, Pi, 2 Pi}, 
+              None}, {{(-2) Pi, -Pi, 0, Pi, 2 Pi}, None}}, AspectRatio -> 1, 
+           FrameLabel -> {{"second rotation", None}, {
+             "first rotation", "phase diagram (winding number)"}}]]}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellID->523249451]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "DetailsSection"],
+
+Cell["\<\
+Quantum walks have attracted interest in quantum information theory as a \
+promising toolbox for building quantum algorithms. Alternatively, seen as a \
+quantum dynamical protocol, quantum walks also provide a versatile platform \
+for studying exotic phases called topological phases. Topological phases are \
+new phases of matter, and the first example of materials with this property \
+was only found in the 1980s. Recent study of topological phases suggests that \
+because of their unique properties, they are promising candidates for future \
+quantum technologies such as quantum computers. Intriguingly, quantum walks \
+give one of the simplest examples of dynamics that displays topological \
+behavior. This Demonstration lets you explore the topological structure of \
+(split-step) quantum walks. \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.497368993035713*^9}, {3.4973694664955378`*^9, 
+   3.497369469360208*^9}, 3.4973695817755613`*^9, {3.4976149343808775`*^9, 
+   3.497614938546044*^9}, {3.4977261733564167`*^9, 3.4977261824189167`*^9}, {
+   3.497730980166017*^9, 3.497731034381572*^9}, {3.497731068856162*^9, 
+   3.4977311348256283`*^9}, {3.4982372294991217`*^9, 3.498237237499241*^9}, {
+   3.4982372790851593`*^9, 3.498237281586546*^9}, {3.498650121085191*^9, 
+   3.498650124016419*^9}, {3.498650169654018*^9, 3.498650198441874*^9}, {
+   3.4986502333096733`*^9, 3.4986502341021214`*^9}, {3.4988542318120003`*^9, 
+   3.4988542322495003`*^9}, {3.4988542623276253`*^9, 3.4988542637651253`*^9}},
+ 
+ CellID->350351441],
+
+Cell["\<\
+The quantum walk we study in this Demonstration follows a quantum dynamical \
+protocol defined for a single spin-1/2 particle in a one-dimensional lattice. \
+The particle is initially placed at the origin with either spin up or spin \
+down. Then we allow the particle to evolve by applying \"one-step\" \
+operations repeatedly, and observing, for example, the resulting probability \
+distributions. \"One step\" of a split-step quantum walk consists of four \
+coherent operations: \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.497369022832634*^9}, 3.497369113111237*^9, {
+   3.497369579315301*^9, 3.4973695797472973`*^9}, {3.497369689648736*^9, 
+   3.4973697347620153`*^9}, {3.4976149243654766`*^9, 
+   3.4976149245454836`*^9}, {3.4977311527779703`*^9, 3.497731232344989*^9}, 
+   3.498235887073742*^9, {3.498237332187292*^9, 3.49823733254627*^9}, {
+   3.498237366555263*^9, 3.498237373859579*^9}, {3.498237443434452*^9, 
+   3.4982374449878597`*^9}, {3.498237500547072*^9, 3.498237502330168*^9}, 
+   3.498237533205126*^9},
+ CellID->1203942371],
+
+Cell[TextData[{
+ "1. Rotation of spin around the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]], "InlineMath"],
+ " axis by angle ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "1"], TraditionalForm]], "InlineMath"],
+ ";"
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.49736902679528*^9}, 3.497731438562993*^9, 
+   3.498239233971136*^9, {3.49823927485984*^9, 3.498239294406817*^9}, {
+   3.49831590147475*^9, 3.498315907084125*^9}},
+ CellID->1184410657],
+
+Cell["2. Translation of spin UP to the RIGHT by one lattice site;", \
+"DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.4973690281950483`*^9}, 3.49761491346004*^9, {
+   3.498237570059862*^9, 3.49823759669071*^9}, {3.498237640235362*^9, 
+   3.498237644467462*^9}, 3.49823923789959*^9, {3.498239304659484*^9, 
+   3.498239321815436*^9}},
+ CellID->1363988156],
+
+Cell[TextData[{
+ "3. Rotation of spin around the ",
+ Cell[BoxData[
+  FormBox["y", TraditionalForm]], "InlineMath"],
+ " axis by angle ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "2"], TraditionalForm]], "InlineMath"],
+ "; and "
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.4973690300934677`*^9}, 3.4982392464669743`*^9, {
+   3.4982393275072327`*^9, 3.4982393410790977`*^9}, {3.49831591197475*^9, 
+   3.498315913396625*^9}},
+ CellID->161006167],
+
+Cell["\<\
+4. Translation of spin DOWN to the LEFT by one lattice site. \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.4973690300934677`*^9}, 3.4982392464669743`*^9, {
+   3.4982393275072327`*^9, 3.4982393410746927`*^9}, 3.49824056289579*^9},
+ CellID->789292302],
+
+Cell[TextData[{
+ "When the second rotation ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "2"], TraditionalForm]], "InlineMath"],
+ " is set to 0, this split-step quantum walk reduces to a conventional, \
+discrete-time quantum walk. The split-step quantum walks described above \
+realize topological phases, and their phases are determined by the values of \
+the first and second rotation angles, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "1"], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Theta]", "2"], TraditionalForm]], "InlineMath",
+  FormatType->"TraditionalForm"],
+ "."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.49736903009171*^9}, {3.497369066894457*^9, 
+   3.4973690677190332`*^9}, {3.49736947894753*^9, 3.497369572875388*^9}, 
+   3.497369741982032*^9, {3.4976148968493757`*^9, 3.4976149087148504`*^9}, 
+   3.4977262084189167`*^9, {3.497731323525387*^9, 3.4977313899221973`*^9}, {
+   3.497731532815937*^9, 3.4977315581826773`*^9}, {3.498315918334125*^9, 
+   3.498315938381*^9}, 3.498316276709125*^9, {3.498650363508252*^9, 
+   3.498650406109991*^9}, {3.4986504381185427`*^9, 3.498650508270578*^9}, {
+   3.498650540775333*^9, 3.498650597759375*^9}, {3.498650647467033*^9, 
+   3.498650655951126*^9}, {3.4988542955776253`*^9, 3.4988543395620003`*^9}},
+ CellID->2092740591],
+
+Cell["\<\
+This Demonstration allows one to study the behavior of a particle under a \
+spatially inhomogeneous quantum walk protocol. The dynamical protocol differs \
+for the left and the right of the origin; while the second rotation is the \
+same on the right and left regions, the first rotation angles of the left of \
+the origin (green) and right of the origin (blue) can be chosen using the \
+slider. Through the choices of the rotation angles, one can place the \
+protocol of two regions in the same or different topological phases of the \
+quantum walks. Now the Demonstration initializes the particle at the origin \
+(boundary) with the spin either up or down, and simulates an inhomogeneous \
+quantum walk. Interestingly, when the right and left regions correspond to \
+quantum walk protocols with distinct topological phases, there is a finite \
+probability that the particle remains near the origin after many steps of the \
+quantum walk(see Snapshot 1). This bound state at the phase boundary is a \
+manifestation of nontrivial topology of the quantum walk. For a further \
+explanation of the physics, refer to [1]. \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497098288115576*^9, 3.497098290954955*^9}, {
+   3.4971039038477287`*^9, 3.4971040120339613`*^9}, {3.497104080484562*^9, 
+   3.497104153722123*^9}, {3.497104222334957*^9, 3.49710434149887*^9}, {
+   3.497104380648828*^9, 3.4971045965259037`*^9}, {3.497104661125534*^9, 
+   3.4971048581899967`*^9}, {3.497112829891596*^9, 3.497112829895109*^9}, {
+   3.497112997637476*^9, 3.497113005830956*^9}, {3.497113043443952*^9, 
+   3.497113107518778*^9}, {3.497113245545286*^9, 3.4971132477204857`*^9}, {
+   3.4973689930338707`*^9, 3.49736903009171*^9}, {3.497369066894457*^9, 
+   3.497369071073353*^9}, {3.497369190332967*^9, 3.497369194932332*^9}, 
+   3.497369313640889*^9, 3.497369760167324*^9, {3.4976148826888094`*^9, 
+   3.497614884748892*^9}, {3.497614951411558*^9, 3.497614974778718*^9}, {
+   3.497731581275887*^9, 3.497731616846925*^9}, {3.497731666108466*^9, 
+   3.4977317532318687`*^9}, {3.4982359069500933`*^9, 3.498235932605044*^9}, {
+   3.498236309730913*^9, 3.498236310698813*^9}, {3.498237716107678*^9, 
+   3.498237717083197*^9}, {3.498237770397938*^9, 3.498237800738563*^9}, {
+   3.49823789244318*^9, 3.4982379123224382`*^9}, {3.498239712654347*^9, 
+   3.498239713091872*^9}, {3.498650669466449*^9, 3.498650678096874*^9}, {
+   3.49865070820327*^9, 3.4986507129446507`*^9}, {3.4988543057495003`*^9, 
+   3.4988543119995003`*^9}},
+ CellID->181654018],
+
+Cell["\<\
+Snapshot 1: When the left and right regions belong to different topological \
+phases characterized by different integers, there is a topologically \
+protected bound state at the phase boundary. Such a bound state can be \
+detected, for example, by implementing the quantum walk with the initial \
+particle located at the boundary. Even after many steps of the quantum walk, \
+there remains a finite probability of finding the particle near the boundary, \
+indicating the existence of a bound state. \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497369174032106*^9, 3.497369297670754*^9}, {
+   3.497731770857725*^9, 3.497731782617285*^9}, {3.4977318213956738`*^9, 
+   3.497731826370556*^9}, 3.49823795229102*^9, {3.49823799054596*^9, 
+   3.498238015029174*^9}},
+ CellID->687462411],
+
+Cell["\<\
+Snapshot 2: When the left and right regions belong to the same topological \
+phase, there is no bound state so that the particles rapidly fly away from \
+the boundary. \
+\>", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497369174032106*^9, 3.497369301657606*^9}, {
+   3.497369339400639*^9, 3.497369375982361*^9}, 3.497731775073572*^9, {
+   3.497731845586626*^9, 3.4977318623383617`*^9}, 3.4982380204023848`*^9},
+ CellID->718720817],
+
+Cell["References", "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4976148095558844`*^9, 3.4976148124760013`*^9}, 
+   3.498235942274506*^9},
+ CellID->137819332],
+
+Cell[TextData[{
+ "[1] T. Kitagawa, M. S. Rudner, E. Berg, and E. Demler, \"Exploring \
+Topological Phases with Quantum Walks,\" ",
+ StyleBox["Physical Review A",
+  FontSlant->"Italic"],
+ " ",
+ StyleBox["82",
+  FontWeight->"Bold"],
+ ",(3) 2010. ",
+ ButtonBox["doi: 10.1101/PhysRevA.82.033429",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://link.aps.org/doi/10.1103/PhysRevA.82.033429"], None},
+  ButtonNote->"http://link.aps.org/doi/10.1103/PhysRevA.82.033429"],
+ "."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.497112831854382*^9, {3.497112919076695*^9, 
+   3.497112965333009*^9}, 3.4976148041656685`*^9, {3.497726658153291*^9, 
+   3.4977266832626667`*^9}, {3.498235947475142*^9, 3.4982361343468924`*^9}, {
+   3.4982362097943068`*^9, 3.498236209797151*^9}},
+ CellID->539346064],
+
+Cell[TextData[{
+ "[2] J. Kempe, \"Quantum Random Walks: An Introductory Overview,\" ",
+ StyleBox["Contemporary Physics",
+  FontSlant->"Italic"],
+ ", ",
+ StyleBox["44",
+  FontWeight->"Bold"],
+ "(4), July 2003, pp. 307\[Dash]327."
+}], "DetailNotes",
+ CellChangeTimes->{
+  3.35696210375764*^9, 3.497112966554801*^9, {3.4971132143404713`*^9, 
+   3.4971132341488867`*^9}, 3.4976148067057705`*^9, {3.4977266982314167`*^9, 
+   3.4977267384814167`*^9}, {3.4982362608380747`*^9, 3.498236275251391*^9}},
+ CellID->260823661]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "ControlSuggestionsSection"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Resize Images"]}],
+  "\"Click inside an image to reveal its orange resize frame.\\nDrag any of \
+the orange resize handles to resize the image.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.4976148164011583`*^9},
+ FontFamily->"Verdana",
+ CellTags->"ResizeImages"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Rotate and Zoom in 3D"]}],
+  RowBox[{
+   "\"Drag a 3D graphic to rotate it. Starting the drag near the center \
+tumbles\\nthe graphic; starting near a corner turns it parallel to the plane \
+of the screen.\\nHold down \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" (or \"", 
+    FrameBox[
+    "Cmd", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" on Mac) and drag up and down to zoom.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"RotateAndZoomIn3D"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Drag Locators"]}],
+  RowBox[{"\"Drag any locator (\"", 
+    GraphicsBox[
+     LocatorBox[
+      Scaled[{0.5, 0.5}]], ImageSize -> 20], 
+    "\", etc.) to move it around.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"DragLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Create and Delete Locators"]}],
+  RowBox[{"\"Insert a new locator in the graphic by holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key\\nand clicking where you want it to be. Delete a locator by \
+clicking it\\nwhile holding down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" key.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"CreateAndDeleteLocators"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Slider Zoom"]}],
+  RowBox[{"\"Hold down the \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], 
+    "\" key while moving a slider to make fine adjustments in the slider \
+value.\\nHold \"", 
+    FrameBox[
+    "Ctrl", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" and/or \"", 
+    FrameBox[
+    "Shift", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" at the same time as \"", 
+    FrameBox[
+    "Alt", Background -> GrayLevel[0.9], FrameMargins -> 2, FrameStyle -> 
+     GrayLevel[0.9]], "\" to make ever finer adjustments.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.497726750965791*^9},
+ FontFamily->"Verdana",
+ CellTags->"SliderZoom"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Gamepad Controls"]}],
+  "\"Control this Demonstration with a gamepad or other\\nhuman interface \
+device connected to your computer.\"",
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.3895522232313623`*^9, 
+  3.4976148182562323`*^9},
+ FontFamily->"Verdana",
+ CellTags->"GamepadControls"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[True], Cell[" Automatic Animation"]}],
+  RowBox[{"\"Animate a slider in this Demonstration by clicking the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAwcIKwAgOI/R/IhBKc\n\
+/4EAyGAG0f+nTZsGwgysIJIRKsWKLAXGIHFmEpUgLADxWUAkI24jZs+eTaEt\n\
+IG+wQKRmzJgBlYf5lhEA30OqWA=="], "Graphics", ImageSize -> {9, 9}, ImageMargins -> 
+      0, CellBaseline -> Baseline], BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"button\\nnext to the slider, and then clicking the play button that \
+appears.\\nAnimate all controls by selecting \"", 
+    StyleBox["Autorun", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ CellChangeTimes->{3.35696210375764*^9, 3.497726752122041*^9},
+ FontFamily->"Verdana",
+ CellTags->"AutomaticAnimation"],
+
+Cell[BoxData[
+ TooltipBox[
+  RowBox[{
+   CheckboxBox[False], Cell[" Bookmark Animation"]}],
+  RowBox[{
+   "\"See a prepared animation of this Demonstration by selecting\\n\"", 
+    StyleBox["Animate Bookmarks", FontWeight -> "Bold"], "\" from the\"", 
+    AdjustmentBox[
+     Cell[
+      GraphicsData[
+      "CompressedBitmap", 
+       "eJyNULENwyAQfEySIlMwTVJlCGRFsosokeNtqBmDBagoaZjAI1C8/8GUUUC6\n\
+57h7cQ8PvU7Pl17nUav7oj/TPH7V7b2QJAUAXBkKmCPRowxICy64bRvGGNF7\n\
+X8CctGoDSN4xhIDGGDhzFXwUh3/ClBKrDQPmnGXtI6u0OOd+tZBVUqy1xSaH\n\
+UqiK6pPe4XdEdAz6563tx/gejuORGMxJaz8mdpJn7hc="], "Graphics", 
+      ImageSize -> {10, 10}, ImageMargins -> 0, CellBaseline -> Baseline], 
+     BoxBaselineShift -> 0.1839080459770115, 
+     BoxMargins -> {{0., 0.}, {-0.1839080459770115, 0.1839080459770115}}], 
+    "\"menu.\""}],
+  TooltipDelay->0.35]], "ControlSuggestions",
+ FontFamily->"Verdana",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SearchTermsSection"],
+
+Cell["topological phase", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497113325546666*^9, 3.4971133311965*^9}, {
+   3.497113367020533*^9, 3.4971133690831833`*^9}},
+ CellID->649146900],
+
+Cell["quantum walk", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4971133347583723`*^9, 3.497113337421118*^9}, 
+   3.497732039176339*^9},
+ CellID->1130450456],
+
+Cell["dynamical phase", "SearchTerms",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.4971133437457037`*^9, 3.4971133461196547`*^9}, {
+   3.4971133842586327`*^9, 3.497113386657371*^9}},
+ CellID->1262019600]
+}, Open  ]],
+
+Cell["", "RelatedLinksSection"],
+
+Cell[CellGroupData[{
+
+Cell["", "AuthorSection"],
+
+Cell[TextData[{
+ "Contributed by: ",
+ ButtonBox["Takuya Kitagawa",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://demonstrations.wolfram.com/author.html?author=Takuya+\
+Kitagawa"], None},
+  ButtonNote->
+   "http://demonstrations.wolfram.com/author.html?author=Takuya+Kitagawa"]
+}], "Author",
+ CellChangeTimes->{
+  3.35696210375764*^9, {3.497113308383561*^9, 3.49711331060772*^9}, {
+   3.497370337701067*^9, 3.49737033772043*^9}, {3.497614873373437*^9, 
+   3.497614873373437*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{772, 681},
+WindowMargins->{{10, Automatic}, {Automatic, 0}},
+Magnification->1.,
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (February 18, 2009)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Demonstration.nb", 
+  CharacterEncoding -> "WindowsANSI"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "ResizeImages"->{
+  Cell[127051, 2731, 376, 9, 22, "ControlSuggestions",
+   CellTags->"ResizeImages"]},
+ "RotateAndZoomIn3D"->{
+  Cell[127430, 2742, 678, 16, 22, "ControlSuggestions",
+   CellTags->"RotateAndZoomIn3D"]},
+ "DragLocators"->{
+  Cell[128111, 2760, 340, 11, 22, "ControlSuggestions",
+   CellTags->"DragLocators"]},
+ "CreateAndDeleteLocators"->{
+  Cell[128454, 2773, 637, 15, 22, "ControlSuggestions",
+   CellTags->"CreateAndDeleteLocators"]},
+ "SliderZoom"->{
+  Cell[129094, 2790, 906, 22, 22, "ControlSuggestions",
+   CellTags->"SliderZoom"]},
+ "GamepadControls"->{
+  Cell[130003, 2814, 395, 10, 22, "ControlSuggestions",
+   CellTags->"GamepadControls"]},
+ "AutomaticAnimation"->{
+  Cell[130401, 2826, 1526, 32, 22, "ControlSuggestions",
+   CellTags->"AutomaticAnimation"]},
+ "BookmarkAnimation"->{
+  Cell[131930, 2860, 908, 21, 22, "ControlSuggestions",
+   CellTags->"BookmarkAnimation"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"ResizeImages", 134504, 2942},
+ {"RotateAndZoomIn3D", 134614, 2945},
+ {"DragLocators", 134725, 2948},
+ {"CreateAndDeleteLocators", 134842, 2951},
+ {"SliderZoom", 134957, 2954},
+ {"GamepadControls", 135064, 2957},
+ {"AutomaticAnimation", 135179, 2960},
+ {"BookmarkAnimation", 135297, 2963}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[567, 22, 276, 4, 74, "DemoTitle"],
+Cell[CellGroupData[{
+Cell[868, 30, 33, 0, 266, "InitializationSection"],
+Cell[904, 32, 27213, 719, 1548, "Input",
+ InitializationCell->True,
+ CellID->1681047275]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[28154, 756, 29, 0, 188, "ManipulateSection"],
+Cell[CellGroupData[{
+Cell[28208, 760, 7842, 193, 428, "Input"],
+Cell[36053, 955, 14464, 277, 455, "Output",
+ CellID->326025612]
+}, {2}]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[50563, 1238, 36, 0, 172, "ManipulateCaptionSection"],
+Cell[50602, 1240, 1649, 30, 98, "ManipulateCaption",
+ CellID->1865459029],
+Cell[52254, 1272, 1933, 33, 159, "ManipulateCaption",
+ CellID->1656137850]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54224, 1310, 28, 0, 174, "ThumbnailSection"],
+Cell[54255, 1312, 14467, 277, 455, "Output",
+ CellID->30420690]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[68759, 1594, 28, 0, 138, "SnapshotsSection"],
+Cell[68790, 1596, 14466, 277, 455, "Output",
+ CellID->2120245],
+Cell[83259, 1875, 14468, 277, 455, "Output",
+ CellID->161214278],
+Cell[97730, 2154, 14544, 279, 455, "Output",
+ CellID->523249451]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112311, 2438, 26, 0, 332, "DetailsSection"],
+Cell[112340, 2440, 2080, 31, 142, "DetailNotes",
+ CellID->350351441],
+Cell[114423, 2473, 1595, 25, 82, "DetailNotes",
+ CellID->1203942371],
+Cell[116021, 2500, 1004, 21, 23, "DetailNotes",
+ CellID->1184410657],
+Cell[117028, 2523, 887, 14, 22, "DetailNotes",
+ CellID->1363988156],
+Cell[117918, 2539, 996, 21, 23, "DetailNotes",
+ CellID->161006167],
+Cell[118917, 2562, 802, 13, 22, "DetailNotes",
+ CellID->789292302],
+Cell[119722, 2577, 1923, 37, 70, "DetailNotes",
+ CellID->2092740591],
+Cell[121648, 2616, 2547, 37, 172, "DetailNotes",
+ CellID->181654018],
+Cell[124198, 2655, 812, 14, 82, "DetailNotes",
+ CellID->687462411],
+Cell[125013, 2671, 457, 9, 37, "DetailNotes",
+ CellID->718720817],
+Cell[125473, 2682, 173, 4, 22, "DetailNotes",
+ CellID->137819332],
+Cell[125649, 2688, 809, 21, 37, "DetailNotes",
+ CellID->539346064],
+Cell[126461, 2711, 513, 13, 37, "DetailNotes",
+ CellID->260823661]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[127011, 2729, 37, 0, 120, "ControlSuggestionsSection"],
+Cell[127051, 2731, 376, 9, 22, "ControlSuggestions",
+ CellTags->"ResizeImages"],
+Cell[127430, 2742, 678, 16, 22, "ControlSuggestions",
+ CellTags->"RotateAndZoomIn3D"],
+Cell[128111, 2760, 340, 11, 22, "ControlSuggestions",
+ CellTags->"DragLocators"],
+Cell[128454, 2773, 637, 15, 22, "ControlSuggestions",
+ CellTags->"CreateAndDeleteLocators"],
+Cell[129094, 2790, 906, 22, 22, "ControlSuggestions",
+ CellTags->"SliderZoom"],
+Cell[130003, 2814, 395, 10, 22, "ControlSuggestions",
+ CellTags->"GamepadControls"],
+Cell[130401, 2826, 1526, 32, 22, "ControlSuggestions",
+ CellTags->"AutomaticAnimation"],
+Cell[131930, 2860, 908, 21, 22, "ControlSuggestions",
+ CellTags->"BookmarkAnimation"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[132875, 2886, 30, 0, 152, "SearchTermsSection"],
+Cell[132908, 2888, 200, 4, 22, "SearchTerms",
+ CellID->649146900],
+Cell[133111, 2894, 174, 4, 22, "SearchTerms",
+ CellID->1130450456],
+Cell[133288, 2900, 205, 4, 22, "SearchTerms",
+ CellID->1262019600]
+}, Open  ]],
+Cell[133508, 2907, 31, 0, 138, "RelatedLinksSection"],
+Cell[CellGroupData[{
+Cell[133564, 2911, 25, 0, 124, "AuthorSection"],
+Cell[133592, 2913, 490, 13, 22, "Author"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
