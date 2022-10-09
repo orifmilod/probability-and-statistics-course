@@ -1,0 +1,303 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11204,        293]
+NotebookOptionsPosition[      8388,        228]
+NotebookOutlinePosition[      9622,        263]
+CellTagsIndexPosition[      9545,        258]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "SlideShowNavigationBar", "FirstSlide",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"ed0888f8-b892-47b3-b3e4-ba18a4423f4b"],
+
+Cell[CellGroupData[{
+
+Cell["Axiom of choice", "Chapter",
+ CellChangeTimes->{{3.8742164782909184`*^9, 
+  3.874216538375993*^9}},ExpressionUUID->"3b322ab5-8fea-47c0-8176-\
+7a1c1205235f"],
+
+Cell["\<\
+Given a possibly infinite collection of non-empty sets, we can collect a new \
+set which contain one element from each set.
+\
+\>", "Text",
+ CellChangeTimes->{{3.874216547888733*^9, 3.874216584840063*^9}, {
+  3.874217121434565*^9, 
+  3.874217200233945*^9}},ExpressionUUID->"25e38539-43b6-4e40-aba5-\
+95561a35b590"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["\[ForAll]", "S"], 
+  RowBox[{"[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"[", 
+      RowBox[{
+       SubscriptBox["\[ForAll]", 
+        RowBox[{"X", "\[Element]", "S"}]], 
+       RowBox[{"X", "\[NotElement]", "\[EmptySet]"}]}], "]"}], "^", 
+     RowBox[{"[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         SubscriptBox["\[ForAll]", 
+          RowBox[{"X", ",", 
+           RowBox[{"Y", "\[Element]", "S"}]}]], 
+         RowBox[{"X", "\[NotEqual]", "Y"}]}], "\[Implies]", 
+        RowBox[{"X", "\[Intersection]", "Y"}]}], "=", "\[EmptySet]"}], 
+      "]"}]}], "\[Implies]", 
+    RowBox[{
+     SubscriptBox["\[Exists]", "V"], 
+     RowBox[{
+      SubscriptBox["\[ForAll]", 
+       RowBox[{"X", "\[Element]", "S"}]], 
+      RowBox[{
+       SubscriptBox["\[Exists]", "x"], 
+       RowBox[{"[", 
+        RowBox[{
+         RowBox[{"X", "\[Intersection]", "V"}], "=", "x"}], "]"}]}]}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.8742303567496977`*^9, 3.874230672145664*^9}},
+ EmphasizeSyntaxErrors->True,
+ CellLabel->
+  "In[152]:=",ExpressionUUID->"0dbaf2c9-a05d-4acf-be37-c45c03b89e50"],
+
+Cell[BoxData[
+ TemplateBox[{
+  "Syntax","sntxi",
+   "\"Incomplete expression; more input is needed \\!\\(\\*RowBox[{\\\"\\\\\\\
+\"\\\\\\\"\\\"}]\\).\"",2,152,27,31749542093782806148,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{3.874230683411833*^9},
+ CellLabel->
+  "During evaluation of \
+In[152]:=",ExpressionUUID->"598e7195-8cf2-4025-bf5d-35882611e7ad"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.87422898013859*^9, 3.874229067358263*^9}, {
+   3.874229168940398*^9, 3.87422932527779*^9}, {3.874229374012458*^9, 
+   3.8742294775859137`*^9}, {3.874230093263768*^9, 3.8742301154642563`*^9}, 
+   3.874230678793017*^9, 
+   3.874230781421378*^9},ExpressionUUID->"f6fb1c82-0b16-4faf-adb2-\
+ebd2f6f52011"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"e5cae927-5991-411c-bfc6-3fc035ac105d"],
+
+Cell[CellGroupData[{
+
+Cell["Banach - Tarski Paradox", "Subchapter",
+ CellChangeTimes->{{3.8742307892611313`*^9, 3.8742308275738077`*^9}, {
+  3.874230885368804*^9, 3.8742308855504427`*^9}, {3.874231582599306*^9, 
+  3.87423158522386*^9}},ExpressionUUID->"d37ee435-9930-44e4-9143-\
+ce056cee64aa"],
+
+Cell["\<\
+Take a sphere built up from uncountably many points.
+Let\[CloseCurlyQuote]s name the points on a sphere according to the \
+algorithm:
+- select the starting point which is not in any set yet, add it to the set of \
+starting points
+- produce a route from the starting point by going up,down,left or right, \
+without backtracking (two opposite directions cancel each other out), call \
+the resulting point with the name being a list of taken directions. Add a \
+point to a set of points which had the same last direction.
+- repeat uncountably many times
+
+We end-up with 5 sets with  uncountably many points, for starting points and \
+for 4 directions
+
+We then can take one set of points which end on a given direction and rotate \
+it in the opposite direction. Then the last direction from the names of \
+points will cancel-out with the direction added by rotation and we will get \
+all of the names: 
+-without direction - so the starting points set
+-with a direction different than the opposite direction - so 3 sets: the \
+initial one, and 2 for perpendicular directions.
+
+With the sets we got from rotating this set of points, and with the set of \
+opposite direction we can create a whole new ball - and we still have sets \
+for perpendicular directions.
+
+ We can repeat this process for the sets for perpendicular direction and we \
+will have one ball more.\
+\>", "Text",
+ CellChangeTimes->{{3.87422898013859*^9, 3.874229067358263*^9}, {
+   3.874229168940398*^9, 3.87422932527779*^9}, {3.874229374012458*^9, 
+   3.8742294775859137`*^9}, {3.874230093263768*^9, 3.8742301154642563`*^9}, 
+   3.874230678793017*^9, 3.874230781421378*^9, {3.874231589206869*^9, 
+   3.874231591013315*^9}, {3.874231629143496*^9, 3.874231974151691*^9}, {
+   3.874232108117878*^9, 3.874232250595718*^9}, {3.874232308188046*^9, 
+   3.874232325282071*^9}, {3.8742324024303007`*^9, 3.8742324538397408`*^9}, {
+   3.874232614676731*^9, 3.874232831688384*^9}, {3.874232865040819*^9, 
+   3.874233123695636*^9}, 
+   3.874241168962509*^9},ExpressionUUID->"e4f7692c-4c50-4efc-8ebc-\
+412091f723f7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"2c280f42-4946-42a9-a1c1-52d0b0fdd413"],
+
+Cell[CellGroupData[{
+
+Cell["Zorn Lemma", "Chapter",
+ CellChangeTimes->{{3.8742411734981203`*^9, 
+  3.874241189021811*^9}},ExpressionUUID->"1808eec4-a638-4efa-b638-\
+85a4df9b6d04"],
+
+Cell["\<\
+Partially ordered set containing upper bounds for every chain (that is, every \
+totally ordered subset) necessarily contains at least one maximal element.
+\
+\>", "Text",
+ CellChangeTimes->{{3.87422898013859*^9, 3.874229067358263*^9}, {
+   3.874229168940398*^9, 3.87422932527779*^9}, {3.874229374012458*^9, 
+   3.8742294775859137`*^9}, {3.874230093263768*^9, 3.8742301154642563`*^9}, 
+   3.874230678793017*^9, 3.874230781421378*^9, {3.874231589206869*^9, 
+   3.874231591013315*^9}, {3.874231629143496*^9, 3.874231974151691*^9}, {
+   3.874232108117878*^9, 3.874232250595718*^9}, {3.874232308188046*^9, 
+   3.874232325282071*^9}, {3.8742324024303007`*^9, 3.8742324538397408`*^9}, {
+   3.874232614676731*^9, 3.874232831688384*^9}, {3.874232865040819*^9, 
+   3.874233123695636*^9}, {3.8742413701552877`*^9, 3.874241374448955*^9}, {
+   3.8742414767670593`*^9, 
+   3.874241480938609*^9}},ExpressionUUID->"45a2069c-0bb6-4eac-90ff-\
+5ca93a9ed689"],
+
+Cell[CellGroupData[{
+
+Cell["Proof", "Subchapter",
+ CellChangeTimes->{{3.874228968040083*^9, 3.87422896804076*^9}, 
+   3.874229502540715*^9, {3.874241483405919*^9, 
+   3.8742414987941313`*^9}},ExpressionUUID->"d5a3f104-cec5-4eb8-8399-\
+99b31136833f"],
+
+Cell["\<\
+Suppose the lemma is false.
+
+Then there exists a partially ordered set P, such that every totally ordered \
+subset has an upper bound, and that for every element in P there is another \
+element bigger than it.
+For every totally ordered subset T we may then define a bigger element b(T), \
+because T has an upper bound, and that upper bound has a bigger element .
+
+Using the function b, we are going to define elements a0 < a1 < a2 < a3 < ... \
+< a\[Omega] < a\[Omega] + 1 < \[Ellipsis], in P.
+
+It means that there is at least as many elements in set P as there is ordinals.
+
+This is impossible, because if there would be a set of all ordinal numbers, \
+it would be an ordinal number by itself, and it wouldn\[CloseCurlyQuote]t be \
+in itself, so it wouldn\[CloseCurlyQuote]t contain all of the ordinal numbers.\
+\>", "Text",
+ CellChangeTimes->{{3.874241505165395*^9, 3.874241652251749*^9}, 
+   3.8742416892100563`*^9, {3.8742418042395897`*^9, 3.8742418051412373`*^9}, {
+   3.87424223891273*^9, 
+   3.874242327725337*^9}},ExpressionUUID->"1f5384a2-d952-4d36-9f01-\
+9954620d6385"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Slideshow Working",
+WindowSize->{805, 876},
+WindowMargins->{{525, Automatic}, {62, Automatic}},
+TaggingRules->{
+ "PresenterSettings" -> {
+   "ShowToolbar" -> True, "ShowNavigationBar" -> False, 
+    "SlideBreakStyles" -> {}, "ShowSlideBreaks" -> True, 
+    "Theme" -> {
+     "ThemeName" -> "Default", "FontSetName" -> "Default", "ColorSetName" -> 
+      "Default"}}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Default.nb", 
+  CharacterEncoding -> "UTF-8"],
+"Theme" -> "Default"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ed0888f8-b892-47b3-b3e4-ba18a4423f4b",
+   CellTags->"SlideShowHeader"],
+  Cell[3206, 106, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e5cae927-5991-411c-bfc6-3fc035ac105d",
+   CellTags->"SlideShowHeader"],
+  Cell[5750, 164, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2c280f42-4946-42a9-a1c1-52d0b0fdd413",
+   CellTags->"SlideShowHeader"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SlideShowHeader", 9091, 248}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"ed0888f8-b892-47b3-b3e4-ba18a4423f4b",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[741, 28, 162, 3, 151, "Chapter",ExpressionUUID->"3b322ab5-8fea-47c0-8176-7a1c1205235f"],
+Cell[906, 33, 323, 8, 112, "Text",ExpressionUUID->"25e38539-43b6-4e40-aba5-95561a35b590"],
+Cell[CellGroupData[{
+Cell[1254, 45, 1137, 35, 47, "Input",ExpressionUUID->"0dbaf2c9-a05d-4acf-be37-c45c03b89e50"],
+Cell[2394, 82, 380, 9, 38, "Message",ExpressionUUID->"598e7195-8cf2-4025-bf5d-35882611e7ad"]
+}, Open  ]],
+Cell[2789, 94, 368, 6, 74, "Input",ExpressionUUID->"f6fb1c82-0b16-4faf-adb2-ebd2f6f52011"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3206, 106, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e5cae927-5991-411c-bfc6-3fc035ac105d",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[3353, 112, 271, 4, 67, "Subchapter",ExpressionUUID->"d37ee435-9930-44e4-9143-ce056cee64aa"],
+Cell[3627, 118, 2074, 40, 887, "Text",ExpressionUUID->"e4f7692c-4c50-4efc-8ebc-412091f723f7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5750, 164, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2c280f42-4946-42a9-a1c1-52d0b0fdd413",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[5897, 170, 157, 3, 151, "Chapter",ExpressionUUID->"1808eec4-a638-4efa-b638-85a4df9b6d04"],
+Cell[6057, 175, 948, 16, 143, "Text",ExpressionUUID->"45a2069c-0bb6-4eac-90ff-5ca93a9ed689"],
+Cell[CellGroupData[{
+Cell[7030, 195, 227, 4, 67, "Subchapter",ExpressionUUID->"d5a3f104-cec5-4eb8-8399-99b31136833f"],
+Cell[7260, 201, 1088, 22, 577, "Text",ExpressionUUID->"1f5384a2-d952-4d36-9f01-9954620d6385"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
