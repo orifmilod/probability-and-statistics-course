@@ -150,22 +150,40 @@ tion and an outline on the quantum contextuality, the leading notion of
  of quantum mechanics.
 \end_layout
 
-\section{Chapter 1 notes}
+\begin_layout Section
+Chapter 1 notes
+\end_layout
 
-\subsection{Sample space}
+\begin_layout Subsection
+Sample space
+\end_layout
+\begin_layout Standard
 In probability theory, sample space captures the all possible values that a random trail can take on. 
 The sample space is usually noted as sets of all possible outcomes. Sample space is often denoted by symbol Ωs.
 The sample space can be finite or infinite set. 
 
-\subsection{Ordered sampling}
+\end_layout
+\begin_layout Subsection
+Ordered sampling
+\end_layout
+\begin_layout Standard
 Ordered sampling is a type of sampling in which the particular event after happening can happen again. 
 For instance, for a 4 digit password, we can pick 1 of the 10 possible digits (1,2,...,9,0) then we have 10^4 possibilities.
 
-\subsection{Ordered sampling}
+\end_layout
+
+\begin_layout Subsection
+Ordered sampling
+\end_layout
+\begin_layout Standard
 TODO: add 
 
+\end_layout
 
-\subsection{Conditional probability} 
+\begin_layout Subsection
+Conditional probability 
+\end_layout
+\begin_layout Standard
 Conditional probability enables us to consider the outcome of an experiment with partial information.
 In the same way, a generic formula for P(E|F) that is valid for all events E and F is derived:
 If the event F happens, then for E to occur, the actual occurrence must be a point in both E and F; that is, it must be in EF.
@@ -177,7 +195,6 @@ If $$ (F) > 0 $$ then P(E \mid F) = \frac{P(EF)}{P(F)}
 If E and F are independent events, that is to say, if F occurs, then that gives us no information about occurance of E then 
 $$ E \cup  F = \emptyset $$
 
-\begin_layout Standard
 The probability model is 
 \begin_inset Formula $\left(\Omega,\sigma,p\right)$
 \end_inset
