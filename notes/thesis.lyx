@@ -298,7 +298,7 @@ fancyhead[OL,EC,OC,ER]{ }
 \end_layout
 
 \begin_layout Chapter*
-Impact Statement
+Questions
 \begin_inset ERT
 status open
 
@@ -314,8 +314,230 @@ aggiungiAIndice{Impact Statement}
 
 \end_layout
 
-\begin_layout Standard
-Physics breaks into our life since the dawn of time.
+\begin_layout Enumerate
+Relation between joint laws and their marginal ones.
+ Copula functions: definitions and properties.
+ Theorem by Sklar [Section 2.3.4] 
+\end_layout
+
+\begin_layout Enumerate
+Univariate Gaussian distribution 
+\begin_inset Formula $\mathcal{N}\left(b,a^{2}\right)$
+\end_inset
+
+[Ex 2.17] and multivariate 
+\begin_inset Formula $\mathcal{N}\left(b,\mathbb{A}\right)$
+\end_inset
+
+ [Ex 2.29]: Expectation [Ex 3.25]; variance, and covariance matrix in the
+ multivariate case [Ex 3.33-3.34] with the bivariate case explicitly described.
+ Description through characteristic functions [Section 4.2.2] 
+\end_layout
+
+\begin_layout Enumerate
+Bayes' theorem [Prop 1.17] with an example of application [Ex 2.5] 
+\end_layout
+
+\begin_layout Enumerate
+Variance, covariance, correlation coefficient; covariance and correlation
+ matrices.
+ Their property.
+ Relationship between the concepts of independence and non-correlation [Section
+ 3.3.3]
+\end_layout
+
+\begin_layout Enumerate
+Characteristic functions of a random variable (or of a random vector) and
+ its main properties [Section 4.2.1].
+ Series development of a characteristic function and moments [Theor 4.11]
+ 
+\end_layout
+
+\begin_layout Enumerate
+Binomial (with proof) [Theor 4.30] and multinomial [Theor 4.31] Poisson theorems.
+ Theorem Poisson's limit (with proof) [Theor 4.32] and Gaussian convergence
+ of Poisson's laws (with proof) [Theor 4.33] 
+\end_layout
+
+\begin_layout Enumerate
+Define a probability space 
+\begin_inset Formula $(Ω,\mathcal{F},P)$
+\end_inset
+
+ and describe the meaning of the symbols Ω, 
+\begin_inset Formula $\mathcal{F}$
+\end_inset
+
+ and P including some examples [Sect 1.1-2-3] 
+\end_layout
+
+\begin_layout Enumerate
+Poisson distributions 
+\begin_inset Formula $\mathfrak{P}\left(a\right)$
+\end_inset
+
+: definition [Ex 2.2] and distribution function 
+\begin_inset Formula $F\left(x\right)$
+\end_inset
+
+[Ex 2.13].
+ Expectation [Ex 3.24], variance [Ex 3.33] and characteristic function [Ex
+ 4.10] (with proofs) 
+\end_layout
+
+\begin_layout Enumerate
+Probability on 
+\begin_inset Formula $\mathbb{R}^{\infty}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{R}^{T}$
+\end_inset
+
+[Section 2.4]: Kolmogorov's theorems and probability examples [Ex 2.36 and
+ 2.38] on these spaces 
+\end_layout
+
+\begin_layout Enumerate
+Independence of random variables: definition and independence criteria (through
+ distributions, possibly density and characteristic functions) [Section
+ 3.2.3 with examples, Theor 4.14] 
+\end_layout
+
+\begin_layout Enumerate
+Definition of conditional densities with respect to events of zero measure,
+ and its justification [Sect 3.4.1].
+ Conditional expectation value, even with respect to a random variable [Section
+ 3.4.2].
+ Property of the conditional expectations [Prop 3.42] with proof only of
+ E [E [X | Y]] = E [X] 
+\end_layout
+
+\begin_layout Enumerate
+Uniqueness theorems [Theor 4.12] and inversion [Theor 4.13] for characteristic
+ functions.
+ Theorem of Bochner [Theor 4.15] and Paul Levy Theorem [Theor 4.16] with arguments
+ on their applications 
+\end_layout
+
+\begin_layout Enumerate
+Define the concept of conditional probability (elementary) [Section 1.4];
+ state and prove the Total Probability Formula [Prop 1.14] and the Multiplication
+ Formula [Prop 1.16].
+ To define the independence of two or more events [Section 1.5] 
+\end_layout
+
+\begin_layout Enumerate
+Distribution functions F (x) of a probability P on (R, B (R)): definition
+ and properties.
+ Functions of generalized distribution G (x) [Section 2.2.1] 
+\end_layout
+
+\begin_layout Enumerate
+Definition of random variable and elementary examples.
+ Law definition (distribution) of a random variable.
+ Types of equalities between random variables [Sect 3.1.1-3.1.2] 
+\end_layout
+
+\begin_layout Enumerate
+Definition of expectation value and moments of a random variable [Section
+ 3.3.1].
+ Procedure for the calculation of the expectation value with change of variables
+ [Theor 3.22, Coroll.
+ 3.23].
+ Main ownership of expectation values [Theor 3.26] 
+\end_layout
+
+\begin_layout Enumerate
+Probability density of functions of random variables: calculation procedure,
+ its justification and at least one example [Section 3.5.1] 
+\end_layout
+
+\begin_layout Enumerate
+Composition and decomposition of laws through convolutions.
+ Reproductive properties of Gausian, Poisson and Cauchy and their proofs
+ with characteristic functions [Section 4.2.3] 
+\end_layout
+
+\begin_layout Enumerate
+Binomial distributions B (n, p): definition [Ex 2.1] and discussion of the
+ Bernoulli model [Section 2.1.2].
+ 
+\end_layout
+
+\begin_layout Enumerate
+Probability density f (x) of a law [Sect 2.2.3]: conditions of existence (Radon
+ Nikodym's theorem) [Theor 2.15] and at least two examples.
+ Concept of singular distribution [Section 2.2.4].
+ Blends laws and Lebesgue-Nikodym Theorem [Section 2.2.5] 
+\end_layout
+
+\begin_layout Enumerate
+Functions of random variables and relation to measurability.
+ Point limits of sequences of random variables and Lebesgue's Theorem [Section
+ 3.1.3] 
+\end_layout
+
+\begin_layout Enumerate
+Expose the problem of quadratic mean estimation [Sect 3.4.3] and show that
+ the curve of regression realizes the optimal estimator [Prop 3.43] 
+\end_layout
+
+\begin_layout Enumerate
+Cauchy distribution: definition [Ex 2.20]; non-existence of the expectation
+ value [Ex 3.25].
+ Function characteristic [Ex 4.10].
+ Non-applicability of limit theorems [Ex 4.34] 
+\end_layout
+
+\begin_layout Enumerate
+Sums of independent random variables, convolutions with at least one example
+ [Section 3.5.2] and them characteristic functions [Prop 4.9] 
+\end_layout
+
+\begin_layout Enumerate
+Law of large numbers weak (with proof) [Theor 4.23] and strong [Theor 4.25]
+ with applications to the calculation of an integral with the Monte Carlo
+ method [Ex 4.26] 
+\end_layout
+
+\begin_layout Enumerate
+Binomial distributions B (n, p): Distribution function [Ex 2.13].
+ Decomposition of a binary into independent Bernoulli random variables [Section
+ 3.2.4].
+ Expectation [Ex 3.24] and variance [Ex 3.33] (with demonstration).
+ Characteristic function [Ex 4.10] 
+\end_layout
+
+\begin_layout Enumerate
+Multivariate distribution functions F (x) and (if they exist) their density
+ f (x): definition and properties.
+ Joint and marginal distributions: rules for determining the marginal from
+ the conjunct ones [Section 2.3.1-2-3]
+\end_layout
+
+\begin_layout Enumerate
+Random vectors and their joint and marginal distributions [Section 3.2.1-2]
+ with some examples [Ex 3.12-13] 
+\end_layout
+
+\begin_layout Enumerate
+Chebyshev's inequality: statements and proof [Prop 3.35].
+ Application to the proof of the weak law of large numbers for not identically
+ distributed random variables [Theor 4.24] 
+\end_layout
+
+\begin_layout Enumerate
+Definitions of the different types of convergence of sequences of random
+ variables and sequences of distributions.
+ Their mutual relations [Section 4.1].
+ Degenerate convergence criterion in quadratic mean with proof [Theor 4.6]
+ 
+\end_layout
+
+\begin_layout Enumerate
+Central Limit Theorem (with proof) [Theor 4.27] and Lyapunov conditions to
+ replace the hypothesis of identical distribution [Theor 4.28]
 \end_layout
 
 \begin_layout Chapter*
@@ -434,11 +656,10 @@ literal "false"
 \emph default
  
 \begin_inset Flex URL
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
-http://corysimon.github.io/articles/uniformdistn-on-sphere/
 \end_layout
 
 \end_inset
@@ -447,11 +668,12 @@ http://corysimon.github.io/articles/uniformdistn-on-sphere/
 \end_layout
 
 \begin_layout Itemize
-task 1: note on Chapter 2;
+task 1: notes on Chapter 2;
 \end_layout
 
 \begin_layout Itemize
-task 2: add the cumulative plots on the slides in the folder material
+task 2: add the cumulative distribution functions plots on the slides in
+ the folder material
 \end_layout
 
 \begin_layout Itemize
@@ -484,6 +706,162 @@ https://demonstrations.wolfram.com/
 \end_inset
 
 .
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+12/10/2022,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+G.
+ Scala, Chapter 2 – Multivariate distribution, marginalization, cdf, pdf,
+ joint pd, compatibility, consistency.
+\end_layout
+
+\begin_layout Itemize
+S.
+ Rout, 
+\begin_inset CommandInset href
+LatexCommand href
+name "Uniform distribution on the sphere"
+target "http://corysimon.github.io/articles/uniformdistn-on-sphere/"
+literal "false"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+task 1: notes on Chapter 2;
+\end_layout
+
+\begin_layout Itemize
+task 2: replay to the question writing some notes: 
+\emph on
+What is a Lebesgue measurement? 
+\emph default
+(suggested reference 
+\begin_inset CommandInset href
+LatexCommand href
+name "Measure Theory - Part 6 - Lebesgue integral"
+target "https://www.youtube.com/watch?v=TG67nsccqeQ"
+literal "false"
+
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Itemize
+task 3: revisiting the Chapter 1 notes
+\end_layout
+
+\begin_layout Itemize
+task 4: Notes about Sklar theorem (suggested reference 
+\begin_inset CommandInset href
+LatexCommand href
+name "How to prove Sklar theorem"
+target "http://dx.doi.org/10.1007/978-3-642-39165-1_12"
+literal "false"
+
+\end_inset
+
+) or discuss about task 3 or 4 of 05/10/22.
+\end_layout
+
+\begin_layout Itemize
+extra tasks: the Cantor devil staircase function and the sin–topological
+ function.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+14/10/22,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+G.
+ Scala, Chapter 3 
+\end_layout
+
+\begin_layout Itemize
+S.
+ Rout, Buffon's needle, or appendix A, or Fine theorem, or Independence
+ vs causality, or Simpson Paradox
+\end_layout
+
+\begin_layout Itemize
+task 1: notes on Chapter 3
+\end_layout
+
+\begin_layout Itemize
+task 2: Fisher Information and Cramer Rao bound or answer the question Q&A
+\end_layout
+
+\begin_layout Itemize
+task 3: review on Chapter 1 and 2, Q&A
+\end_layout
+
+\begin_layout Itemize
+task 4: review on Chapter 1 and 2, Q&A
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+17/10/22,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+G.
+ Scala, Chapter 4 and 5
+\end_layout
+
+\begin_layout Itemize
+S.
+ Rout, see previous tasks
+\end_layout
+
+\begin_layout Itemize
+task 1: notes, Q&A
+\end_layout
+
+\begin_layout Itemize
+task 2: notes, Q&A
+\end_layout
+
+\begin_layout Itemize
+task 3: Q&A
+\end_layout
+
+\begin_layout Itemize
+task 4: Q&A
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+19/10/22,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+G.
+ Scala,
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+21/10/22,
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+G.
+ Scala,
 \end_layout
 
 \end_deeper
