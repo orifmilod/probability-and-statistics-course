@@ -1,0 +1,480 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass deistesi
+\use_default_options true
+\begin_modules
+theorems-ams
+theorems-named
+\end_modules
+\maintain_unincluded_children false
+\language english
+\language_package auto
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Probability Space
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:probability_space"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\emph on
+“One can, damn it, not reduce the whole of philosophy to a screen with two
+ holes”
+\begin_inset Newline newline
+\end_inset
+
+(Jørgen Jørgensen)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+primalettera{P}
+\end_layout
+
+\end_inset
+
+lease cancel the text and writre what you like.
+ This is an example of citation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Einstein1935,schrodinger1935"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+After an overview on the theory of quantum entanglement we deeply pay our
+ focus on the derivation of criteria to distinguish separable and entangled
+ states.
+ We provide a novel family of separability criteria, which rests on correlation
+ matrix (tensor).
+ Interestingly, there is a natural generalization to multipartite scenario.
+ In the final sections we give some notion concerns Bell inequalities generaliza
+tion and an outline on the quantum contextuality, the leading notion of
+ the quantum formalism, and how it is involved in wave–particle dualism
+ of quantum mechanics.
+\end_layout
+
+\begin_layout Section
+Chapter 1 notes
+\end_layout
+
+\begin_layout Subsection
+Sample space
+\end_layout
+
+\begin_layout Standard
+In probability theory, sample space captures the all possible values that
+ a random trail can take on.
+ The sample space is usually noted as sets of all possible outcomes.
+ Sample space is often denoted by symbol Ωs.The sample space can be finite
+ or infinite set.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ordered sampling
+\end_layout
+
+\begin_layout Standard
+Ordered sampling is a type of sampling in which the particular event after
+ happening can happen again.
+ For instance, for a 4 digit password, we can pick 1 of the 10 possible
+ digits (1,2,...,9,0) then we have 10^4 possibilities.
+\end_layout
+
+\begin_layout Subsection
+Ordered sampling
+\end_layout
+
+\begin_layout Standard
+TODO: add 
+\end_layout
+
+\begin_layout Subsection
+Conditional probability 
+\end_layout
+
+\begin_layout Standard
+Conditional probability enables us to consider the outcome of an experiment
+ with partial information.In the same way, a generic formula for P(E|F) that
+ is valid for all events E and F is derived:If the event F happens, then
+ for E to occur, the actual occurrence must be a point in both E and F;
+ that is, it must be in EF.Now that we know F has occurred, F becomes our
+ new and reduced sample space; hence, the likelihood that the event EF happens
+ equals the probability of EF relative to the probability of F.That is, we
+ have the definition below.
+ If $$ (F) > 0 $$ then P(E If E and F are independent events, that is to
+ say, if F occurs, then that gives us no information about occurance of
+ E then $$ E The probability model is 
+\begin_inset Formula $\left(\Omega,\sigma,p\right)$
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "lebesgue-measure.tex"
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+In 1935, Schrödinger realized the 
+\begin_inset Quotes eld
+\end_inset
+
+spooky
+\begin_inset Quotes erd
+\end_inset
+
+ feature of the quantum mechanical description of Nature written in the
+ well-known EPR paper
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Einstein1935"
+literal "false"
+
+\end_inset
+
+, and he wrote 
+\emph on
+
+\begin_inset Quotes eld
+\end_inset
+
+This feature implies the existence of global states of composite system
+ which cannot be written as a product of the states of individual subsystems
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\rho=\sum_{i=1}^{k}p_{i}\rho_{i}^{A}\otimes\rho_{i}^{B},\label{eq:rho_sep}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $p_{i}$
+\end_inset
+
+ is a probability distribution and 
+\begin_inset Formula $\rho_{i}^{A}\left(\rho_{i}^{B}\right)$
+\end_inset
+
+ are density operators of subsystem 
+\begin_inset Formula $A\left(B\right)$
+\end_inset
+
+.
+ Werner not only gave accurate definition of separable states (those mixed
+ states 
+\begin_inset Formula 
+\begin{equation}
+\frac{2}{3}\int_{-\infty}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hi Orif, I hope you meet this message.
+ I would like to add a section at the end of this Chapter callend Local
+ Causality, do not delete.
+\end_layout
+
+\begin_layout Section
+Local Causality
+\end_layout
+
+\begin_layout Standard
+In the previous section, some student wrote the definition of events in
+ probability theory and in theory of relativity.
+ Let 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ random variables taking value 
+\begin_inset Formula $\left\{ -1,1\right\} $
+\end_inset
+
+ and, let 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ some settings, or degenerate rv.
+ The probability spaces involved are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A,B\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|A,B\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+,
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+The setting can be modelized as a.
+ By the multiplication formula (see slides) 
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B\right)=P\left(X|Y,A,B\right)P\left(Y|A,B\right).
+\end{equation}
+
+\end_inset
+
+Suppose that the values of the random variable 
+\begin_inset Formula $X,Y$
+\end_inset
+
+ depends on the settings 
+\begin_inset Formula $A,B$
+\end_inset
+
+.
+ Now, consider the situation where the rv are spacelike separate such that
+ the probability spaces are
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|B\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B\right)=P\left(X|A\right)P\left(Y|B\right).
+\end{equation}
+
+\end_inset
+
+However, if they show some correlations, we assume that there must be some
+ local structure.
+ Therefore we rewrite the probability spaces as
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{X}\left(\cdot|A,\Lambda\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),P_{Y}\left(\cdot|B,\Lambda\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{A}\left(\cdot-\vartheta_{A}\right)\right)$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(\left\{ -1,1\right\} ,\mathcal{F}\left(\left\{ -1,1\right\} \right),\delta_{B}\left(\cdot-\vartheta_{B}\right)\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(X,Y|A,B,\Lambda\right)=P\left(X|A,\Lambda\right)P\left(Y|B,\Lambda\right).
+\end{equation}
+
+\end_inset
+
+This is call screening–off condition and can obtained equivalently with
+ parameter independence and outcome independence (Jarrett 1984).
+ Even more, the variable 
+\begin_inset Formula $\Lambda$
+\end_inset
+
+ is motivated by the Reichenbach's common cause principle.
+\end_layout
+
+\end_body
+\end_document

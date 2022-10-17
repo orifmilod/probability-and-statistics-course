@@ -1,0 +1,26 @@
+\begin{document}
+
+\subsection{Lebesgue Measure}
+The idea of the Lebesgue integral is to first define a measure on subsets of \mathds{R}. That
+is, we wish to assign a number $\mu(S)$ to each subset S of R, representing the total
+length that S takes up on the real number line. For example, the measure $\mu(I)$ of
+any interval $I \subseteq R$ should be equal to its length $\ell(I)$. Measure should also be additive, meaning that the measure of a disjoint union of two sets is the sum of the measures of the sets. if we want $\mu$ to be compatible with taking limits, it should be countably
+additive, meaning that $$\mu(\bigcup_{n \in N} S_{n}) = \sum_{n \in N} \mu(S_n) $$ 
+
+\noindent Of course, the measure $\mu(R)$ of the entire real line should be infinite, as should the measure of any open or closed ray. Thus the measure should be a function
+$ \mu: \wp(R) \rightarrow [0,\infty] $ 
+where $\wp(R)$ is the power set of R.
+
+\hfill
+
+\noindent It turns out that it is impossible to define a function $$ \mu: \wp(R) \rightarrow [0,\infty] $$ 
+
+The reason is that there exist certain subsets of R that really cannot be assigned
+a measure
+Thus our plan is to restrict ourselves to a certain collection $\mathcal{M}$ of subsets of R,
+which we will refer to as the \textbf{Lebesgue measurable sets}. We will then define a
+function
+$$ \mu: \mathcal{M} \rightarrow [0,\infty] $$
+called the \textbf{Lebesgue measure}. We can also use this function to define Lebesgue integral. 
+
+\end{document}
