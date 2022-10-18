@@ -1,0 +1,395 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12583,        385]
+NotebookOptionsPosition[      9176,        311]
+NotebookOutlinePosition[     10553,        348]
+CellTagsIndexPosition[     10476,        343]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["", "SlideShowNavigationBar", "FirstSlide",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"2db6baa1-bb78-471c-aab0-73a3b55e80d1"],
+
+Cell[CellGroupData[{
+
+Cell["Buffon' s needle", "Chapter",
+ CellChangeTimes->{{3.875107046260906*^9, 
+  3.8751070684288063`*^9}},ExpressionUUID->"63e6ae05-4a89-42e4-8690-\
+e3dd52093ab7"],
+
+Cell["\<\
+A needle of unit length is thrown at random on a table where a few parallel \
+lines are drawn at a unit distance :
+ what is the probability that the needle will lie across one of these lines?\
+\>", "Text",
+ CellChangeTimes->{{3.875107096131015*^9, 3.8751071227483063`*^9}, 
+   3.875107195883881*^9},ExpressionUUID->"a95f39f2-c6f2-4f1a-b581-\
+4c7a9cedc979"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"e13937e0-0761-42c3-99e7-e54ea50ecde5"],
+
+Cell["", "Text",
+ CellChangeTimes->{{3.875107096131015*^9, 
+  3.8751071227483063`*^9}},ExpressionUUID->"436f7b28-7aa7-4f2f-b471-\
+aaf36e3d6fb7"],
+
+Cell[CellGroupData[{
+
+Cell["PDF", "Chapter",
+ CellChangeTimes->{{3.875107199372628*^9, 
+  3.875107211315539*^9}},ExpressionUUID->"271c20f6-4f4d-452a-83aa-\
+efa53eabe755"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.875107111675354*^9, 
+  3.8751071130101*^9}},ExpressionUUID->"2d9e21ce-ef42-4755-95d8-532b5802fe48"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["f", 
+    RowBox[{"X", ",", "\[Theta]"}]], 
+   RowBox[{"(", 
+    RowBox[{"x", ",", "\[Theta]"}], ")"}]}], " ", "=", " ", 
+  RowBox[{
+   FractionBox["1", "\[Pi]"], 
+   RowBox[{"\[Chi]", "[", 
+    RowBox[{"0", ",", "1"}], "]"}], 
+   RowBox[{"(", "x", ")"}], "*", 
+   RowBox[{"\[Chi]", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "\[Pi]"}], "2"], ",", 
+     FractionBox["\[Pi]", "2"]}], "]"}], 
+   RowBox[{"(", "\[Theta]", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.875107223477944*^9, 3.875107382501623*^9}, {
+  3.8751074835060987`*^9, 
+  3.8751074880246973`*^9}},ExpressionUUID->"30146b44-538d-4317-b23e-\
+288da7efe08b"],
+
+Cell[CellGroupData[{
+
+Cell["marginals", "Subsection",
+ CellChangeTimes->{{3.8751072017554617`*^9, 3.8751072017592773`*^9}, {
+  3.8751073856577387`*^9, 
+  3.875107413972225*^9}},ExpressionUUID->"4d4708cf-aca2-4cec-aa43-\
+1259cc91361a"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["f", "X"], 
+   RowBox[{"(", "x", ")"}]}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{"\[Chi]", "[", 
+    RowBox[{"0", ",", "1"}], "]"}], 
+   RowBox[{"(", "x", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.875107426951531*^9, 
+  3.875107441156961*^9}},ExpressionUUID->"089b43e1-8314-49f7-ba09-\
+633102615aad"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SubscriptBox["f", "\[Theta]"], 
+   RowBox[{"(", "\[Theta]", ")"}]}], " ", "=", " ", 
+  RowBox[{
+   FractionBox["1", "\[Pi]"], 
+   RowBox[{"\[Chi]", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", "\[Pi]"}], "2"], ",", 
+     FractionBox["\[Pi]", "2"]}], "]"}], 
+   RowBox[{"(", "\[Theta]", ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.8751074448136683`*^9, 
+  3.8751074753884153`*^9}},ExpressionUUID->"830d2e66-45c3-4485-91ec-\
+3906cca07d68"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"e167612e-1db2-4e6b-8a5c-e227ff89ebda"],
+
+Cell[CellGroupData[{
+
+Cell["Events", "Chapter",
+ CellChangeTimes->{{3.8751076735946712`*^9, 
+  3.87510768848332*^9}},ExpressionUUID->"b995fd4a-9e4f-4bfa-9fdb-\
+206f6c87bf63"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"B", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", ",", "\[Theta]"}], ")"}], ":", " ", 
+      RowBox[{
+       RowBox[{"x", "\[LessEqual]", 
+        RowBox[{
+         FractionBox["1", "2"], "cos", 
+         RowBox[{"(", "\[Theta]", ")"}]}]}], " ", "\[Or]", " ", 
+       RowBox[{"x", " ", "\[GreaterEqual]", 
+        RowBox[{"1", "-", 
+         RowBox[{
+          FractionBox["1", "2"], "cos", 
+          RowBox[{"(", "\[Theta]", ")"}]}]}]}]}]}], ";", " ", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["\[Pi]", "2"]}], "\[LessEqual]", "\[Theta]", 
+      "\[LessEqual]", 
+      FractionBox["\[Pi]", "2"]}]}], "}"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.87510769988385*^9, 
+  3.875107925725912*^9}},ExpressionUUID->"e6547c15-82f3-422d-bb95-\
+d8c1ffb2ffc2"],
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "the", " ", "needle", " ", "lies", " ", "across", " ", "a", " ", "line"}],
+     "}"}], "=", 
+   RowBox[{"{", 
+    RowBox[{"\[Omega]", "\[Element]", 
+     RowBox[{"\[CapitalOmega]", ":", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"X", ",", "\[CapitalTheta]"}], ")"}], "\[Element]", "B"}]}]}],
+     "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.87510949753874*^9, 
+  3.875109542201825*^9}},ExpressionUUID->"087bfa98-06ce-45df-9da3-\
+410ca8ff014c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["", "SlideShowNavigationBar",
+ CellTags->
+  "SlideShowHeader",ExpressionUUID->"18c60bae-4a40-4eda-894f-56262b6c6458"],
+
+Cell[CellGroupData[{
+
+Cell["Probability", "Section",
+ CellChangeTimes->{{3.87510959653286*^9, 
+  3.875109610794095*^9}},ExpressionUUID->"995cf40a-6de0-457f-932c-\
+34629c5b0895"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"P", 
+    RowBox[{"{", "A", "}"}]}], "=", 
+   RowBox[{
+    RowBox[{"E", "[", 
+     SubscriptBox["I", "A"], "]"}], "=", 
+    RowBox[{
+     RowBox[{"E", "[", 
+      RowBox[{
+       SubscriptBox["\[Chi]", "B"], 
+       RowBox[{"(", 
+        RowBox[{"X", ",", "\[CapitalTheta]"}], ")"}]}], "]"}], "=", 
+     RowBox[{
+      RowBox[{"E", "[", 
+       RowBox[{"E", "[", 
+        RowBox[{
+         RowBox[{
+          SubscriptBox["\[Chi]", "B"], 
+          RowBox[{"(", 
+           RowBox[{"X", ",", "\[CapitalTheta]"}], ")"}]}], "|", 
+         "\[CapitalTheta]"}], "]"}], "]"}], "=", "\n", 
+      RowBox[{"=", 
+       RowBox[{
+        RowBox[{
+         SubsuperscriptBox["\[Integral]", 
+          RowBox[{"-", 
+           FractionBox["\[Pi]", "2"]}], 
+          FractionBox["\[Pi]", "2"]], 
+         RowBox[{
+          RowBox[{"E", "[", 
+           RowBox[{
+            SubscriptBox["\[Chi]", "B"], 
+            RowBox[{"(", 
+             RowBox[{"X", ",", "\[Theta]"}], ")"}]}], "]"}], " ", 
+          FractionBox["d\[Theta]", "\[Pi]"]}]}], "=", 
+        RowBox[{
+         FractionBox["1", "\[Pi]"], 
+         RowBox[{
+          SubsuperscriptBox["\[Integral]", 
+           RowBox[{"-", 
+            FractionBox["\[Pi]", "2"]}], 
+           RowBox[{"-", 
+            FractionBox["\[Pi]", "2"]}]], 
+          RowBox[{
+           RowBox[{"E", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               SubscriptBox["\[Chi]", "B"], 
+               RowBox[{"(", 
+                RowBox[{"X", ",", "\[CapitalTheta]"}], ")"}]}], "|", 
+              "\[CapitalTheta]"}], "=", "\[Theta]"}], "]"}], 
+           "d\[Theta]"}]}]}]}]}]}]}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"E", "[", 
+    RowBox[{
+     SubscriptBox["\[Chi]", "B"], 
+     RowBox[{"(", 
+      RowBox[{"X", ",", "\[Theta]"}], ")"}]}], "]"}], "=", 
+   RowBox[{
+    RowBox[{"P", 
+     RowBox[{"{", 
+      RowBox[{"X", "\[LessEqual]", 
+       RowBox[{
+        FractionBox["1", "2"], "cos", " ", "\[Theta]"}]}], "}"}], " ", 
+     "\:222a", " ", 
+     RowBox[{"{", 
+      RowBox[{"X", "\[GreaterEqual]", 
+       RowBox[{"1", "\[Minus]", 
+        RowBox[{
+         FractionBox["1", "2"], "cos", 
+         RowBox[{"(", "\[Theta]", ")"}]}]}]}], "}"}]}], "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       FractionBox["1", "2"], "cos\[Theta]"}], "+", 
+      RowBox[{
+       FractionBox["1", "2"], "cos\[Theta]"}]}], "=", 
+     RowBox[{"cos", " ", "\[Theta]"}]}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"P", 
+   RowBox[{"{", "A", "}"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "\[Pi]"], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", 
+      RowBox[{"-", 
+       FractionBox["\[Pi]", "2"]}], 
+      RowBox[{"-", 
+       FractionBox["\[Pi]", "2"]}]], 
+     RowBox[{"cos", " ", "\[Theta]d\[Theta]"}]}]}], " ", "=", " ", 
+   FractionBox["2", "\[Pi]"]}]}]}], "Input",
+ CellChangeTimes->{{3.87510969640149*^9, 3.8751102116831837`*^9}, {
+  3.8751102864467287`*^9, 
+  3.875110290313486*^9}},ExpressionUUID->"00e7d4c1-eada-4979-ae2a-\
+0c960303fc61"]
+}, Open  ]]
+}, Open  ]]
+},
+ScreenStyleEnvironment->"Slideshow Working",
+WindowSize->{805, 876},
+WindowMargins->{{525, Automatic}, {62, Automatic}},
+TaggingRules->{
+ "PresenterSettings" -> {
+   "ShowToolbar" -> True, "ShowNavigationBar" -> False, 
+    "SlideBreakStyles" -> {}, "ShowSlideBreaks" -> True, 
+    "Theme" -> {
+     "ThemeName" -> "Default", "FontSetName" -> "Default", "ColorSetName" -> 
+      "Default"}}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"PresenterTools"}, "Default.nb", 
+  CharacterEncoding -> "UTF-8"],
+"Theme" -> "Default"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "SlideShowHeader"->{
+  Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2db6baa1-bb78-471c-aab0-73a3b55e80d1",
+   CellTags->"SlideShowHeader"],
+  Cell[1322, 46, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e13937e0-0761-42c3-99e7-e54ea50ecde5",
+   CellTags->"SlideShowHeader"],
+  Cell[3740, 132, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e167612e-1db2-4e6b-8a5c-e227ff89ebda",
+   CellTags->"SlideShowHeader"],
+  Cell[5489, 193, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"18c60bae-4a40-4eda-894f-56262b6c6458",
+   CellTags->"SlideShowHeader"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"SlideShowHeader", 9879, 331}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 136, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"2db6baa1-bb78-471c-aab0-73a3b55e80d1",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[741, 28, 163, 3, 151, "Chapter",ExpressionUUID->"63e6ae05-4a89-42e4-8690-e3dd52093ab7"],
+Cell[907, 33, 366, 7, 143, "Text",ExpressionUUID->"a95f39f2-c6f2-4f1a-b581-4c7a9cedc979"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1322, 46, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e13937e0-0761-42c3-99e7-e54ea50ecde5",
+ CellTags->"SlideShowHeader"],
+Cell[1447, 50, 144, 3, 50, "Text",ExpressionUUID->"436f7b28-7aa7-4f2f-b471-aaf36e3d6fb7"],
+Cell[CellGroupData[{
+Cell[1616, 57, 148, 3, 151, "Chapter",ExpressionUUID->"271c20f6-4f4d-452a-83aa-efa53eabe755"],
+Cell[1767, 62, 148, 2, 45, "Input",ExpressionUUID->"2d9e21ce-ef42-4755-95d8-532b5802fe48"],
+Cell[1918, 66, 682, 21, 64, "Input",ExpressionUUID->"30146b44-538d-4317-b23e-288da7efe08b"],
+Cell[CellGroupData[{
+Cell[2625, 91, 212, 4, 88, "Subsection",ExpressionUUID->"4d4708cf-aca2-4cec-aa43-1259cc91361a"],
+Cell[2840, 97, 351, 11, 45, "Input",ExpressionUUID->"089b43e1-8314-49f7-ba09-633102615aad"],
+Cell[3194, 110, 485, 15, 64, "Input",ExpressionUUID->"830d2e66-45c3-4485-91ec-3906cca07d68"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3740, 132, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"e167612e-1db2-4e6b-8a5c-e227ff89ebda",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[3887, 138, 152, 3, 151, "Chapter",ExpressionUUID->"b995fd4a-9e4f-4bfa-9fdb-206f6c87bf63"],
+Cell[4042, 143, 864, 26, 92, "Input",ExpressionUUID->"e6547c15-82f3-422d-bb95-d8c1ffb2ffc2"],
+Cell[4909, 171, 531, 16, 45, "Input",ExpressionUUID->"087bfa98-06ce-45df-9da3-410ca8ff014c"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5489, 193, 122, 2, 61, "SlideShowNavigationBar",ExpressionUUID->"18c60bae-4a40-4eda-894f-56262b6c6458",
+ CellTags->"SlideShowHeader"],
+Cell[CellGroupData[{
+Cell[5636, 199, 155, 3, 116, "Section",ExpressionUUID->"995cf40a-6de0-457f-932c-34629c5b0895"],
+Cell[5794, 204, 3354, 103, 523, "Input",ExpressionUUID->"00e7d4c1-eada-4979-ae2a-0c960303fc61"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
