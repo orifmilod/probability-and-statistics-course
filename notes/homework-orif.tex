@@ -1,0 +1,166 @@
+\begin{document}
+
+\subsection{Gaussian distribution}
+\subsubsection{Univariate case}
+The normal distribution, commonly known as the Gaussian distribution, is described by two parameters: mean, which is the distribution's anticipated average value, and standard deviation, which is the expected squared divergence from the mean. The mean determinse the Gaussian's center position and the standard deviation determines the distribution's form.  The variance is sometimes referred to as the square of the standard deviation. This distribution is denoted as N($\mu$, $\sigma$).
+
+Given the mean and variance, the probability distribution function of a normal distribution for a given value $\x$ is:
+
+f(x) = $\frac{1}{\sigma\sqrt{2\pi}} 
+\exp\left( -\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^{\!2}\,\right)$
+
+The covariance between variables X and Y is denoted as Cov (X,Y) and is calculated by the below formula. 
+$$cov_{x,y}=\frac{\sum_{i=1}^{N}(x_{i}-\bar{x})(y_{i}-\bar{y})}{N-1}$$
+The covariance measures both the strength and direction of the linear relationship between two variables. Positive covariance values indicate that above average values of one variable are associated with above average values of the other variable and below average values are similarly associated. Negative covariance values indicate that above average values of one variable are associated with below average values of the other variable.
+
+\subsubsection{Multivariate case}
+
+\noindent A multidimensional generalisation of the one-dimensional normal distribution is the multivariate normal distribution. It denotes the distribution of a multivariate random variable, which is composed of many random variables that can be connected with one another. The multivariate normal distribution, like the univariate normal distribution, is defined by two sets of parameters: the mean vector, which is the distribution's expected value, and the variance-covariance matrix, which measures how two random variables depend on each other and how they change together.
+
+If $X_1,\ldots,X_n$ are independent $\mathcal{N}(0,1)$ random variables, $X=(X_1,\ldots,X_n)$ and $\Sigma$ is a $n\times n$ covariance matrix, then pdf of multivariate normal distribution is given by: 
+
+$$f_X(x_1, \ldots, x_n)=\frac{1}{\sqrt{(2\pi)^n|\boldsymbol\Sigma|}}
+\exp\left(-\frac{1}{2}({x}-{\mu})^T{\boldsymbol\Sigma}^{-1}({x}-{\mu})
+\right)$$
+
+
+\subsubsection{Define a probability space ($\Omega$, F, P) and describe the meaning of the symbols $\Omega$, F and P including some examples}
+
+A probability space is a set of all possible outcome from an experiment which is often denoted as $\Omega$. F is a $\sigma$-algebra. In general ($\Omega$, F, P) is called a finite probability space. P is a function which accepts a $\omega \in \Omega$ and returns the probability of that event occuring.\\ \\
+Chareacteristics of P are:
+$$P \{\emptyset\} = 0 \  and \ P\{\Omega\} = 1 $$
+$$ P\{A \cup B\} = P\{A\} + P\{B\} \  \ if A \cap B = \emptyset $$
+
+\subsubsection{Conditional probability}
+Conditional probabilities are dependent on the occurrence of a preceding result or event. A conditional probability would consider these events in relation to one another. The possibility of an event or outcome occurring depending on the occurrence of another event or outcome therefore is known as conditional probability.
+
+\noindent Two occurrences are said to be independent if the occurrence of one does not affect the likelihood of the occurrence of the other. However, if the occurrence of one event affects the likelihood of the occurrence of the other event, the two occurrences are said to be dependant. If events are independent, the likelihood of some event B is not affected by what happens with event A. As a result, a conditional probability is related to those events that
+
+If $ (F) > 0 $ then $$P(E \mid F) = \frac{P(EF)}{P(F)}$$
+
+If E and F are independent events, that is to say, if F occurs, then that gives us no information about occurance of E then 
+$$ E \cup  F = \emptyset $$
+
+A simple example: 
+Suppose you are drawing three marbles—red, blue, and green from a bag. Each marble has an equal chance of being drawn. What is the conditional probability of drawing the red marble after already drawing the blue one?
+
+First, the probability of drawing a blue marble is about 33\% because it is one possible outcome out of three. Assuming this first event occurs, there will be two marbles remaining, with each having a 50\% chance of being drawn. So the chance of drawing a blue marble after already drawing a red marble would be about (33\%\times 50\%) = 16.5\%
+
+\subsubsection{Distribution functions F(x) of a probability P on (R, B(R)): definition and properties. Functions of generalized distribution}
+
+The Cumulative Distribution Function (CDF) is used to describe the probability distribution of random variables. It can be used to describe the probability for a discrete, continuous or mixed variable. It is obtained by summing up the probability density function and getting the cumulative probability for a random variable.
+
+The Probability Density Function is a function that gives us the probability distribution of a random variable for any value of it. To get the probability distribution at a point, you only have to solve the probability density function for that point. 
+
+The cumulative distribution function of a random variable to be calculated at a point x is represented as $F_x(X)$.
+
+Propertty ofcumulative distribution is that the function $F_{X}$ is non-decreasing and right-continuous. 
+
+$$\lim\limits_{n \to -\infty} F_X(x) = 0, \ \lim\limits_{n \to \infty} F_X(x) = 1 $$
+
+
+The PDF of distrete random variable is given by:
+
+$$  F_{X}(x)=\operatorname {P} (X\leq x)=\sum _{x_{i}\leq x}\operatorname {P} (X=x_{i})=\sum _{x_{i}\leq x}p(x_{i})} $$
+
+\subsubsection{Binomial distributions B(n, p): Distribution function. Decomposition of a binary into independent Bernoulli random variable. Expectation and variance (with demonstration). Characteristic function}
+A Binomial distribution, often denoted as $Bin(n,p)$, is a distribution which is made out of multiple Bernoulli distribution. If X is a random variable with this distribution, then:
+
+$$ 
+  P(X=1) = p = 1 - P(X=0) = 1 - q}
+$$
+The mean of Binomial distribution is given by $p$ and the variance by p*q
+
+
+For example, the collection of all possible outcomes of a sequence of coin tossing is known to follow the binomial distribution. 
+
+\paragraph{Expected Value of a Random Variable}
+The mean of a random variable is more commonly referred to as its Expected Value. It's the value you expect to obtain when you carry out some experiment whose outcomes are represented by the random variable. More specifically, it's the average of the random variable, weighted by its probabilities. The expected value of a random variable X is denoted by $E(X)$ or  $\mu$ 
+
+The expected value (or mean, or average), denoted $\mu$, of a discrete  It is the first-order ($N=1$) \emph{raw} moment (the central moment is 0 by definition). It is defined as:
+
+$$ E[X] = \triangleq \sum_{x} p(x)\cdot x $$
+
+\paragraph{Variance of a Random Variable}
+Essentially variance measures how far a data set is spread out. The variance is the the sum of squared deviations from the mean. The variance for population data is denoted by $\sigma^2$.
+The formulae of variance is given by: \\
+\begin{align}
+\text{Var}[X] &= \mathbb{E}[(X - \mathbb{E}[X])^2] \notag \\
+&= \mathbb{E}[X^2 - 2\mathbb{E}[X]X + \mathbb{E}[X]^2] \notag \\
+&= \mathbb{E}[X^2] - 2\mathbb{E}[X]^2 + \mathbb{E}[X]^2 \notag \\
+&= \mathbb{E}[X^2] - \mathbb{E}[X]^2. \notag
+\end{align}
+
+
+
+\subsubsection{Chebyshev’s inequality: statements and proof. Application to the proof of the weak law of large numbers for identically distributed random variables}
+
+Chebyshev inequality asserts that if a random variable has a variance then the probability that it takes a value far from it's mean is also small. A great preliminary to study Chebyshev inequality is another inequality called Markov inequality. The Markov inequality expresses a general property of probability distributions. A proof of it is given below but it also may be derived simply by the following observation: it is not possible for $(1/n)$th of a population to be greater than $n$ times the average value. Expressed mathematically this is:
+
+$$\text{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a}$$
+
+For a $>$ 0 and X \geq 0:
+
+$$E[X] = \(\int_{0}^{\infty} x f_X(x)\ dx \geq  \int_{a}^{\infty} x f_X(x)\ dx \geq  \int_{a}^{\infty} a f_X(x)\ dx = a \ P(X \geq a) $$
+$$ \Longleftrightarrow \text{P}(X \geq a) \leq \frac{\mathbb{E}[X]}{a} \renewcommand{\qedsymbol}{$\blacksquare$} $$
+
+\noindent The Chebyshev inequality is another general result for probabilities, expressing a bound on the probability of a random variable, $X$, straying from its mean, $\mu$, by more than $k$ standard deviations. To derive this, we first define a random variable, $Y = (X - \mu)^2$, and constant, $a = (k\sigma)^2$. Then, by the Markov inequality:
+
+$$\text{P}((X - \mu)^2 \geq (k\sigma)^2) \leq \frac{\mathbb{E}[(X - \mu)^2]}{(k\sigma)^2},$$
+
+\noindent which we may rewrite as:
+
+\begin{align}
+\text{P}(|X - \mu| \geq k\sigma) &\leq \frac{\text{Var}(X)}{k^2\sigma^2} \notag &= \frac{1}{k^2} \notag
+\end{align}
+
+
+\noindent The law of large numbers states that given a sequence $X_1, X_2, \dots, X_N$ of i.i.d random variables, the sample average, $\bar{X} = \frac{1}{n}(X_1 + X_2 + \cdots + X_n)$ converges to the true mean, $\mu$, as n grows. That is, $\bar{X}_n \rightarrow \mu$ as $n \rightarrow \infty$.
+
+\noindent Note first that:
+
+\noindent \text{Var}(\bar{X}_n) = \text{Var}\bigg(\frac{X_1 + X_2 + \cdots + X_n}{n}\bigg) =  \frac{1}{n^2} (\text{Var}(X_1) + \text{Var}(X_2) + \cdots + \text{Var}(X_n)) \\
+= \frac{n\sigma^2}{n^2} = \frac{\sigma^2}{n} \\
+
+Now, by the Chebyshev inequality,
+
+$$
+\text{P}(|\bar{X}_n - \mu| \geq k\frac{\sigma}{\sqrt{n}}) \leq \frac{1}{k^2}.
+$$
+
+Choosing $k = \frac{\sqrt{n}}{\sigma} \epsilon$ for any arbitrary choice of $\epsilon$:
+
+$$
+\text{P}(|\bar{X}_n - \mu| \geq \epsilon) \leq \frac{\sigma^2}{n\epsilon^2},
+$$
+
+that is:
+
+$$
+\text{P}(|\bar{X}_n - \mu| < \epsilon) \geq 1 - \frac{\sigma^2}{n\epsilon^2},
+$$
+
+which converges to 1 for a sufficiently large choice of n.
+
+
+\subsubsection{Central Limit Theorem (with proof) and Lyapunov conditions to replace the hypothesis of identical distribution}
+
+\subparagraph{Proof of the Central Limit Theorem}
+
+The Central Limit Theorem (CLT) is a profound result, with far-reaching applications. It's proof is therefore the demonstration of a universal truth.
+The theorem states that the sum of $n$ random variables, whatever their individual distributions, converges to a Gaussian distribution as $n \to \infty$.
+If we then suppose natural phenomena to be aggregations of many random events, the central limit theorem explains how the bell curve appears with such regularity.
+
+\paragraph {Lyapunov Central Limit Theorem} In this variant of the central limit theorem the random variables $X_{i}$ is independent and not necessarily iid. In it's essence  that some averaged control on some (2 + $\delta$)-moment was enough to guarantee the conclusion.
+for some $\delta > 0$ \\ \\
+Lyapunov’s condition are when
+
+$$
+\lim _{n\to \infty }\;{\frac {1}{s_{n}^{2+\delta }}}\,\sum _{i=1}^{n}\mathbb {E} \left[\left|X_{i}-\mu _{i}\right|^{2+\delta }\right]=0
+$$
+is satisfied, then a sum of $\frac {X_{i}-\mu _{i}}{s_{n}}$ converges in distribution to a standard normal random variable, as  {n} goes to infinity:
+$$
+\frac {1}{s_{n}}}\,\sum _{i=1}^{n}\left(X_{i}-\mu _{i}\right)\ \rightarrow \ N(0,1)
+$$
+
+\end{document}
