@@ -1,0 +1,233 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\author{}
+\date{}
+
+\begin{document}
+
+\textbf{Bayes' Theorem}
+
+Bayes' Theorem is a mathematical formula we use when we want to
+calculate a conditional probability. We should first know what
+conditional probability is before we learn more about Bayes' Theorem.
+
+\textbf{Conditional Probability}
+
+Conditional probability is how likely an event is supposed to occur
+based on the outcome of the previous event. Let us have the probability
+space \((\mathrm{\Omega},\mathcal{F,}ꓑ)\) and two events A and B that
+are elements of the event space shown as
+\(A,B \in \mathcal{\text{\ F}}\).
+
+We will calculate the conditional probability with the following
+formula:
+
+\[ꓑ\left\{ A|B \right\} = \ \frac{ꓑ\{ A \cap B\}}{ꓑ\{ B\}}\ \]
+
+Since the denominator can't be equal to 0, we must also say that
+\(ꓑ\left\{ B \right\} \neq 0\).
+
+We've already mentioned the definition of Bayes' Theorem, therefore we
+can continue with its formula which is the following:
+
+\[ꓑ\left\{ A|B \right\} = \ \frac{ꓑ\left\{ B \middle| A \right\}\ ꓑ\{ A\}}{ꓑ\{ B\}}\ \]
+
+\textbf{Proof}
+
+To prove this equation, we will use the formula of conditional
+probability which is:
+
+\[ꓑ\left\{ A|B \right\} = \ \frac{ꓑ\left\{ A \cap B \right\}}{ꓑ\left\{ B \right\}}\ ,\ \ where\ ꓑ\left\{ B \right\} \neq 0\ \ \]
+
+Now we swap A and B to get a similar formula:
+
+\[ꓑ\left\{ B|A \right\} = \ \frac{ꓑ\left\{ A \cap B \right\}}{ꓑ\left\{ A \right\}}\ ,\ \ where\ ꓑ\left\{ A \right\} \neq 0\]
+
+In the swapped version we see that
+\(ꓑ\left\{ A \cap B \right\} = ꓑ\left\{ B|A \right\}\ ꓑ\left\{ A \right\}\ \).
+
+Now we take this \(ꓑ\left\{ A \cap B \right\}\) of the swapped version
+and replace it with the \(ꓑ\left\{ A \cap B \right\}\) in the first
+equation. That's how we come up with the formula of Bayes' Theorem.
+
+\textbf{Evaluation by Using the Total Probability Rule}
+
+We can evaluate this formula further by using the Total Probability
+Rule. It is a rule that states if the probability of an event is
+unknown, it can be calculated using the known probabilities of several
+distinct events. The formula is the following:
+
+\[ꓑ\left\{ A \right\} = \ \sum_{k}^{}{ꓑ\{ A \cap B_{k}\}}\]
+
+Since we know that
+\(ꓑ\left\{ A \cap B \right\} = ꓑ\left\{ A|B \right\}\ ꓑ\left\{ B \right\}\),
+we adapt this equality to the formula above and it becomes:
+
+\[ꓑ\left\{ A \right\} = \ \sum_{k}^{}{ꓑ\left\{ A \middle| B_{k} \right\}\ P\{ B_{k}\}}\]
+
+Now the last thing we want to do to modify the Bayes' Theorem is to
+replace the denominator \(ꓑ\left\{ B \right\}\) with its equivalent by
+using our new Total Probability formula.
+
+Here is the last version of our modified formula of Bayes' Theorem:
+
+\[ꓑ\left\{ D_{k}|B \right\} = \ \frac{ꓑ\left\{ B \middle| D_{k} \right\}\ ꓑ\{ D_{k}\}}{\sum_{j}^{}{ꓑ\left\{ B \middle| D_{j} \right\}\ P\{ D_{j}\}}}\]
+
+\textbf{Application}
+
+\textbf{Ex.} A record company is looking for a new song to release.
+Alex, Jude and Leo separately sent their song recordings to the company.
+Alex sent 5 song recordings and he's been chosen by the company with \%6
+of his work before. Jude sent 15 song recordings and she has been chosen
+by the company with 4\% of her work before. Lastly, Leo sent 10 song
+recordings and he has been chosen by the company with 3\% of his work
+before. What is the probability that Jude's song will be chosen by the
+company this time?
+
+\[ꓑ\left\{ \text{Jude} \middle| \text{Win} \right\} = \frac{ꓑ\left\{ \text{Win} \middle| \text{Jude} \right\} ꓑ\{ Jude\}}{ꓑ\left\{ \text{Win} \middle| \text{Jude} \right\} ꓑ\left\{ \text{Jude} \right\} + ꓑ\left\{ \text{Win} \middle| \text{Alex} \right\} ꓑ\left\{ \text{Alex} \right\} + ꓑ\left\{ \text{Win} \middle| \text{Leo} \right\} ꓑ\{ Leo\}}\]
+
+\[ꓑ\left\{ \text{Jude} \middle| \text{Win} \right\} = \frac{\% 4\ .\ \frac{15}{30}}{\% 4\ .\frac{15}{30} + \% 6.\frac{5}{30} + \% 3.\frac{10}{30}}\]
+
+\[ꓑ\left\{ \text{Jude} \middle| \text{Win} \right\} = \frac{\frac{4}{100}\text{\ .\ }\frac{15}{30}}{\frac{4}{100}\text{\ .}\frac{15}{30} + \frac{6}{100}.\frac{5}{30} + \frac{3}{100}.\frac{10}{30}}\]
+
+\[ꓑ\left\{ \text{Jude} \middle| \text{Win} \right\} = \frac{\frac{60}{3000}}{\frac{120}{3000}} = \frac{1}{2} = 50\%\]
+
+Jude's song will be released with 50\% of chance.
+
+\textbf{Binomial Distribution}
+
+Let us say that we have an experiment with two possible outcomes just
+like flipping a coin. Binomial distribution is the discrete probability
+distribution of favorable outcomes when we repeat our experiment n times
+with repetitions being independent of each other. It is important that
+the number of trials is fixed and each of them is independent so that
+none of them has an effect on the outcome of the next trial.
+
+This distribution has two parameters: number of repetitions denoted as n
+and the probability of a favorable outcome of an experiment denoted as
+p. Since it is a probability, we know that \(p \in \lbrack 0,1\rbrack\)
+and \(q = 1 - p\) because the sum of the probabilities are supposed to
+be equal to 1.
+
+The formula for binomial distribution is the following:
+
+\[p_{n}(k) = \left( \frac{n}{k} \right)p^{k}q^{n - k}\ \]
+
+Let us have a finite sample space \(\mathrm{\Omega}_{n}\) and an event
+\(A\) such that \(A \subseteq \ \mathrm{\Omega}_{n}\). We use the
+following formula to calculate the probability of event A:
+
+\[ꓑ\left\{ A \right\} = \ \sum_{\text{kϵA}}^{}{p_{n}(k)}\]
+
+Since we know that the total probability of all the possible events in
+the sample space must be equal to 1, we can model this with the
+following equation:
+
+\[ꓑ\left\{ \mathrm{\Omega}_{n} \right\} = \ \sum_{k = 0}^{n}{p_{n}(k)} = 1\]
+
+We denote the binomial distribution as \(\mathfrak{B(}n;p)\). When
+\(\mathfrak{B}(1;p)\), meaning that the number of trials is 1, and the
+sample space has 2 possible outcomes \(\mathrm{\Omega}_{2} = \{ 0,1\}\)
+with \(P\left\{ 1 \right\} = p,\ P\left\{ 0 \right\} = 1 - p\), we call
+it Bernoulli distribution.
+
+\textbf{Bernoulli Distribution}
+
+Bernoulli distribution is a discrete distribution that has two possible
+outcomes which are success and failure. Passing or failing an exam is an
+example of it. Success is labelled as 1 with probability \(p\) and
+failure is labelled as 0 with probability \(1 - p\) where \(0 < p < 1\).
+The sum of Bernoulli random variables gives us a binomial random
+variable.
+
+\[P\left\{ x \right\} = \left\{ \begin{matrix}
+p,\ \ \& x = 1 \\
+1 - p,\ \ \& x = 0 \\
+\end{matrix} \right.\ \]
+
+which can also be written as:
+
+\[P\left\{ x \right\} = p^{x}{(1 - p)}^{1 - x}\]
+
+\textbf{Central Limit Theorem}
+
+Central Limit Theorem (CLT) states that if we take large amount of
+samples (\(n \geq 30\)) from a population, the means of the samples will
+be normally distributed regardless of the distribution of the
+population. That means even if we are dealing with a population which is
+not normally distributed, we can apply the methods we use for normal
+distribution to it by turning it into a normal distribution with the
+means of the samples.
+
+The formula is the following:
+
+\[\lim_{n \rightarrow \infty}\frac{\overline{{(X}_{n}} - \ \mu)}{\sigma}\  \leq z\  = \ \Phi(z)\]
+
+\(X_{n}\ \)is IID sequence
+
+\(\Phi\left( z \right) = \ \frac{1}{\sqrt{2\pi}}\int_{- \infty}^{z}e^{- \frac{z^{2}}{2}}\text{dz}\)
+
+\includegraphics[width=5.63223in,height=4.15299in]{media/image1.png}\\
+https://www.gaussianwaves.com/2010/01/central-limit-theorem-2/
+
+\includegraphics[width=5.94475in,height=4.04882in]{media/image2.png}\\
+https://www.gaussianwaves.com/2010/01/central-limit-theorem-2/
+
+\end{document}
