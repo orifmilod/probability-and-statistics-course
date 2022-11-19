@@ -1,0 +1,1684 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Binomial (with proof) [Theor 4.30] and multinomial [Theor 4.31] Poisson theorems.
+ Theorem Poisson's limit (with proof) [Theor 4.32] and Gaussian convergence
+ of Poisson's laws (with proof) [Theor 4.33] 
+\end_layout
+
+\begin_layout Subsection
+Binomial Poisson theorem:
+\end_layout
+
+\begin_layout Standard
+Take a sequence of binomial rv ’s binomiali S
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+ ∼ 
+\begin_inset Formula $\mathcal{B}$
+\end_inset
+
+(n; p(n)):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/binomial.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if it exists a number α > 0 such that:
+\end_layout
+
+\begin_layout Standard
+p(n) → 0 
+\end_layout
+
+\begin_layout Standard
+q(n) = 1 − p(n) → 1 
+\end_layout
+
+\begin_layout Standard
+np(n) → α 
+\end_layout
+
+\begin_layout Standard
+n →∞ 
+\end_layout
+
+\begin_layout Standard
+then S
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+n
+\end_layout
+
+\end_inset
+
+ converges in distribution to the Poisson law 
+\begin_inset Formula $P$
+\end_inset
+
+(α),
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/poisson.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+that is d S
+\begin_inset Formula $_{n}$
+\end_inset
+
+ 
+\begin_inset Formula $\overset{d}{→}$
+\end_inset
+
+ 
+\begin_inset Formula $P$
+\end_inset
+
+(α) namely 
+\begin_inset Formula $\lim$
+\end_inset
+
+ p
+\begin_inset Formula $_{n}$
+\end_inset
+
+(k) = 
+\begin_inset Formula $\frac{α^{k}ke^{-\alpha}}{k!}$
+\end_inset
+
+ , k = 0, 1, .
+ .
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/poisson-binomial.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proof
+\end_layout
+
+\begin_layout Standard
+Since for every α > 0, from a certain n onward we have α/n < 1, starting
+ from there our hypotheses empower us to write:
+\end_layout
+
+\begin_layout Standard
+p(n) = 
+\begin_inset Formula $\frac{α}{n}$
+\end_inset
+
+ + o(n
+\begin_inset Formula $^{-1}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+so that for k = 0, 1, .
+ .
+ .
+ , n we will get:
+\end_layout
+
+\begin_layout Standard
+p
+\begin_inset Formula $_{n}(k)=\frac{{\color{red}n(n\text{−}1)...(n\text{−}k+1)}}{{\color{black}k!}}{\color{red}[\frac{\alpha}{n}+o(n^{-1})]^{k}}$
+\end_inset
+
+
+\begin_inset Formula {\color{blue} $[1-\frac{α}{n}$ + o(n$^{-1}$)]$^{n-k}$}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dealing with the three factors separately:
+\end_layout
+
+\begin_layout Standard
+
+\color red
+n(n − 1) .
+ .
+ .
+ (n − k + 1)[
+\begin_inset Formula $\frac{α}{n}$
+\end_inset
+
+ + o(n
+\begin_inset Formula $^{-1}$
+\end_inset
+
+)]
+\begin_inset Formula $^{k}$
+\end_inset
+
+=
+\begin_inset Formula $\frac{n(n\text{−}1)...(n\text{−}k+1)}{n^{k}}$
+\end_inset
+
+
+\begin_inset Formula $[α$
+\end_inset
+
+ + o(1)]
+\begin_inset Formula $^{k}$
+\end_inset
+
+=(1-
+\begin_inset Formula $\frac{1}{n})$
+\end_inset
+
+...(1-
+\begin_inset Formula $\frac{k-1}{n})$
+\end_inset
+
+
+\begin_inset Formula $[α$
+\end_inset
+
+ + o(1)]
+\begin_inset Formula $^{k}$
+\end_inset
+
+ 
+\begin_inset Formula $\overset{n}{→}$
+\end_inset
+
+ α
+\begin_inset Formula $^{k}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\color blue
+[
+\begin_inset Formula $1-\frac{α}{n}+o(n^{-1}$
+\end_inset
+
+)]
+\begin_inset Formula $^{n-k}$
+\end_inset
+
+=
+\begin_inset Formula $^{k}$
+\end_inset
+
+[
+\begin_inset Formula $1-\frac{α}{n}$
+\end_inset
+
+ + o(n
+\begin_inset Formula $^{-1}$
+\end_inset
+
+)]
+\begin_inset Formula $^{n}$
+\end_inset
+
+[
+\begin_inset Formula $1-\frac{α}{n}$
+\end_inset
+
+ + o(n
+\begin_inset Formula $^{-1}$
+\end_inset
+
+)]
+\begin_inset Formula $^{-k}$
+\end_inset
+
+
+\begin_inset Formula $\overset{n}{→}$
+\end_inset
+
+ e
+\begin_inset Formula $^{-α}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we get:
+\end_layout
+
+\begin_layout Standard
+p
+\begin_inset Formula $_{n}(k)={\color{red}\frac{α^{k}{\color{blue}e^{-\alpha}}}{{\color{black}k!}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Multinomial Poisson theorem:
+\end_layout
+
+\begin_layout Standard
+Take a sequence of multinomial r-vec’s
+\begin_inset Formula $S_{n}=(X_{1}\cdots X_{r}\mathcal{B}(n;p_{1},\cdots,p_{r})$
+\end_inset
+
+ with
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $P\left\{ X_{1}=k_{1},\cdots,X_{r}=k_{r}\right\} =\frac{n!}{k_{0}!k_{1}!\cdots k_{r}!}p_{0}^{k_{0}}p_{1}^{k_{1}}\cdots p_{r}^{k_{r}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\begin{cases}
+p_{0}+p_{1}+\ldots+p_{r}=1\\
+k_{0}+k_{1}+\ldots+k_{r}=n
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If for 
+\begin_inset Formula $j=1,\ldots,r$
+\end_inset
+
+ and
+\begin_inset Formula $n→∞$
+\end_inset
+
+ there exist 
+\begin_inset Formula $α_{j}>0$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{j}=p_{j}(n)→0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $p_{0}=p_{0}(n)→1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then we have np
+\begin_inset Formula $_{j}$
+\end_inset
+
+(n) → α
+\begin_inset Formula $_{j}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{n}=(X_{1},\ldots,X_{r})\overset{d}{\rightarrow}\mathcal{B}(α_{1})\mathcal{B}(α_{2})...\mathcal{B}(α_{r})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Theorem Poisson's limit
+\end_layout
+
+\begin_layout Standard
+For every 
+\begin_inset Formula $n∈N$
+\end_inset
+
+ and 
+\begin_inset Formula $k=1,\ldots,n$
+\end_inset
+
+ take the independent rv ’s 
+\begin_inset Formula $X_{k}^{n}$
+\end_inset
+
+ with:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P\{X_{k}^{n}=1\}=p_{k}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $P\{X_{k}^{n}=0\}=q_{k}^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $p_{k}^{n}+q_{k}^{n}=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+and positive 
+\begin_inset Formula $S_{n}=X_{1}+···+X_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+if 
+\begin_inset Formula 
+\[
+\underset{1\leq k\leq n}{max}p_{k}^{n}\overset{n}{\rightarrow}0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\stackrel[k=1]{n}{\sum}p_{k}^{n}\overset{n}{\rightarrow}α>0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then we have 
+\begin_inset Formula 
+\[
+S_{n}\overset{d}{\rightarrow}P(α)(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proof
+\end_layout
+
+\begin_layout Standard
+From the independence of the X
+\begin_inset Formula $_{k}$
+\end_inset
+
+, we have 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{Sn}(u)=E[e^{iuS_{n}}]\text{=}\stackrel[k=1]{n}{\prod}[p_{k}^{n}e^{iu}+q_{k}^{n}]=\stackrel[k=1]{n}{\prod}[1+p_{k}^{n}(e^{iu}-1)]
+\]
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Since by hypothesis
+\begin_inset Formula $p_{k}^{n}→0$
+\end_inset
+
+, from the series expansion of the logarithm we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+ln\varphi_{Sn}(u)=\stackrel[k=1]{n}{\sum}ln[1+p_{k}^{n}(e^{iu}-1)]=\stackrel[k=1]{n}{\sum}ln[p_{k}^{n}(e^{iu}-1)+o(p_{k}^{n})]\overset{n}{\rightarrow}α(e^{iu}-1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and given the continuity of the logarithm
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varphi_{Sn}(u)\overset{n}{\rightarrow}e^{α(e^{iu}-1)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{n}\overset{d}{\rightarrow}P(α)(n)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Gaussian convergence of Poisson's laws
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $S∼P(α)$
+\end_inset
+
+ is a Poisson rv , then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S^{*}=\frac{S-α}{\sqrt{α}}\overset{d}{\rightarrow}N(0,1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proof
+\end_layout
+
+\begin_layout Standard
+If φ α is the chf of S
+\begin_inset Formula $^{*}$
+\end_inset
+
+, from the series expansion of an exponential we find for
+\begin_inset Formula $α→+∞$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ_{α}(u)=E[e^{iuS^{*}}]=e^{-iu\sqrt{α}}E[e^{iuS/\sqrt{α}}]=exp[-iu\sqrt{α}+α(e^{iuS/\sqrt{α}}-1)]=exp[-iu\sqrt{α}-α+α(1+\frac{iu}{\sqrt{-α}}-\frac{u^{2}}{2α}+o(\frac{1}{α}))]\rightarrow e^{-u^{2}/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definition of conditional densities with respect to events of zero measure,
+ and its justification [Sect 3.4.1].
+ Conditional expectation value, even with respect to a random variable [Section
+ 3.4.2].
+ Property of the conditional expectations [Prop 3.42] with proof only of
+ E [E [X | Y]] = E [X] 
+\end_layout
+
+\begin_layout Subsection
+Conditional densities
+\end_layout
+
+\begin_layout Subsubsection
+CDF
+\end_layout
+
+\begin_layout Standard
+If X, Y are two rv ’s with a joint cdf 
+\begin_inset Formula $F_{XY}(x,y)$
+\end_inset
+
+ which is y-differentiable, and if Y is ac with pdf f Y (y), we will call
+ cdf of X conditioned by the event {Y = y} the function:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F_{X|Y}(x|y)=\begin{cases}
+\frac{\partial_{y}F_{X,Y}(x,y)}{f_{Y}(y)} & f_{Y}(y)\neq0\\
+arbitrary,possibly=0 & f_{Y}(y)=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+PDF
+\end_layout
+
+\begin_layout Standard
+If X is ac and the joint pdf is 
+\begin_inset Formula $f_{XY}(x,y)$
+\end_inset
+
+, then the pdf of X conditioned by the event {Y = y} is:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{X|Y}(x|y)=\begin{cases}
+\frac{f_{XY}(x,y)}{f_{Y}(y)} & f_{Y}(y)\neq0\\
+0 & f_{Y}(y)=0
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Conditional expectation
+\end_layout
+
+\begin_layout Standard
+Given the rv ’s X, Y and a Borel function g(x), we will call conditional
+ expectation of g(X) w.r.t.
+ {Y = y} the y-function:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m(y)\equiv E[g(X|Y=y)]=\intop_{-\infty}^{\infty}g(x)f_{X|Y}(x|y)dx
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will call instead conditional expectation of g(X) w.r.t.
+ the rv Y the rv:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[g(X)|Y]≡m(Y)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Properties
+\end_layout
+
+\begin_layout Itemize
+E [E [X|Y ]] = E [X] 
+\end_layout
+
+\begin_layout Itemize
+E [X|Y ] = E [X] P -a.s.
+ if X and Y are independent 
+\end_layout
+
+\begin_layout Itemize
+E [φ(X, Y )|Y = y] = E [φ(X, y)|Y = y] 
+\end_layout
+
+\begin_layout Itemize
+E [φ(X, Y )|Y = y] = E [φ(X, y)] 
+\end_layout
+
+\begin_layout Itemize
+E [X g(Y )|Y ] = g(Y ) E [X|Y ] P Y -as P -a.s.
+\end_layout
+
+\begin_layout Subsubsection
+Proof for E[E[X|Y]]=E[X]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[E[X|Y]]=E[m(Y)]=\int_{R}m(y)F_{Y}(y)dy=\int_{R}E[X|Y=y]f_{Y}(y)dy=\int_{R}[\int_{R}xf_{X|Y}(x|y)dx]f_{Y}(y)dy=\int_{R}[\int_{R}x\frac{f_{XY}(x,y)}{f_{Y}(y)}dx]f_{Y}(y)dy=\int_{R}x[\int_{R}f_{XY}(x,y)dy]dx=\int_{R}xf_{X}(x)dx=E[X]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Definition of expectation value and moments of a random variable [Section
+ 3.3.1].
+ Procedure for the calculation of the expectation value with change of variables
+ [Theor 3.22, Coroll.
+ 3.23].
+ Main ownership of expectation values [Theor 3.26] 
+\end_layout
+
+\begin_layout Subsection
+Expectation value
+\end_layout
+
+\begin_layout Standard
+The expectation of a rv X is a numerical indicator specifying the location
+ of the barycenter of a distribution 
+\begin_inset Formula $P_{X}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For every 
+\begin_inset Formula $A\text{∈}\digamma$
+\end_inset
+
+ we always have E [I
+\begin_inset Formula $_{A}$
+\end_inset
+
+] = P{A}
+\end_layout
+
+\begin_layout Standard
+For a rv X expectation value can be calculated using Lebesgue integral:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E[X]=\int_{\varOmega}XdP=\int_{\varOmega}X(ω)P\left\{ dω\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Moments
+\end_layout
+
+\begin_layout Standard
+We will call moment of order k of a rv X the expectation (if it exists)
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[X^{k}]=\int_{\varOmega}X^{k}dP$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $k=0,1,2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and absolute moment of order r the expectation (if it exists)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[|X^{r}|]=\int_{\varOmega}|X|^{r}dP$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $r\geq0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Calculation of the expectation value with change of variables
+\end_layout
+
+\begin_layout Standard
+Take the r-vec
+\begin_inset Formula $X=(X_{1},\cdots,X_{n})$
+\end_inset
+
+ on 
+\begin_inset Formula $(Ω,F,P)$
+\end_inset
+
+ with joint distribution 
+\begin_inset Formula $P_{X}$
+\end_inset
+
+ , and the Borel function 
+\begin_inset Formula $g:(R_{n},B(R_{n}))→(R,B(R));$
+\end_inset
+
+ if 
+\begin_inset Formula $Y=g(X)$
+\end_inset
+
+ we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[Y]=\int_{\varOmega}YdP=\int_{\varOmega}Y(ω)P\left\{ dω\right\} =E[g(X)]=\int_{\varOmega}g(X)dP=\int_{\varOmega}g(X(\omega))P\left\{ d\omega\right\} =\int_{R^{n}}g(x)P_{x}\left\{ dx\right\} =\int_{R^{n}}g(x_{1},x_{2,}\ldots,x_{n})P_{x}\left\{ dx_{1},dx_{2},\ldots,dx_{n}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Main ownership of expectation 
+\end_layout
+
+\begin_layout Standard
+Because expectation value is defined with the Lebesgue integral it is sharing
+ it's properties: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E[aX+bY]=aE[X]+bE[Y]$
+\end_inset
+
+with 
+\begin_inset Formula $a,b∈R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E[X]≤E[|X|]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $X=0$
+\end_inset
+
+, P -a.s., then
+\begin_inset Formula $E[X]=0$
+\end_inset
+
+; if moreover X is an arbitrary rv and A an event - then 
+\begin_inset Formula $E[XI_{A}]=\int_{A}XdP=0$
+\end_inset
+
+ if 
+\begin_inset Formula $P\left\{ A\right\} =0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $X≤Y$
+\end_inset
+
+ , P -a.s.
+ then
+\begin_inset Formula $E[X]≤E[Y]$
+\end_inset
+
+, and if
+\begin_inset Formula $X=Y$
+\end_inset
+
+ P -a.s., then 
+\begin_inset Formula $E[X]=E[Y]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $X≥0$
+\end_inset
+
+ and 
+\begin_inset Formula $E[X]=0$
+\end_inset
+
+, then 
+\begin_inset Formula $X=0$
+\end_inset
+
+, P -a.s., namely X is degenerate 
+\begin_inset Formula $δ_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+if 
+\begin_inset Formula $E[XI_{A}]≤E[YI_{A}],∀A∈F$
+\end_inset
+
+, then
+\begin_inset Formula $X≤Y$
+\end_inset
+
+ , P -a.s., and in particular if 
+\begin_inset Formula $E[XI_{A}]=E[YI_{A}],∀A∈F$
+\end_inset
+
+, then 
+\begin_inset Formula $X=Y$
+\end_inset
+
+ , P -a.s.
+\end_layout
+
+\begin_layout Itemize
+if X and Y are independent, then also XY is integrable and 
+\begin_inset Formula $E[XY]=E[X]·E[Y]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Probability density f(x) of a law [Sect 2.2.3]: conditions of existence (Radon
+ Nikodym's theorem) [Theor 2.15] and at least two examples.
+ Concept of singular distribution [Section 2.2.4].
+ Blends laws and Lebesgue-Nikodym Theorem [Section 2.2.5] 
+\end_layout
+
+\begin_layout Subsection
+Radon Nikodym's theorem
+\end_layout
+
+\begin_layout Standard
+A cdf 
+\begin_inset Formula $F(x)$
+\end_inset
+
+ on R is ac iff there exists a non negative function 
+\begin_inset Formula $f(x)$
+\end_inset
+
+ defined on R such that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\int_{-\infty}^{\infty}f(x)dx=1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(x)=\int_{-\infty}^{x}f(z)dz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x)=F'(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The function f(x) is called a pdf (probability density function) of F(x).
+\end_layout
+
+\begin_layout Subsubsection
+Example of Uniform distribution
+\end_layout
+
+\begin_layout Standard
+The cdf:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(x)=\begin{cases}
+0 & x<a\\
+\frac{x-a}{b-a} & a\leq x\leq b\\
+1 & x>b
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pdf can be calculated by derivation of cdf, so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x)=\begin{cases}
+0 & x<a\\
+\frac{1}{b-a} & a\leq x\leq b\\
+0 & x>b
+\end{cases}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Example of Gaussian distribution
+\end_layout
+
+\begin_layout Standard
+The cdf:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(x)=\frac{1}{a\sqrt{2\pi}}\int_{-\infty}^{x}e^{-(z-b)^{2}/2a^{2}}dz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pdf can be calculated by derivation of cdf, so
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f(x)=\frac{1}{a\sqrt{2\pi}}e^{-(-b+x)^{2}/2a^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Singular distribution
+\end_layout
+
+\begin_layout Standard
+We say that P is a singular distribution when its cdf F (x) is continuous,
+ but not ac.
+\end_layout
+
+\begin_layout Standard
+Namely, it's neither degenerate nor absolutely continuous.
+\end_layout
+
+\begin_layout Standard
+The example could be a Cauchy distribution with 
+\begin_inset Quotes eld
+\end_inset
+
+a
+\begin_inset Quotes erd
+\end_inset
+
+ aproaching 0.
+ At some point the pdf function would take the infinite value, ceasing to
+ be a function.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Sums of independent random variables, convolutions with at least one example
+ [Section 3.5.2] and them characteristic functions [Prop 4.9] 
+\end_layout
+
+\begin_layout Subsection
+Sums of independent random variables
+\end_layout
+
+\begin_layout Standard
+Given two independent rv ’s X and Y with pdf ’s 
+\begin_inset Formula $f_{X}(x)$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{Y}(y)$
+\end_inset
+
+, the pdf of their sum Z = X + Y is the convolution of the respective pdf
+ ’s.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{Z}(x)=(f_{X}*f_{Y})(x)=(f_{X}*f_{Y})(x)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sum of uniformly distributed rv's
+\end_layout
+
+\begin_layout Standard
+Given 
+\begin_inset Formula $X_{1,}\ldots,X_{n}$
+\end_inset
+
+with pdf's described by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{X_{k}}(x)=\frac{1}{2}\upsilon(1-|x|)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+we can construct 
+\begin_inset Formula $Y=X_{1}+X_{2}+\ldots+X_{n}$
+\end_inset
+
+by convoluting it's pdf's
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $f_{Y}(x)=(f_{X_{1}}*f_{X_{2}}*\ldots*f_{X_{n}})(x)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Example for plot n=1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/f1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Example for plot n=2
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/f2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Example for plot n=3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/f3.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Example for plot n=4
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/treidek/Projekty/probability-and-statisics-course/f4.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Characteristic functions
+\end_layout
+
+\begin_layout Standard
+By calculating a Fourier Transform of pdf we can obtain a chf (characteristic
+ function).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+φ_{X}(u)=φ_{X}(u_{1},...,u_{n})=E[e^{iu·X}];u∈R^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It's useful because the chf of sum of rv's is a product of chf and not a
+ convolution.
+\end_layout
+
+\begin_layout LyX-Code
+f[x_] := 1/2 HeavisideTheta[1 - Abs[x]]
+\end_layout
+
+\begin_layout LyX-Code
+h = FourierTransform[f[x], x, y] 
+\end_layout
+
+\begin_layout LyX-Code
+f2 = InverseFourierTransform[h*h, y, x] 
+\end_layout
+
+\begin_layout LyX-Code
+f3 = InverseFourierTransform[h*h*h, y, x] 
+\end_layout
+
+\begin_layout LyX-Code
+f4 = InverseFourierTransform[h*h*h*h, y, x]
+\end_layout
+
+\begin_layout LyX-Code
+Plot[f3, {x, -5, 5}]
+\end_layout
+
+\begin_layout LyX-Code
+Plot[f4, {x, -5, 5}]
+\end_layout
+
+\begin_layout Standard
+The plot's for n=3 and n=4 in previous section were created with the code
+ above, which was faster than running convolution and I could do that thanks
+ to the properties of chf.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Law of large numbers weak (with proof) [Theor 4.23] and strong [Theor 4.25]
+ with applications to the calculation of an integral with the Monte Carlo
+ method [Ex 4.26] 
+\end_layout
+
+\begin_layout Subsection
+Weak law of large numbers
+\end_layout
+
+\begin_layout Standard
+In short, law of large numbers claims that avarege probability of n iid
+ rv.
+ will approach it's expected value with n aproaching infinity.
+\end_layout
+
+\begin_layout Standard
+Given a sequence
+\begin_inset Formula $(X_{n})n∈N$
+\end_inset
+
+ of rv ’s iid with 
+\begin_inset Formula $E[|X_{n}|]<+∞$
+\end_inset
+
+, and taken 
+\begin_inset Formula $S_{n}=X_{1}+···+X_{n}$
+\end_inset
+
+ and 
+\begin_inset Formula $E[X_{n}]=m$
+\end_inset
+
+, it turns out that:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{S_{n}}{n}\overset{P}{\rightarrow}m
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Proof
+\end_layout
+
+\begin_layout Standard
+First lets calculate chf of the given random sequence
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ_{n}(u)=E[e^{iuS_{n}/n}]=\stackrel[k=1]{n}{\prod}E[e^{iuX_{k}/n}]=[φ_{n}(\frac{u}{n})]^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We will write the chf of the rv as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ(u)=1+ium+o(u)$
+\end_inset
+
+ for 
+\begin_inset Formula $u\rightarrow0$
+\end_inset
+
+
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+
+\begin_inset Formula $φ(\frac{u}{n})=1+i\frac{u}{n}m+o(\frac{1}{n})$
+\end_inset
+
+ for 
+\begin_inset Formula $n\rightarrow\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then we can just plug it in to the previous equation and get:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ_{n}(u)=[1+i\frac{u}{n}m+o(\frac{1}{n})]^{n}\rightarrow e^{imu}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Strong law of large numbers
+\end_layout
+
+\begin_layout Standard
+The only difference between weak and strong law of large numbers is that
+ the strong law claims that the sequence converges to the expected value
+ almost surely, so the probabilty that it doesn't converge is 0.
+\end_layout
+
+\begin_layout Subsubsection
+Monte Carlo
+\end_layout
+
+\begin_layout Standard
+The Monte Carlo method is using strong law of large numbers to estimate
+ a numerical value of an integral, by randomly selecting points on the plot
+ and checking if the point is below or above a function.
+\end_layout
+
+\begin_layout Standard
+By having enough points and knowing the area of the whole plot, one can
+ use a ratio of point below to point above, multiplied by the area of the
+ plot, to get the area under the function - namely the integral.
+\end_layout
+
+\begin_layout Standard
+This can be done, because the probability to get below the line, will aproach
+ almost surely the expectation value of this event, when we will try enough
+ number of times.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Separator plain
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Central Limit Theorem (with proof) [Theor 4.27] and Lyapunov conditions to
+ replace the hypothesis of identical distribution [Theor 4.28]
+\end_layout
+
+\begin_layout Subsection
+Central Limit Theorem
+\end_layout
+
+\begin_layout Standard
+Take a sequence
+\begin_inset Formula $(X_{n})n∈N$
+\end_inset
+
+ of iid rv ’s with
+\begin_inset Formula $E[X_{n}^{2}]<+∞$
+\end_inset
+
+ and 
+\begin_inset Formula $V[X_{n}]>0$
+\end_inset
+
+, and define 
+\begin_inset Formula $S_{n}=X_{1}+...+X_{n}$
+\end_inset
+
+then:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{S_{n}-E[S_{n}]}{\sqrt{V[S_{n}]}}\overset{d}{\rightarrow}N(0,1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What it means, is that for big enough random sequences and enough sampling
+ points, with well defined expectation value and variance, it's mean distributio
+n will approach the Normal Gauss distribution.
+\end_layout
+
+\begin_layout Subsubsection
+Proof
+\end_layout
+
+\begin_layout Standard
+We will take:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $m=E[X_{n}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $σ^{2}=V[X_{n}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ(u)=E[e^{iu(X_{n}\text{−}m)}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E[S_{n}]=nm$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $V[S_{n}]=n\sigma^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{n}^{*}=\frac{1}{\sigma\sqrt{n}}\stackrel[k=1]{n}{\sum}(X_{k}-m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+r.vs are iid, so we can use the sam trick as for a law of large numbers and
+ get
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ_{n}(u)=E[e^{iuS_{n}^{*}}]=\stackrel[k=1]{n}{\prod}E[e^{iu(X_{k}-m)/\sigma\sqrt{n}}]=[φ_{n}(\frac{u}{\sigma\sqrt{n}})]^{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ(u)=1\text{−}\frac{σ^{2}u^{2}}{2}+o(u^{2})$
+\end_inset
+
+with 
+\begin_inset Formula $u\rightarrow0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and pluging 
+\begin_inset Formula $φ(u)$
+\end_inset
+
+ into 
+\begin_inset Formula $φ_{n}(u)$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $φ_{n}(u)=[1\text{−}\frac{σ^{2}u^{2}}{2}+o(u^{2})]^{n}\Rightarrowφ_{n}(u)=[1-\frac{u^{2}}{2n}+o(\frac{1}{n})]^{n}\overset{e}{\rightarrow}e^{-u^{2}/2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Where 
+\begin_inset Formula $e^{-u^{2}/2}$
+\end_inset
+
+is the chf of 
+\begin_inset Formula $N(0,1)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Lyapunov conditions
+\end_layout
+
+\begin_layout Standard
+If the distribution meets Lyapunov conditions: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{1}{V_{n}^{2+\delta}}\stackrel[k=1]{n}{\sum}E[|X_{k}-m_{k}|^{2+\delta}]\overset{n}{\rightarrow}0$
+\end_inset
+
+ for 
+\begin_inset Formula $m_{n}=E[X_{k}]$
+\end_inset
+
+ and 
+\begin_inset Formula $V_{n}=\sqrt{\sigma_{1}^{2}+\sigma_{2}^{2}+\ldots+\sigma_{n}^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then it holds also for independent r.v (not necesserily identically distrubuted)
+\end_layout
+
+\end_body
+\end_document
